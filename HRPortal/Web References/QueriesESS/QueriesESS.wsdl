@@ -1,0 +1,1012 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="urn:microsoft-dynamics-schemas/codeunit/QueriesESS" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/QueriesESS" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/QueriesESS" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="FnResetPassword">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="emailaddress" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnResetPassword_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ResetSendEmail">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="emailaddress" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ResetSendEmail_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="SendEmailNotification">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="recepient" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="emailSubject" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="emailBody" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SendEmailNotification_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="fnApprovalCommentLine">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="appNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnApprovalCommentLine_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnApprovalEntries">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="appNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnApprovalEntries_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnGetDepartments2">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="dmValueType" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="blocked" type="boolean" />
+            <element minOccurs="1" maxOccurs="1" name="gblDmNo" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="glblDmCode" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnGetDepartments2_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnGetDepartments">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="dmValueType" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="blocked" type="boolean" />
+            <element minOccurs="1" maxOccurs="1" name="gblDmNo" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnGetDepartments_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnGetEmployeeDetail">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="empNumber" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnGetEmployeeDetail_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnGetItems">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="fnGetItems_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnGetLocations">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="fnGetLocations_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnGetProcurementLineItems">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="reqType" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnGetProcurementLineItems_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnImprestHeaderSingle">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="empNumber" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="appNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnImprestHeaderSingle_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnImprestHeader">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="empNumber" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnImprestHeader_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnImprestLines">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="appNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnImprestLines_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnImprestSurrendersLines">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="appNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnImprestSurrendersLines_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnImprestSurrenders">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="empNumber" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnImprestSurrenders_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnOpenImprests">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnOpenImprests_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnPaymentHeader">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="empNumber" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="docType" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnPaymentHeader_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnPaymentLines">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="appNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnPaymentLines_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnPettyCashLines">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="appNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnPettyCashLines_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnPettycashHeader">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="empNumber" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="docType" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnPettycashHeader_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnPurchaseRequisitionLines">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="appNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnPurchaseRequisitionLines_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnPurchaseRequisitionsSingle">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="empNumber" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="appNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnPurchaseRequisitionsSingle_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnPurchaseRequisitions">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="empNumber" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnPurchaseRequisitions_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnStaffClaimLines">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="appNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnStaffClaimLines_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnStaffClaims">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="empNumber" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="docType" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnStaffClaims_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnStoreRequisitionLines">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="appNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnStoreRequisitionLines_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnStoreRequisitions">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="empNumber" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnStoreRequisitions_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fntransactionCodes">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="transactionType" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fntransactionCodes_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="loginUser">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="empNumber" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="password" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="loginUser_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <message name="FnResetPassword">
+    <part name="parameters" element="tns:FnResetPassword" />
+  </message>
+  <message name="FnResetPassword_Result">
+    <part name="parameters" element="tns:FnResetPassword_Result" />
+  </message>
+  <message name="ResetSendEmail">
+    <part name="parameters" element="tns:ResetSendEmail" />
+  </message>
+  <message name="ResetSendEmail_Result">
+    <part name="parameters" element="tns:ResetSendEmail_Result" />
+  </message>
+  <message name="SendEmailNotification">
+    <part name="parameters" element="tns:SendEmailNotification" />
+  </message>
+  <message name="SendEmailNotification_Result">
+    <part name="parameters" element="tns:SendEmailNotification_Result" />
+  </message>
+  <message name="fnApprovalCommentLine">
+    <part name="parameters" element="tns:fnApprovalCommentLine" />
+  </message>
+  <message name="fnApprovalCommentLine_Result">
+    <part name="parameters" element="tns:fnApprovalCommentLine_Result" />
+  </message>
+  <message name="fnApprovalEntries">
+    <part name="parameters" element="tns:fnApprovalEntries" />
+  </message>
+  <message name="fnApprovalEntries_Result">
+    <part name="parameters" element="tns:fnApprovalEntries_Result" />
+  </message>
+  <message name="fnGetDepartments2">
+    <part name="parameters" element="tns:fnGetDepartments2" />
+  </message>
+  <message name="fnGetDepartments2_Result">
+    <part name="parameters" element="tns:fnGetDepartments2_Result" />
+  </message>
+  <message name="fnGetDepartments">
+    <part name="parameters" element="tns:fnGetDepartments" />
+  </message>
+  <message name="fnGetDepartments_Result">
+    <part name="parameters" element="tns:fnGetDepartments_Result" />
+  </message>
+  <message name="fnGetEmployeeDetail">
+    <part name="parameters" element="tns:fnGetEmployeeDetail" />
+  </message>
+  <message name="fnGetEmployeeDetail_Result">
+    <part name="parameters" element="tns:fnGetEmployeeDetail_Result" />
+  </message>
+  <message name="fnGetItems">
+    <part name="parameters" element="tns:fnGetItems" />
+  </message>
+  <message name="fnGetItems_Result">
+    <part name="parameters" element="tns:fnGetItems_Result" />
+  </message>
+  <message name="fnGetLocations">
+    <part name="parameters" element="tns:fnGetLocations" />
+  </message>
+  <message name="fnGetLocations_Result">
+    <part name="parameters" element="tns:fnGetLocations_Result" />
+  </message>
+  <message name="fnGetProcurementLineItems">
+    <part name="parameters" element="tns:fnGetProcurementLineItems" />
+  </message>
+  <message name="fnGetProcurementLineItems_Result">
+    <part name="parameters" element="tns:fnGetProcurementLineItems_Result" />
+  </message>
+  <message name="fnImprestHeaderSingle">
+    <part name="parameters" element="tns:fnImprestHeaderSingle" />
+  </message>
+  <message name="fnImprestHeaderSingle_Result">
+    <part name="parameters" element="tns:fnImprestHeaderSingle_Result" />
+  </message>
+  <message name="fnImprestHeader">
+    <part name="parameters" element="tns:fnImprestHeader" />
+  </message>
+  <message name="fnImprestHeader_Result">
+    <part name="parameters" element="tns:fnImprestHeader_Result" />
+  </message>
+  <message name="fnImprestLines">
+    <part name="parameters" element="tns:fnImprestLines" />
+  </message>
+  <message name="fnImprestLines_Result">
+    <part name="parameters" element="tns:fnImprestLines_Result" />
+  </message>
+  <message name="fnImprestSurrendersLines">
+    <part name="parameters" element="tns:fnImprestSurrendersLines" />
+  </message>
+  <message name="fnImprestSurrendersLines_Result">
+    <part name="parameters" element="tns:fnImprestSurrendersLines_Result" />
+  </message>
+  <message name="fnImprestSurrenders">
+    <part name="parameters" element="tns:fnImprestSurrenders" />
+  </message>
+  <message name="fnImprestSurrenders_Result">
+    <part name="parameters" element="tns:fnImprestSurrenders_Result" />
+  </message>
+  <message name="fnOpenImprests">
+    <part name="parameters" element="tns:fnOpenImprests" />
+  </message>
+  <message name="fnOpenImprests_Result">
+    <part name="parameters" element="tns:fnOpenImprests_Result" />
+  </message>
+  <message name="fnPaymentHeader">
+    <part name="parameters" element="tns:fnPaymentHeader" />
+  </message>
+  <message name="fnPaymentHeader_Result">
+    <part name="parameters" element="tns:fnPaymentHeader_Result" />
+  </message>
+  <message name="fnPaymentLines">
+    <part name="parameters" element="tns:fnPaymentLines" />
+  </message>
+  <message name="fnPaymentLines_Result">
+    <part name="parameters" element="tns:fnPaymentLines_Result" />
+  </message>
+  <message name="fnPettyCashLines">
+    <part name="parameters" element="tns:fnPettyCashLines" />
+  </message>
+  <message name="fnPettyCashLines_Result">
+    <part name="parameters" element="tns:fnPettyCashLines_Result" />
+  </message>
+  <message name="fnPettycashHeader">
+    <part name="parameters" element="tns:fnPettycashHeader" />
+  </message>
+  <message name="fnPettycashHeader_Result">
+    <part name="parameters" element="tns:fnPettycashHeader_Result" />
+  </message>
+  <message name="fnPurchaseRequisitionLines">
+    <part name="parameters" element="tns:fnPurchaseRequisitionLines" />
+  </message>
+  <message name="fnPurchaseRequisitionLines_Result">
+    <part name="parameters" element="tns:fnPurchaseRequisitionLines_Result" />
+  </message>
+  <message name="fnPurchaseRequisitionsSingle">
+    <part name="parameters" element="tns:fnPurchaseRequisitionsSingle" />
+  </message>
+  <message name="fnPurchaseRequisitionsSingle_Result">
+    <part name="parameters" element="tns:fnPurchaseRequisitionsSingle_Result" />
+  </message>
+  <message name="fnPurchaseRequisitions">
+    <part name="parameters" element="tns:fnPurchaseRequisitions" />
+  </message>
+  <message name="fnPurchaseRequisitions_Result">
+    <part name="parameters" element="tns:fnPurchaseRequisitions_Result" />
+  </message>
+  <message name="fnStaffClaimLines">
+    <part name="parameters" element="tns:fnStaffClaimLines" />
+  </message>
+  <message name="fnStaffClaimLines_Result">
+    <part name="parameters" element="tns:fnStaffClaimLines_Result" />
+  </message>
+  <message name="fnStaffClaims">
+    <part name="parameters" element="tns:fnStaffClaims" />
+  </message>
+  <message name="fnStaffClaims_Result">
+    <part name="parameters" element="tns:fnStaffClaims_Result" />
+  </message>
+  <message name="fnStoreRequisitionLines">
+    <part name="parameters" element="tns:fnStoreRequisitionLines" />
+  </message>
+  <message name="fnStoreRequisitionLines_Result">
+    <part name="parameters" element="tns:fnStoreRequisitionLines_Result" />
+  </message>
+  <message name="fnStoreRequisitions">
+    <part name="parameters" element="tns:fnStoreRequisitions" />
+  </message>
+  <message name="fnStoreRequisitions_Result">
+    <part name="parameters" element="tns:fnStoreRequisitions_Result" />
+  </message>
+  <message name="fntransactionCodes">
+    <part name="parameters" element="tns:fntransactionCodes" />
+  </message>
+  <message name="fntransactionCodes_Result">
+    <part name="parameters" element="tns:fntransactionCodes_Result" />
+  </message>
+  <message name="loginUser">
+    <part name="parameters" element="tns:loginUser" />
+  </message>
+  <message name="loginUser_Result">
+    <part name="parameters" element="tns:loginUser_Result" />
+  </message>
+  <portType name="QueriesESS_Port">
+    <operation name="FnResetPassword">
+      <input name="FnResetPassword" message="tns:FnResetPassword" />
+      <output name="FnResetPassword_Result" message="tns:FnResetPassword_Result" />
+    </operation>
+    <operation name="ResetSendEmail">
+      <input name="ResetSendEmail" message="tns:ResetSendEmail" />
+      <output name="ResetSendEmail_Result" message="tns:ResetSendEmail_Result" />
+    </operation>
+    <operation name="SendEmailNotification">
+      <input name="SendEmailNotification" message="tns:SendEmailNotification" />
+      <output name="SendEmailNotification_Result" message="tns:SendEmailNotification_Result" />
+    </operation>
+    <operation name="fnApprovalCommentLine">
+      <input name="fnApprovalCommentLine" message="tns:fnApprovalCommentLine" />
+      <output name="fnApprovalCommentLine_Result" message="tns:fnApprovalCommentLine_Result" />
+    </operation>
+    <operation name="fnApprovalEntries">
+      <input name="fnApprovalEntries" message="tns:fnApprovalEntries" />
+      <output name="fnApprovalEntries_Result" message="tns:fnApprovalEntries_Result" />
+    </operation>
+    <operation name="fnGetDepartments2">
+      <input name="fnGetDepartments2" message="tns:fnGetDepartments2" />
+      <output name="fnGetDepartments2_Result" message="tns:fnGetDepartments2_Result" />
+    </operation>
+    <operation name="fnGetDepartments">
+      <input name="fnGetDepartments" message="tns:fnGetDepartments" />
+      <output name="fnGetDepartments_Result" message="tns:fnGetDepartments_Result" />
+    </operation>
+    <operation name="fnGetEmployeeDetail">
+      <input name="fnGetEmployeeDetail" message="tns:fnGetEmployeeDetail" />
+      <output name="fnGetEmployeeDetail_Result" message="tns:fnGetEmployeeDetail_Result" />
+    </operation>
+    <operation name="fnGetItems">
+      <input name="fnGetItems" message="tns:fnGetItems" />
+      <output name="fnGetItems_Result" message="tns:fnGetItems_Result" />
+    </operation>
+    <operation name="fnGetLocations">
+      <input name="fnGetLocations" message="tns:fnGetLocations" />
+      <output name="fnGetLocations_Result" message="tns:fnGetLocations_Result" />
+    </operation>
+    <operation name="fnGetProcurementLineItems">
+      <input name="fnGetProcurementLineItems" message="tns:fnGetProcurementLineItems" />
+      <output name="fnGetProcurementLineItems_Result" message="tns:fnGetProcurementLineItems_Result" />
+    </operation>
+    <operation name="fnImprestHeaderSingle">
+      <input name="fnImprestHeaderSingle" message="tns:fnImprestHeaderSingle" />
+      <output name="fnImprestHeaderSingle_Result" message="tns:fnImprestHeaderSingle_Result" />
+    </operation>
+    <operation name="fnImprestHeader">
+      <input name="fnImprestHeader" message="tns:fnImprestHeader" />
+      <output name="fnImprestHeader_Result" message="tns:fnImprestHeader_Result" />
+    </operation>
+    <operation name="fnImprestLines">
+      <input name="fnImprestLines" message="tns:fnImprestLines" />
+      <output name="fnImprestLines_Result" message="tns:fnImprestLines_Result" />
+    </operation>
+    <operation name="fnImprestSurrendersLines">
+      <input name="fnImprestSurrendersLines" message="tns:fnImprestSurrendersLines" />
+      <output name="fnImprestSurrendersLines_Result" message="tns:fnImprestSurrendersLines_Result" />
+    </operation>
+    <operation name="fnImprestSurrenders">
+      <input name="fnImprestSurrenders" message="tns:fnImprestSurrenders" />
+      <output name="fnImprestSurrenders_Result" message="tns:fnImprestSurrenders_Result" />
+    </operation>
+    <operation name="fnOpenImprests">
+      <input name="fnOpenImprests" message="tns:fnOpenImprests" />
+      <output name="fnOpenImprests_Result" message="tns:fnOpenImprests_Result" />
+    </operation>
+    <operation name="fnPaymentHeader">
+      <input name="fnPaymentHeader" message="tns:fnPaymentHeader" />
+      <output name="fnPaymentHeader_Result" message="tns:fnPaymentHeader_Result" />
+    </operation>
+    <operation name="fnPaymentLines">
+      <input name="fnPaymentLines" message="tns:fnPaymentLines" />
+      <output name="fnPaymentLines_Result" message="tns:fnPaymentLines_Result" />
+    </operation>
+    <operation name="fnPettyCashLines">
+      <input name="fnPettyCashLines" message="tns:fnPettyCashLines" />
+      <output name="fnPettyCashLines_Result" message="tns:fnPettyCashLines_Result" />
+    </operation>
+    <operation name="fnPettycashHeader">
+      <input name="fnPettycashHeader" message="tns:fnPettycashHeader" />
+      <output name="fnPettycashHeader_Result" message="tns:fnPettycashHeader_Result" />
+    </operation>
+    <operation name="fnPurchaseRequisitionLines">
+      <input name="fnPurchaseRequisitionLines" message="tns:fnPurchaseRequisitionLines" />
+      <output name="fnPurchaseRequisitionLines_Result" message="tns:fnPurchaseRequisitionLines_Result" />
+    </operation>
+    <operation name="fnPurchaseRequisitionsSingle">
+      <input name="fnPurchaseRequisitionsSingle" message="tns:fnPurchaseRequisitionsSingle" />
+      <output name="fnPurchaseRequisitionsSingle_Result" message="tns:fnPurchaseRequisitionsSingle_Result" />
+    </operation>
+    <operation name="fnPurchaseRequisitions">
+      <input name="fnPurchaseRequisitions" message="tns:fnPurchaseRequisitions" />
+      <output name="fnPurchaseRequisitions_Result" message="tns:fnPurchaseRequisitions_Result" />
+    </operation>
+    <operation name="fnStaffClaimLines">
+      <input name="fnStaffClaimLines" message="tns:fnStaffClaimLines" />
+      <output name="fnStaffClaimLines_Result" message="tns:fnStaffClaimLines_Result" />
+    </operation>
+    <operation name="fnStaffClaims">
+      <input name="fnStaffClaims" message="tns:fnStaffClaims" />
+      <output name="fnStaffClaims_Result" message="tns:fnStaffClaims_Result" />
+    </operation>
+    <operation name="fnStoreRequisitionLines">
+      <input name="fnStoreRequisitionLines" message="tns:fnStoreRequisitionLines" />
+      <output name="fnStoreRequisitionLines_Result" message="tns:fnStoreRequisitionLines_Result" />
+    </operation>
+    <operation name="fnStoreRequisitions">
+      <input name="fnStoreRequisitions" message="tns:fnStoreRequisitions" />
+      <output name="fnStoreRequisitions_Result" message="tns:fnStoreRequisitions_Result" />
+    </operation>
+    <operation name="fntransactionCodes">
+      <input name="fntransactionCodes" message="tns:fntransactionCodes" />
+      <output name="fntransactionCodes_Result" message="tns:fntransactionCodes_Result" />
+    </operation>
+    <operation name="loginUser">
+      <input name="loginUser" message="tns:loginUser" />
+      <output name="loginUser_Result" message="tns:loginUser_Result" />
+    </operation>
+  </portType>
+  <binding name="QueriesESS_Binding" type="tns:QueriesESS_Port">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <operation name="FnResetPassword">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:FnResetPassword" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnResetPassword">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnResetPassword_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ResetSendEmail">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:ResetSendEmail" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ResetSendEmail">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ResetSendEmail_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="SendEmailNotification">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:SendEmailNotification" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="SendEmailNotification">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="SendEmailNotification_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnApprovalCommentLine">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnApprovalCommentLine" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnApprovalCommentLine">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnApprovalCommentLine_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnApprovalEntries">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnApprovalEntries" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnApprovalEntries">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnApprovalEntries_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnGetDepartments2">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnGetDepartments2" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnGetDepartments2">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnGetDepartments2_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnGetDepartments">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnGetDepartments" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnGetDepartments">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnGetDepartments_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnGetEmployeeDetail">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnGetEmployeeDetail" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnGetEmployeeDetail">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnGetEmployeeDetail_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnGetItems">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnGetItems" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnGetItems">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnGetItems_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnGetLocations">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnGetLocations" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnGetLocations">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnGetLocations_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnGetProcurementLineItems">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnGetProcurementLineItems" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnGetProcurementLineItems">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnGetProcurementLineItems_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnImprestHeaderSingle">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnImprestHeaderSingle" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnImprestHeaderSingle">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnImprestHeaderSingle_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnImprestHeader">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnImprestHeader" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnImprestHeader">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnImprestHeader_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnImprestLines">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnImprestLines" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnImprestLines">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnImprestLines_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnImprestSurrendersLines">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnImprestSurrendersLines" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnImprestSurrendersLines">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnImprestSurrendersLines_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnImprestSurrenders">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnImprestSurrenders" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnImprestSurrenders">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnImprestSurrenders_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnOpenImprests">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnOpenImprests" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnOpenImprests">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnOpenImprests_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnPaymentHeader">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnPaymentHeader" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnPaymentHeader">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnPaymentHeader_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnPaymentLines">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnPaymentLines" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnPaymentLines">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnPaymentLines_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnPettyCashLines">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnPettyCashLines" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnPettyCashLines">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnPettyCashLines_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnPettycashHeader">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnPettycashHeader" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnPettycashHeader">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnPettycashHeader_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnPurchaseRequisitionLines">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnPurchaseRequisitionLines" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnPurchaseRequisitionLines">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnPurchaseRequisitionLines_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnPurchaseRequisitionsSingle">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnPurchaseRequisitionsSingle" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnPurchaseRequisitionsSingle">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnPurchaseRequisitionsSingle_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnPurchaseRequisitions">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnPurchaseRequisitions" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnPurchaseRequisitions">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnPurchaseRequisitions_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnStaffClaimLines">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnStaffClaimLines" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnStaffClaimLines">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnStaffClaimLines_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnStaffClaims">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnStaffClaims" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnStaffClaims">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnStaffClaims_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnStoreRequisitionLines">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnStoreRequisitionLines" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnStoreRequisitionLines">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnStoreRequisitionLines_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnStoreRequisitions">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnStoreRequisitions" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnStoreRequisitions">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnStoreRequisitions_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fntransactionCodes">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fntransactionCodes" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fntransactionCodes">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fntransactionCodes_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="loginUser">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:loginUser" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="loginUser">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="loginUser_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="QueriesESS">
+    <port name="QueriesESS_Port" binding="tns:QueriesESS_Binding">
+      <address location="http://172.187.180.196:7047/BC220/WS/Z.Boskovic%20Air%20Charters%20Ltd/Codeunit/QueriesESS" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </port>
+  </service>
+</definitions>

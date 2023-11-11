@@ -1,0 +1,1265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="urn:microsoft-dynamics-schemas/codeunit/HRPortal" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="DeleteImprestDocumentLink">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="filename" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="sharepointlink" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DeleteImprestDocumentLink_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DeletePettyCashDocumentLink">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="filename" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="sharepointlink" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DeletePettyCashDocumentLink_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DeletePurchaseDocumentLink">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="filename" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="sharepointlink" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DeletePurchaseDocumentLink_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DeleteStaffClaimDocumentLink">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="filename" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="sharepointlink" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DeleteStaffClaimDocumentLink_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DeleteStoreDocumentLink">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="filename" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="sharepointlink" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DeleteStoreDocumentLink_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DeleteSurrenderDocumentLink">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="filename" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="sharepointlink" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DeleteSurrenderDocumentLink_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="changePassword">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="currentPassword" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="newPassword" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="confirmPassword" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="changePassword_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createImprestDocumentLink">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="fileLink" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="fileName" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createImprestDocumentLink_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createImprestHeader">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="description" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="fromDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="toDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="destination" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="department" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="busnCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="airplaneCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="vehicleCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="curr" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createImprestHeader_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createImprestLine">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="transactionType" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="amount" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="quantity" type="decimal" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createImprestLine_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createPaymentHeader">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="description" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="docType" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createPaymentHeader_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createPaymentLine">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="description" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="amount" type="decimal" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createPaymentLine_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createPettyCashDocumentLink">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="fileLink" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="fileName" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createPettyCashDocumentLink_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createPettyCashHeader">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="description" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="docType" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="payMode" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="refNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createPettyCashHeader_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createPettyCashLine">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="description" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="amount" type="decimal" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createPettyCashLine_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createPurchaseDocumentLink">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="fileLink" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="fileName" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createPurchaseDocumentLink_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createPurchaseRequisitionLine">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="reqType" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="typee" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="quantity" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="deliveryLocation" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="item" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="amount" type="decimal" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createPurchaseRequisitionLine_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createPurchaseRequisition">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="description" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="reqType" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="purchaseType" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="department" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="busnCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="airplaneCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="vehicleCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="curr" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createPurchaseRequisition_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createStaffClaimDocumentLink">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="fileLink" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="fileName" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createStaffClaimDocumentLink_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createStaffClaimLine">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="description" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="amount" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="transType" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createStaffClaimLine_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createStaffClaim">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="description" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="docType" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createStaffClaim_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createStoreDocumentLink">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="fileLink" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="fileName" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createStoreDocumentLink_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createStoreRequisitionLine">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="item" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="location" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="quantity" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createStoreRequisitionLine_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createStoreRequisition">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="description" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="department" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="requiredDate" type="date" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createStoreRequisition_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createSurrenderDocumentLink">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="fileLink" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="fileName" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createSurrenderDocumentLink_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createSurrenderLine">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="description" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="amountAdvanced" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="actualSpent" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="receiptNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createSurrenderLine_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createSurrender">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="imprestNumber" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createSurrender_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="deleteImprestLine">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="lineNumber" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="deleteImprestLine_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="deletePaymentLine">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="lineNumber" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="deletePaymentLine_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="deletePettycashLine">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="lineNumber" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="deletePettycashLine_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="deletePurchaseLine">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="lineNumber" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="deletePurchaseLine_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="deleteRequisitionLine">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="lineNumber" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="deleteRequisitionLine_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="deleteStaffLine">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="lineNumber" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="deleteStaffLine_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="deleteSurrenderLine">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="lineNumber" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="deleteSurrenderLine_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="resetPassword">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="employeeNumbera45idNumber" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="resetPassword_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <message name="DeleteImprestDocumentLink">
+    <part name="parameters" element="tns:DeleteImprestDocumentLink" />
+  </message>
+  <message name="DeleteImprestDocumentLink_Result">
+    <part name="parameters" element="tns:DeleteImprestDocumentLink_Result" />
+  </message>
+  <message name="DeletePettyCashDocumentLink">
+    <part name="parameters" element="tns:DeletePettyCashDocumentLink" />
+  </message>
+  <message name="DeletePettyCashDocumentLink_Result">
+    <part name="parameters" element="tns:DeletePettyCashDocumentLink_Result" />
+  </message>
+  <message name="DeletePurchaseDocumentLink">
+    <part name="parameters" element="tns:DeletePurchaseDocumentLink" />
+  </message>
+  <message name="DeletePurchaseDocumentLink_Result">
+    <part name="parameters" element="tns:DeletePurchaseDocumentLink_Result" />
+  </message>
+  <message name="DeleteStaffClaimDocumentLink">
+    <part name="parameters" element="tns:DeleteStaffClaimDocumentLink" />
+  </message>
+  <message name="DeleteStaffClaimDocumentLink_Result">
+    <part name="parameters" element="tns:DeleteStaffClaimDocumentLink_Result" />
+  </message>
+  <message name="DeleteStoreDocumentLink">
+    <part name="parameters" element="tns:DeleteStoreDocumentLink" />
+  </message>
+  <message name="DeleteStoreDocumentLink_Result">
+    <part name="parameters" element="tns:DeleteStoreDocumentLink_Result" />
+  </message>
+  <message name="DeleteSurrenderDocumentLink">
+    <part name="parameters" element="tns:DeleteSurrenderDocumentLink" />
+  </message>
+  <message name="DeleteSurrenderDocumentLink_Result">
+    <part name="parameters" element="tns:DeleteSurrenderDocumentLink_Result" />
+  </message>
+  <message name="changePassword">
+    <part name="parameters" element="tns:changePassword" />
+  </message>
+  <message name="changePassword_Result">
+    <part name="parameters" element="tns:changePassword_Result" />
+  </message>
+  <message name="createImprestDocumentLink">
+    <part name="parameters" element="tns:createImprestDocumentLink" />
+  </message>
+  <message name="createImprestDocumentLink_Result">
+    <part name="parameters" element="tns:createImprestDocumentLink_Result" />
+  </message>
+  <message name="createImprestHeader">
+    <part name="parameters" element="tns:createImprestHeader" />
+  </message>
+  <message name="createImprestHeader_Result">
+    <part name="parameters" element="tns:createImprestHeader_Result" />
+  </message>
+  <message name="createImprestLine">
+    <part name="parameters" element="tns:createImprestLine" />
+  </message>
+  <message name="createImprestLine_Result">
+    <part name="parameters" element="tns:createImprestLine_Result" />
+  </message>
+  <message name="createPaymentHeader">
+    <part name="parameters" element="tns:createPaymentHeader" />
+  </message>
+  <message name="createPaymentHeader_Result">
+    <part name="parameters" element="tns:createPaymentHeader_Result" />
+  </message>
+  <message name="createPaymentLine">
+    <part name="parameters" element="tns:createPaymentLine" />
+  </message>
+  <message name="createPaymentLine_Result">
+    <part name="parameters" element="tns:createPaymentLine_Result" />
+  </message>
+  <message name="createPettyCashDocumentLink">
+    <part name="parameters" element="tns:createPettyCashDocumentLink" />
+  </message>
+  <message name="createPettyCashDocumentLink_Result">
+    <part name="parameters" element="tns:createPettyCashDocumentLink_Result" />
+  </message>
+  <message name="createPettyCashHeader">
+    <part name="parameters" element="tns:createPettyCashHeader" />
+  </message>
+  <message name="createPettyCashHeader_Result">
+    <part name="parameters" element="tns:createPettyCashHeader_Result" />
+  </message>
+  <message name="createPettyCashLine">
+    <part name="parameters" element="tns:createPettyCashLine" />
+  </message>
+  <message name="createPettyCashLine_Result">
+    <part name="parameters" element="tns:createPettyCashLine_Result" />
+  </message>
+  <message name="createPurchaseDocumentLink">
+    <part name="parameters" element="tns:createPurchaseDocumentLink" />
+  </message>
+  <message name="createPurchaseDocumentLink_Result">
+    <part name="parameters" element="tns:createPurchaseDocumentLink_Result" />
+  </message>
+  <message name="createPurchaseRequisitionLine">
+    <part name="parameters" element="tns:createPurchaseRequisitionLine" />
+  </message>
+  <message name="createPurchaseRequisitionLine_Result">
+    <part name="parameters" element="tns:createPurchaseRequisitionLine_Result" />
+  </message>
+  <message name="createPurchaseRequisition">
+    <part name="parameters" element="tns:createPurchaseRequisition" />
+  </message>
+  <message name="createPurchaseRequisition_Result">
+    <part name="parameters" element="tns:createPurchaseRequisition_Result" />
+  </message>
+  <message name="createStaffClaimDocumentLink">
+    <part name="parameters" element="tns:createStaffClaimDocumentLink" />
+  </message>
+  <message name="createStaffClaimDocumentLink_Result">
+    <part name="parameters" element="tns:createStaffClaimDocumentLink_Result" />
+  </message>
+  <message name="createStaffClaimLine">
+    <part name="parameters" element="tns:createStaffClaimLine" />
+  </message>
+  <message name="createStaffClaimLine_Result">
+    <part name="parameters" element="tns:createStaffClaimLine_Result" />
+  </message>
+  <message name="createStaffClaim">
+    <part name="parameters" element="tns:createStaffClaim" />
+  </message>
+  <message name="createStaffClaim_Result">
+    <part name="parameters" element="tns:createStaffClaim_Result" />
+  </message>
+  <message name="createStoreDocumentLink">
+    <part name="parameters" element="tns:createStoreDocumentLink" />
+  </message>
+  <message name="createStoreDocumentLink_Result">
+    <part name="parameters" element="tns:createStoreDocumentLink_Result" />
+  </message>
+  <message name="createStoreRequisitionLine">
+    <part name="parameters" element="tns:createStoreRequisitionLine" />
+  </message>
+  <message name="createStoreRequisitionLine_Result">
+    <part name="parameters" element="tns:createStoreRequisitionLine_Result" />
+  </message>
+  <message name="createStoreRequisition">
+    <part name="parameters" element="tns:createStoreRequisition" />
+  </message>
+  <message name="createStoreRequisition_Result">
+    <part name="parameters" element="tns:createStoreRequisition_Result" />
+  </message>
+  <message name="createSurrenderDocumentLink">
+    <part name="parameters" element="tns:createSurrenderDocumentLink" />
+  </message>
+  <message name="createSurrenderDocumentLink_Result">
+    <part name="parameters" element="tns:createSurrenderDocumentLink_Result" />
+  </message>
+  <message name="createSurrenderLine">
+    <part name="parameters" element="tns:createSurrenderLine" />
+  </message>
+  <message name="createSurrenderLine_Result">
+    <part name="parameters" element="tns:createSurrenderLine_Result" />
+  </message>
+  <message name="createSurrender">
+    <part name="parameters" element="tns:createSurrender" />
+  </message>
+  <message name="createSurrender_Result">
+    <part name="parameters" element="tns:createSurrender_Result" />
+  </message>
+  <message name="deleteImprestLine">
+    <part name="parameters" element="tns:deleteImprestLine" />
+  </message>
+  <message name="deleteImprestLine_Result">
+    <part name="parameters" element="tns:deleteImprestLine_Result" />
+  </message>
+  <message name="deletePaymentLine">
+    <part name="parameters" element="tns:deletePaymentLine" />
+  </message>
+  <message name="deletePaymentLine_Result">
+    <part name="parameters" element="tns:deletePaymentLine_Result" />
+  </message>
+  <message name="deletePettycashLine">
+    <part name="parameters" element="tns:deletePettycashLine" />
+  </message>
+  <message name="deletePettycashLine_Result">
+    <part name="parameters" element="tns:deletePettycashLine_Result" />
+  </message>
+  <message name="deletePurchaseLine">
+    <part name="parameters" element="tns:deletePurchaseLine" />
+  </message>
+  <message name="deletePurchaseLine_Result">
+    <part name="parameters" element="tns:deletePurchaseLine_Result" />
+  </message>
+  <message name="deleteRequisitionLine">
+    <part name="parameters" element="tns:deleteRequisitionLine" />
+  </message>
+  <message name="deleteRequisitionLine_Result">
+    <part name="parameters" element="tns:deleteRequisitionLine_Result" />
+  </message>
+  <message name="deleteStaffLine">
+    <part name="parameters" element="tns:deleteStaffLine" />
+  </message>
+  <message name="deleteStaffLine_Result">
+    <part name="parameters" element="tns:deleteStaffLine_Result" />
+  </message>
+  <message name="deleteSurrenderLine">
+    <part name="parameters" element="tns:deleteSurrenderLine" />
+  </message>
+  <message name="deleteSurrenderLine_Result">
+    <part name="parameters" element="tns:deleteSurrenderLine_Result" />
+  </message>
+  <message name="resetPassword">
+    <part name="parameters" element="tns:resetPassword" />
+  </message>
+  <message name="resetPassword_Result">
+    <part name="parameters" element="tns:resetPassword_Result" />
+  </message>
+  <portType name="HRPortal_Port">
+    <operation name="DeleteImprestDocumentLink">
+      <input name="DeleteImprestDocumentLink" message="tns:DeleteImprestDocumentLink" />
+      <output name="DeleteImprestDocumentLink_Result" message="tns:DeleteImprestDocumentLink_Result" />
+    </operation>
+    <operation name="DeletePettyCashDocumentLink">
+      <input name="DeletePettyCashDocumentLink" message="tns:DeletePettyCashDocumentLink" />
+      <output name="DeletePettyCashDocumentLink_Result" message="tns:DeletePettyCashDocumentLink_Result" />
+    </operation>
+    <operation name="DeletePurchaseDocumentLink">
+      <input name="DeletePurchaseDocumentLink" message="tns:DeletePurchaseDocumentLink" />
+      <output name="DeletePurchaseDocumentLink_Result" message="tns:DeletePurchaseDocumentLink_Result" />
+    </operation>
+    <operation name="DeleteStaffClaimDocumentLink">
+      <input name="DeleteStaffClaimDocumentLink" message="tns:DeleteStaffClaimDocumentLink" />
+      <output name="DeleteStaffClaimDocumentLink_Result" message="tns:DeleteStaffClaimDocumentLink_Result" />
+    </operation>
+    <operation name="DeleteStoreDocumentLink">
+      <input name="DeleteStoreDocumentLink" message="tns:DeleteStoreDocumentLink" />
+      <output name="DeleteStoreDocumentLink_Result" message="tns:DeleteStoreDocumentLink_Result" />
+    </operation>
+    <operation name="DeleteSurrenderDocumentLink">
+      <input name="DeleteSurrenderDocumentLink" message="tns:DeleteSurrenderDocumentLink" />
+      <output name="DeleteSurrenderDocumentLink_Result" message="tns:DeleteSurrenderDocumentLink_Result" />
+    </operation>
+    <operation name="changePassword">
+      <input name="changePassword" message="tns:changePassword" />
+      <output name="changePassword_Result" message="tns:changePassword_Result" />
+    </operation>
+    <operation name="createImprestDocumentLink">
+      <input name="createImprestDocumentLink" message="tns:createImprestDocumentLink" />
+      <output name="createImprestDocumentLink_Result" message="tns:createImprestDocumentLink_Result" />
+    </operation>
+    <operation name="createImprestHeader">
+      <input name="createImprestHeader" message="tns:createImprestHeader" />
+      <output name="createImprestHeader_Result" message="tns:createImprestHeader_Result" />
+    </operation>
+    <operation name="createImprestLine">
+      <input name="createImprestLine" message="tns:createImprestLine" />
+      <output name="createImprestLine_Result" message="tns:createImprestLine_Result" />
+    </operation>
+    <operation name="createPaymentHeader">
+      <input name="createPaymentHeader" message="tns:createPaymentHeader" />
+      <output name="createPaymentHeader_Result" message="tns:createPaymentHeader_Result" />
+    </operation>
+    <operation name="createPaymentLine">
+      <input name="createPaymentLine" message="tns:createPaymentLine" />
+      <output name="createPaymentLine_Result" message="tns:createPaymentLine_Result" />
+    </operation>
+    <operation name="createPettyCashDocumentLink">
+      <input name="createPettyCashDocumentLink" message="tns:createPettyCashDocumentLink" />
+      <output name="createPettyCashDocumentLink_Result" message="tns:createPettyCashDocumentLink_Result" />
+    </operation>
+    <operation name="createPettyCashHeader">
+      <input name="createPettyCashHeader" message="tns:createPettyCashHeader" />
+      <output name="createPettyCashHeader_Result" message="tns:createPettyCashHeader_Result" />
+    </operation>
+    <operation name="createPettyCashLine">
+      <input name="createPettyCashLine" message="tns:createPettyCashLine" />
+      <output name="createPettyCashLine_Result" message="tns:createPettyCashLine_Result" />
+    </operation>
+    <operation name="createPurchaseDocumentLink">
+      <input name="createPurchaseDocumentLink" message="tns:createPurchaseDocumentLink" />
+      <output name="createPurchaseDocumentLink_Result" message="tns:createPurchaseDocumentLink_Result" />
+    </operation>
+    <operation name="createPurchaseRequisitionLine">
+      <input name="createPurchaseRequisitionLine" message="tns:createPurchaseRequisitionLine" />
+      <output name="createPurchaseRequisitionLine_Result" message="tns:createPurchaseRequisitionLine_Result" />
+    </operation>
+    <operation name="createPurchaseRequisition">
+      <input name="createPurchaseRequisition" message="tns:createPurchaseRequisition" />
+      <output name="createPurchaseRequisition_Result" message="tns:createPurchaseRequisition_Result" />
+    </operation>
+    <operation name="createStaffClaimDocumentLink">
+      <input name="createStaffClaimDocumentLink" message="tns:createStaffClaimDocumentLink" />
+      <output name="createStaffClaimDocumentLink_Result" message="tns:createStaffClaimDocumentLink_Result" />
+    </operation>
+    <operation name="createStaffClaimLine">
+      <input name="createStaffClaimLine" message="tns:createStaffClaimLine" />
+      <output name="createStaffClaimLine_Result" message="tns:createStaffClaimLine_Result" />
+    </operation>
+    <operation name="createStaffClaim">
+      <input name="createStaffClaim" message="tns:createStaffClaim" />
+      <output name="createStaffClaim_Result" message="tns:createStaffClaim_Result" />
+    </operation>
+    <operation name="createStoreDocumentLink">
+      <input name="createStoreDocumentLink" message="tns:createStoreDocumentLink" />
+      <output name="createStoreDocumentLink_Result" message="tns:createStoreDocumentLink_Result" />
+    </operation>
+    <operation name="createStoreRequisitionLine">
+      <input name="createStoreRequisitionLine" message="tns:createStoreRequisitionLine" />
+      <output name="createStoreRequisitionLine_Result" message="tns:createStoreRequisitionLine_Result" />
+    </operation>
+    <operation name="createStoreRequisition">
+      <input name="createStoreRequisition" message="tns:createStoreRequisition" />
+      <output name="createStoreRequisition_Result" message="tns:createStoreRequisition_Result" />
+    </operation>
+    <operation name="createSurrenderDocumentLink">
+      <input name="createSurrenderDocumentLink" message="tns:createSurrenderDocumentLink" />
+      <output name="createSurrenderDocumentLink_Result" message="tns:createSurrenderDocumentLink_Result" />
+    </operation>
+    <operation name="createSurrenderLine">
+      <input name="createSurrenderLine" message="tns:createSurrenderLine" />
+      <output name="createSurrenderLine_Result" message="tns:createSurrenderLine_Result" />
+    </operation>
+    <operation name="createSurrender">
+      <input name="createSurrender" message="tns:createSurrender" />
+      <output name="createSurrender_Result" message="tns:createSurrender_Result" />
+    </operation>
+    <operation name="deleteImprestLine">
+      <input name="deleteImprestLine" message="tns:deleteImprestLine" />
+      <output name="deleteImprestLine_Result" message="tns:deleteImprestLine_Result" />
+    </operation>
+    <operation name="deletePaymentLine">
+      <input name="deletePaymentLine" message="tns:deletePaymentLine" />
+      <output name="deletePaymentLine_Result" message="tns:deletePaymentLine_Result" />
+    </operation>
+    <operation name="deletePettycashLine">
+      <input name="deletePettycashLine" message="tns:deletePettycashLine" />
+      <output name="deletePettycashLine_Result" message="tns:deletePettycashLine_Result" />
+    </operation>
+    <operation name="deletePurchaseLine">
+      <input name="deletePurchaseLine" message="tns:deletePurchaseLine" />
+      <output name="deletePurchaseLine_Result" message="tns:deletePurchaseLine_Result" />
+    </operation>
+    <operation name="deleteRequisitionLine">
+      <input name="deleteRequisitionLine" message="tns:deleteRequisitionLine" />
+      <output name="deleteRequisitionLine_Result" message="tns:deleteRequisitionLine_Result" />
+    </operation>
+    <operation name="deleteStaffLine">
+      <input name="deleteStaffLine" message="tns:deleteStaffLine" />
+      <output name="deleteStaffLine_Result" message="tns:deleteStaffLine_Result" />
+    </operation>
+    <operation name="deleteSurrenderLine">
+      <input name="deleteSurrenderLine" message="tns:deleteSurrenderLine" />
+      <output name="deleteSurrenderLine_Result" message="tns:deleteSurrenderLine_Result" />
+    </operation>
+    <operation name="resetPassword">
+      <input name="resetPassword" message="tns:resetPassword" />
+      <output name="resetPassword_Result" message="tns:resetPassword_Result" />
+    </operation>
+  </portType>
+  <binding name="HRPortal_Binding" type="tns:HRPortal_Port">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <operation name="DeleteImprestDocumentLink">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:DeleteImprestDocumentLink" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="DeleteImprestDocumentLink">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="DeleteImprestDocumentLink_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="DeletePettyCashDocumentLink">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:DeletePettyCashDocumentLink" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="DeletePettyCashDocumentLink">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="DeletePettyCashDocumentLink_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="DeletePurchaseDocumentLink">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:DeletePurchaseDocumentLink" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="DeletePurchaseDocumentLink">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="DeletePurchaseDocumentLink_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="DeleteStaffClaimDocumentLink">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:DeleteStaffClaimDocumentLink" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="DeleteStaffClaimDocumentLink">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="DeleteStaffClaimDocumentLink_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="DeleteStoreDocumentLink">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:DeleteStoreDocumentLink" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="DeleteStoreDocumentLink">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="DeleteStoreDocumentLink_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="DeleteSurrenderDocumentLink">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:DeleteSurrenderDocumentLink" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="DeleteSurrenderDocumentLink">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="DeleteSurrenderDocumentLink_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="changePassword">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:changePassword" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="changePassword">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="changePassword_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="createImprestDocumentLink">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:createImprestDocumentLink" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="createImprestDocumentLink">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="createImprestDocumentLink_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="createImprestHeader">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:createImprestHeader" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="createImprestHeader">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="createImprestHeader_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="createImprestLine">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:createImprestLine" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="createImprestLine">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="createImprestLine_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="createPaymentHeader">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:createPaymentHeader" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="createPaymentHeader">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="createPaymentHeader_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="createPaymentLine">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:createPaymentLine" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="createPaymentLine">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="createPaymentLine_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="createPettyCashDocumentLink">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:createPettyCashDocumentLink" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="createPettyCashDocumentLink">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="createPettyCashDocumentLink_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="createPettyCashHeader">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:createPettyCashHeader" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="createPettyCashHeader">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="createPettyCashHeader_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="createPettyCashLine">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:createPettyCashLine" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="createPettyCashLine">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="createPettyCashLine_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="createPurchaseDocumentLink">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:createPurchaseDocumentLink" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="createPurchaseDocumentLink">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="createPurchaseDocumentLink_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="createPurchaseRequisitionLine">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:createPurchaseRequisitionLine" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="createPurchaseRequisitionLine">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="createPurchaseRequisitionLine_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="createPurchaseRequisition">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:createPurchaseRequisition" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="createPurchaseRequisition">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="createPurchaseRequisition_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="createStaffClaimDocumentLink">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:createStaffClaimDocumentLink" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="createStaffClaimDocumentLink">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="createStaffClaimDocumentLink_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="createStaffClaimLine">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:createStaffClaimLine" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="createStaffClaimLine">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="createStaffClaimLine_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="createStaffClaim">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:createStaffClaim" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="createStaffClaim">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="createStaffClaim_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="createStoreDocumentLink">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:createStoreDocumentLink" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="createStoreDocumentLink">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="createStoreDocumentLink_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="createStoreRequisitionLine">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:createStoreRequisitionLine" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="createStoreRequisitionLine">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="createStoreRequisitionLine_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="createStoreRequisition">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:createStoreRequisition" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="createStoreRequisition">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="createStoreRequisition_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="createSurrenderDocumentLink">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:createSurrenderDocumentLink" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="createSurrenderDocumentLink">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="createSurrenderDocumentLink_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="createSurrenderLine">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:createSurrenderLine" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="createSurrenderLine">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="createSurrenderLine_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="createSurrender">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:createSurrender" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="createSurrender">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="createSurrender_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="deleteImprestLine">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:deleteImprestLine" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="deleteImprestLine">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="deleteImprestLine_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="deletePaymentLine">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:deletePaymentLine" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="deletePaymentLine">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="deletePaymentLine_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="deletePettycashLine">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:deletePettycashLine" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="deletePettycashLine">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="deletePettycashLine_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="deletePurchaseLine">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:deletePurchaseLine" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="deletePurchaseLine">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="deletePurchaseLine_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="deleteRequisitionLine">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:deleteRequisitionLine" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="deleteRequisitionLine">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="deleteRequisitionLine_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="deleteStaffLine">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:deleteStaffLine" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="deleteStaffLine">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="deleteStaffLine_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="deleteSurrenderLine">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:deleteSurrenderLine" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="deleteSurrenderLine">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="deleteSurrenderLine_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="resetPassword">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:resetPassword" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="resetPassword">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="resetPassword_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="HRPortal">
+    <port name="HRPortal_Port" binding="tns:HRPortal_Binding">
+      <address location="http://172.187.180.196:7047/BC220/WS/Z.Boskovic%20Air%20Charters%20Ltd/Codeunit/HRPortal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </port>
+  </service>
+</definitions>
