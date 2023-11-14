@@ -34,7 +34,7 @@
         <div class="panel-body">
             <div id="generalFeedback" runat="server"></div>
 
-            <div class="row">
+            <%--<div class="row">
                 <div class="col-md-6 col-lg-6">
                     <div class="form-group">
                         <strong>Requisition Type:</strong>
@@ -56,7 +56,7 @@
                     </div>
                 </div>
 
-            </div>
+            </div>--%>
             <div class="row">
                 <div class="col-md-6 col-lg-6">
                     <div class="form-group">
@@ -77,28 +77,18 @@
 
             </div>
 
-            <div class="row">
-                <div class="col-md-6 col-lg-6">
-                    <div class="form-group">
-                        <strong>Machinery:</strong>
-                        <asp:DropDownList runat="server" ID="mach" CssClass="form-control select2" AutoPostBack="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
-                            <asp:ListItem>--Select--</asp:ListItem>
-                            <asp:ListItem Value="0">Aircraft</asp:ListItem>
-                            <asp:ListItem Value="1">Vehicle</asp:ListItem>
-                        </asp:DropDownList>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6" runat="server" id="aircraft" visible="false">
+            <div class="row">                
+                <div class="col-md-6 col-lg-6" runat="server" id="aircraft" >
                     <div class="form-group">
                         <strong>Aircraft:</strong>
                         <asp:DropDownList ID="airCraftCode" runat="server" CssClass="form-control select2"></asp:DropDownList>
 
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-6" runat="server" id="vehicle" visible="false">
+                <div class="col-md-6 col-lg-6" runat="server" id="vehicle" >
                     <div class="form-group">
-                        <strong>Vehicle:</strong>
-                        <asp:DropDownList ID="vhcleCode" runat="server" CssClass="form-control select2"></asp:DropDownList>
+                        <strong>Project :</strong>
+                        <asp:DropDownList ID="projectCode" runat="server" CssClass="form-control select2"></asp:DropDownList>
 
                     </div>
                 </div>
@@ -128,6 +118,13 @@
 
             </div>
             <div class="row">
+                <div class="col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <strong>Requested Receipt Date:</strong>
+                        <asp:TextBox runat="server" ID="rcptDate" CssClass="form-control" placeholder="Date Required" TextMode="Date" />
+                    </div>
+                </div>
+
             </div>
 
             <div class="panel-footer">

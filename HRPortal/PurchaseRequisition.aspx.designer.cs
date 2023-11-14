@@ -22,24 +22,6 @@ namespace HRPortal {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl generalFeedback;
         
         /// <summary>
-        /// prnType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList prnType;
-        
-        /// <summary>
-        /// purchType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList purchType;
-        
-        /// <summary>
         /// dpt control.
         /// </summary>
         /// <remarks>
@@ -56,15 +38,6 @@ namespace HRPortal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList bsnCode;
-        
-        /// <summary>
-        /// mach control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList mach;
         
         /// <summary>
         /// aircraft control.
@@ -94,13 +67,13 @@ namespace HRPortal {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl vehicle;
         
         /// <summary>
-        /// vhcleCode control.
+        /// projectCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList vhcleCode;
+        protected global::System.Web.UI.WebControls.DropDownList projectCode;
         
         /// <summary>
         /// currCode1 control.
@@ -119,6 +92,15 @@ namespace HRPortal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox description;
+        
+        /// <summary>
+        /// rcptDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox rcptDate;
         
         /// <summary>
         /// next control.

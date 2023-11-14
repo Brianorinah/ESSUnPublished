@@ -31,15 +31,6 @@ namespace HRPortal {
         protected global::System.Web.UI.WebControls.TextBox description;
         
         /// <summary>
-        /// destinationNarration control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox destinationNarration;
-        
-        /// <summary>
         /// dateFrom control.
         /// </summary>
         /// <remarks>
@@ -85,13 +76,13 @@ namespace HRPortal {
         protected global::System.Web.UI.WebControls.DropDownList bsnCode;
         
         /// <summary>
-        /// vhcleCode control.
+        /// projectCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList vhcleCode;
+        protected global::System.Web.UI.WebControls.DropDownList projectCode;
         
         /// <summary>
         /// airCraftCode control.

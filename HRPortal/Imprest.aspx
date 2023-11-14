@@ -37,12 +37,7 @@
                         <asp:TextBox runat="server" ID="description" CssClass="form-control" placeholder="Description" />
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-6">
-                    <div class="form-group">
-                        <strong>Destination:</strong>
-                        <asp:TextBox runat="server" ID="destinationNarration" CssClass="form-control" placeholder="Destination Narration" TextMode="MultiLine" MaxLength="100" />
-                    </div>
-                </div>
+                
                 <div class="col-md-6 col-lg-6">
                     <div class="form-group">
                         <strong>Date From:</strong>
@@ -81,8 +76,8 @@
                 </div>
                 <div class="col-md-6 col-lg-6">
                     <div class="form-group">
-                        <strong>Vehicle:</strong>
-                        <asp:DropDownList ID="vhcleCode" runat="server" CssClass="form-control select2"></asp:DropDownList>
+                        <strong>Project :</strong>
+                        <asp:DropDownList ID="projectCode" runat="server" CssClass="form-control select2"></asp:DropDownList>
 
                     </div>
                 </div>

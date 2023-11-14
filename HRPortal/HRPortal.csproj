@@ -217,6 +217,11 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="ApprovedImprestRequisition.aspx" />
+    <Content Include="ApprovedImprestSurrender.aspx" />
+    <Content Include="ApprovedPettyCash.aspx" />
+    <Content Include="ApprovedPurchaseRequisition.aspx" />
+    <Content Include="ApprovedStaffClaim.aspx" />
+    <Content Include="ApprovedStoreRequisition.aspx" />
     <Content Include="ApproverEntries.aspx" />
     <Content Include="ChangePassword.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -425,6 +430,41 @@
     </Compile>
     <Compile Include="ApprovedImprestRequisition.aspx.designer.cs">
       <DependentUpon>ApprovedImprestRequisition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApprovedImprestSurrender.aspx.cs">
+      <DependentUpon>ApprovedImprestSurrender.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApprovedImprestSurrender.aspx.designer.cs">
+      <DependentUpon>ApprovedImprestSurrender.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApprovedPettyCash.aspx.cs">
+      <DependentUpon>ApprovedPettyCash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApprovedPettyCash.aspx.designer.cs">
+      <DependentUpon>ApprovedPettyCash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApprovedPurchaseRequisition.aspx.cs">
+      <DependentUpon>ApprovedPurchaseRequisition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApprovedPurchaseRequisition.aspx.designer.cs">
+      <DependentUpon>ApprovedPurchaseRequisition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApprovedStaffClaim.aspx.cs">
+      <DependentUpon>ApprovedStaffClaim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApprovedStaffClaim.aspx.designer.cs">
+      <DependentUpon>ApprovedStaffClaim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApprovedStoreRequisition.aspx.cs">
+      <DependentUpon>ApprovedStoreRequisition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApprovedStoreRequisition.aspx.designer.cs">
+      <DependentUpon>ApprovedStoreRequisition.aspx</DependentUpon>
     </Compile>
     <Compile Include="ApproverEntries.aspx.cs">
       <DependentUpon>ApproverEntries.aspx</DependentUpon>

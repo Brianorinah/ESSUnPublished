@@ -70,6 +70,18 @@
           </sequence>
         </complexType>
       </element>
+      <element name="fnCurrencies">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="fnCurrencies_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
       <element name="fnGetDepartments2">
         <complexType>
           <sequence>
@@ -384,6 +396,21 @@
           </sequence>
         </complexType>
       </element>
+      <element name="fnStoreRequisitionsSingle">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="empNumber" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="appNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnStoreRequisitionsSingle_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
       <element name="fnStoreRequisitions">
         <complexType>
           <sequence>
@@ -458,6 +485,12 @@
   </message>
   <message name="fnApprovalEntries_Result">
     <part name="parameters" element="tns:fnApprovalEntries_Result" />
+  </message>
+  <message name="fnCurrencies">
+    <part name="parameters" element="tns:fnCurrencies" />
+  </message>
+  <message name="fnCurrencies_Result">
+    <part name="parameters" element="tns:fnCurrencies_Result" />
   </message>
   <message name="fnGetDepartments2">
     <part name="parameters" element="tns:fnGetDepartments2" />
@@ -591,6 +624,12 @@
   <message name="fnStoreRequisitionLines_Result">
     <part name="parameters" element="tns:fnStoreRequisitionLines_Result" />
   </message>
+  <message name="fnStoreRequisitionsSingle">
+    <part name="parameters" element="tns:fnStoreRequisitionsSingle" />
+  </message>
+  <message name="fnStoreRequisitionsSingle_Result">
+    <part name="parameters" element="tns:fnStoreRequisitionsSingle_Result" />
+  </message>
   <message name="fnStoreRequisitions">
     <part name="parameters" element="tns:fnStoreRequisitions" />
   </message>
@@ -629,6 +668,10 @@
     <operation name="fnApprovalEntries">
       <input name="fnApprovalEntries" message="tns:fnApprovalEntries" />
       <output name="fnApprovalEntries_Result" message="tns:fnApprovalEntries_Result" />
+    </operation>
+    <operation name="fnCurrencies">
+      <input name="fnCurrencies" message="tns:fnCurrencies" />
+      <output name="fnCurrencies_Result" message="tns:fnCurrencies_Result" />
     </operation>
     <operation name="fnGetDepartments2">
       <input name="fnGetDepartments2" message="tns:fnGetDepartments2" />
@@ -718,6 +761,10 @@
       <input name="fnStoreRequisitionLines" message="tns:fnStoreRequisitionLines" />
       <output name="fnStoreRequisitionLines_Result" message="tns:fnStoreRequisitionLines_Result" />
     </operation>
+    <operation name="fnStoreRequisitionsSingle">
+      <input name="fnStoreRequisitionsSingle" message="tns:fnStoreRequisitionsSingle" />
+      <output name="fnStoreRequisitionsSingle_Result" message="tns:fnStoreRequisitionsSingle_Result" />
+    </operation>
     <operation name="fnStoreRequisitions">
       <input name="fnStoreRequisitions" message="tns:fnStoreRequisitions" />
       <output name="fnStoreRequisitions_Result" message="tns:fnStoreRequisitions_Result" />
@@ -775,6 +822,15 @@
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </input>
       <output name="fnApprovalEntries_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnCurrencies">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnCurrencies" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnCurrencies">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnCurrencies_Result">
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </output>
     </operation>
@@ -973,6 +1029,15 @@
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </input>
       <output name="fnStoreRequisitionLines_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnStoreRequisitionsSingle">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnStoreRequisitionsSingle" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnStoreRequisitionsSingle">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnStoreRequisitionsSingle_Result">
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </output>
     </operation>

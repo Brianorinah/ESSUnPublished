@@ -65,6 +65,29 @@ namespace HRPortal
                 dLocation.DataBind();
                 dLocation.Items.Insert(0, new System.Web.UI.WebControls.ListItem("--select--", ""));
 
+                string allVehicles = new Config().ObjNav1().fnGetDepartments(0, false, 4);
+                List<DepartmentsModel> dpts4 = new List<DepartmentsModel>();
+                String[] info54 = allVehicles.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries);
+                if (info54 != null)
+                {
+                    foreach (var allInfo in info54)
+                    {
+                        String[] arr = allInfo.Split('*');
+
+                        DepartmentsModel mdl = new DepartmentsModel();
+                        mdl.Name = arr[1];
+                        mdl.Code = arr[0];
+                        dpts4.Add(mdl);
+
+                    }
+                }
+
+                projectCode.DataSource = dpts4;
+                projectCode.DataTextField = "Name";
+                projectCode.DataValueField = "Code";
+                projectCode.DataBind();
+                projectCode.Items.Insert(0, new System.Web.UI.WebControls.ListItem("--select--", ""));
+
                 String employeeNo = Convert.ToString(Session["employeeNo"]);
                 string requisitionNo = Request.QueryString["docNo"];
 
@@ -81,37 +104,37 @@ namespace HRPortal
                             dptMach(arr[8]);
                             bsnCode.SelectedValue = arr[9];
                             airCraftCode.SelectedValue = arr[10];
-                            vhcleCode.SelectedValue = arr[11];
+                            projectCode.SelectedValue = arr[11];
                             description.Text = arr[1];
                             currCode1.SelectedValue = arr[7];
-                            if (!string.IsNullOrEmpty(arr[10]))
-                            {
-                                mach.SelectedValue = "1";
-                                aircraft.Visible = true;
-                            }
-                            else
-                            {
-                                mach.SelectedValue = "2";
-                                vehicle.Visible = true;
-                            }
+                            //if (!string.IsNullOrEmpty(arr[10]))
+                            //{
+                            //    mach.SelectedValue = "1";
+                            //    aircraft.Visible = true;
+                            //}
+                            //else
+                            //{
+                            //    mach.SelectedValue = "2";
+                            //    vehicle.Visible = true;
+                            //}
 
-                            if (arr[5] == "Program")
-                            {
-                                prnType.SelectedValue = "1";
-                            }
-                            else
-                            {
-                                prnType.SelectedValue = "2";
-                            }
+                            //if (arr[5] == "Program")
+                            //{
+                            //    prnType.SelectedValue = "1";
+                            //}
+                            //else
+                            //{
+                            //    prnType.SelectedValue = "2";
+                            //}
 
-                            if (arr[6] == "Goods")
-                            {
-                                purchType.SelectedValue = "0";
-                            }
-                            else
-                            {
-                                purchType.SelectedValue = "1";
-                            }
+                            //if (arr[6] == "Goods")
+                            //{
+                            //    purchType.SelectedValue = "0";
+                            //}
+                            //else
+                            //{
+                            //    purchType.SelectedValue = "1";
+                            //}
 
                         }
                     }
@@ -167,94 +190,86 @@ namespace HRPortal
             airCraftCode.DataValueField = "Code";
             airCraftCode.DataBind();
             airCraftCode.Items.Insert(0, new System.Web.UI.WebControls.ListItem("--select--", tdpt));
-
-            string allVehicles = new Config().ObjNav1().fnGetDepartments2(0, false, 5, "");
-            List<DepartmentsModel> dpts4 = new List<DepartmentsModel>();
-            String[] info54 = allVehicles.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries);
-            if (info54 != null)
-            {
-                foreach (var allInfo in info54)
-                {
-                    String[] arr = allInfo.Split('*');
-
-                    DepartmentsModel mdl = new DepartmentsModel();
-                    mdl.Name = arr[1];
-                    mdl.Code = arr[0];
-                    dpts4.Add(mdl);
-
-                }
-            }
-
-            vhcleCode.DataSource = dpts4;
-            vhcleCode.DataTextField = "Name";
-            vhcleCode.DataValueField = "Code";
-            vhcleCode.DataBind();
-            vhcleCode.Items.Insert(0, new System.Web.UI.WebControls.ListItem("--select--", ""));
+            
         }
 
         protected void next_Click(object sender, EventArgs e)
         {
-            bool error = false;
-            string message = "";
-            String requisitionNo = "";
-            Boolean newRequisition = false;
-            if (string.IsNullOrEmpty(prnType.SelectedValue.Trim()))
+            int counter = 0;
+            String employeeNo = Convert.ToString(Session["employeeNo"]);
+            string requisitionNo = Request.QueryString["docNo"];
+            var request = new Config().ObjNav1().fnPurchaseRequisitions(employeeNo);
+            String[] info22 = request.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries);
+            if (info22.Count() > 0)
             {
-                error = true;
-                message = "Kindly Insert Requisition Type";
+                foreach (var allinfo in info22)
+                {
+                    String[] arr = allinfo.Split('*');
+                    if (arr[2] == "Open" || arr[2] == "Pending Approval")
+                    {
+                        counter++;
+                    }
+                }
             }
-            if (string.IsNullOrEmpty(purchType.SelectedValue.Trim()))
+            if (counter > 0 && !string.IsNullOrEmpty(requisitionNo))
             {
-                error = true;
-                message = "<br/>Kindly Insert Purchase Type";
-            }
-            if (error)
-            {
-                generalFeedback.InnerHtml = "<div class='alert alert-danger'>" + message + " <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a></div>";
+                generalFeedback.InnerHtml = "<div class='alert alert-danger'>You have an open purchase requisition. Kindly Proceed and edit the existing one.<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a></div>";
             }
             else
             {
-                String employeeNo = Convert.ToString(Session["employeeNo"]);
-                int tprnType = Convert.ToInt16(prnType.SelectedValue.Trim());
-                int tpurchType = Convert.ToInt16(purchType.SelectedValue.Trim());
-                string tdpt = dpt.SelectedValue.Trim();
-                string tbsnCode = bsnCode.SelectedValue.Trim();
-                string tairCraftCode = airCraftCode.SelectedValue.Trim();
-                string tvhcleCode = vhcleCode.SelectedValue.Trim();
-                string tcurrCode = currCode1.SelectedValue.Trim();
-                string tdescription = description.Text.Trim();
-
-                try
+                bool error = false;
+                string message = "";
+                
+                Boolean newRequisition = false;                
+                if (error)
                 {
-                    requisitionNo = Request.QueryString["docNo"];
-                    if (String.IsNullOrEmpty(requisitionNo))
-                    {
-                        requisitionNo = "";
-                        newRequisition = true;
-                    }
-                }
-                catch (Exception)
-                {
-                    newRequisition = true;
-                    requisitionNo = "";
-                }
-
-
-                var nav = new Config().ObjNav();
-
-                String status = nav.createPurchaseRequisition(employeeNo, requisitionNo, tdescription, tprnType, tpurchType, tdpt, tbsnCode, tairCraftCode, tvhcleCode, tcurrCode);
-                String[] info = status.Split('*');
-                if (info[0] == "success")
-                {
-                    generalFeedback.InnerHtml = "<div class='alert alert-" + info[0] + "'>" + info[1] + "<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a></div>";
-                    Response.Redirect("PurchaseRequisition.aspx?step=2&&docNo=" + info[2]);
-
+                    generalFeedback.InnerHtml = "<div class='alert alert-danger'>" + message + " <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a></div>";
                 }
                 else
                 {
-                    generalFeedback.InnerHtml = "<div class='alert alert-danger'>" + info[1] + " <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a></div>";
+
+                    
+                    string tdpt = dpt.SelectedValue.Trim();
+                    string tbsnCode = bsnCode.SelectedValue.Trim();
+                    string tairCraftCode = airCraftCode.SelectedValue.Trim();
+                    string tprojectCode = projectCode.SelectedValue.Trim();
+                    string tcurrCode = currCode1.SelectedValue.Trim();
+                    string tdescription = description.Text.Trim();
+                    DateTime trcptDate = Convert.ToDateTime(rcptDate.Text.Trim());
+
+                    try
+                    {
+                        
+                        if (String.IsNullOrEmpty(requisitionNo))
+                        {
+                            requisitionNo = "";
+                            newRequisition = true;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        newRequisition = true;
+                        requisitionNo = "";
+                    }
+
+
+                    var nav = new Config().ObjNav();
+
+                    String status = nav.createPurchaseRequisition(employeeNo, requisitionNo, tdescription, tdpt, tbsnCode, tairCraftCode, tprojectCode, tcurrCode, trcptDate);
+                    String[] info = status.Split('*');
+                    if (info[0] == "success")
+                    {
+                        generalFeedback.InnerHtml = "<div class='alert alert-" + info[0] + "'>" + info[1] + "<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a></div>";
+                        Response.Redirect("PurchaseRequisition.aspx?step=2&&docNo=" + info[2]);
+
+                    }
+                    else
+                    {
+                        generalFeedback.InnerHtml = "<div class='alert alert-danger'>" + info[1] + " <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a></div>";
+                    }
                 }
             }
+            
 
 
 
@@ -314,19 +329,19 @@ namespace HRPortal
             }
         }
 
-        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (mach.SelectedValue == "0")
-            {
-                aircraft.Visible = true;
-                vehicle.Visible = false;
-            }
-            else
-            {
-                aircraft.Visible = false;
-                vehicle.Visible = true;
-            }
-        }
+        //protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if (mach.SelectedValue == "0")
+        //    {
+        //        aircraft.Visible = true;
+        //        vehicle.Visible = false;
+        //    }
+        //    else
+        //    {
+        //        aircraft.Visible = false;
+        //        vehicle.Visible = true;
+        //    }
+        //}
 
         protected void itemCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -603,28 +618,7 @@ namespace HRPortal
             airCraftCode.DataBind();
             airCraftCode.Items.Insert(0, new System.Web.UI.WebControls.ListItem("--select--", tdpt));
 
-            string allVehicles = new Config().ObjNav1().fnGetDepartments2(0, false, 5, "");
-            List<DepartmentsModel> dpts4 = new List<DepartmentsModel>();
-            String[] info54 = allVehicles.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries);
-            if (info54 != null)
-            {
-                foreach (var allInfo in info54)
-                {
-                    String[] arr = allInfo.Split('*');
-
-                    DepartmentsModel mdl = new DepartmentsModel();
-                    mdl.Name = arr[1];
-                    mdl.Code = arr[0];
-                    dpts4.Add(mdl);
-
-                }
-            }
-
-            vhcleCode.DataSource = dpts4;
-            vhcleCode.DataTextField = "Name";
-            vhcleCode.DataValueField = "Code";
-            vhcleCode.DataBind();
-            vhcleCode.Items.Insert(0, new System.Web.UI.WebControls.ListItem("--select--", ""));
+            
         }
     }
 }

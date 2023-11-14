@@ -15,6 +15,7 @@ namespace HRPortal
             Session["employeeNo"] = "";
             Session["idNo"] = "";
             Session["type"] = 0;
+            Session.Abandon();
             Response.Redirect("Login.aspx");
         }
     }

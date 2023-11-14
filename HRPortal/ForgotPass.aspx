@@ -49,7 +49,7 @@
 						</div>
 					</div>
 					<div class="text-center mt-5 text-muted">
-						Copyright &copy; 2017-2021 &mdash; Your Company
+						<strong>Copyright &copy; <%=DateTime.Now.Year %> <a href="https://www.boskovicaircharters.com/">Boskovic Air Charters.</a></strong> 
 					</div>
 				</div>
 			</div>

@@ -519,29 +519,28 @@ namespace HRPortal.HRPortal {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/HRPortal:createImprestHeader", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", ResponseElementName="createImprestHeader_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
-        public string createImprestHeader(string employeeNo, string requisitionNo, string description, [System.Xml.Serialization.XmlElementAttribute(DataType="date")] System.DateTime fromDate, [System.Xml.Serialization.XmlElementAttribute(DataType="date")] System.DateTime toDate, string destination, string department, string busnCode, string airplaneCode, string vehicleCode, string curr) {
+        public string createImprestHeader(string employeeNo, string requisitionNo, string description, [System.Xml.Serialization.XmlElementAttribute(DataType="date")] System.DateTime fromDate, [System.Xml.Serialization.XmlElementAttribute(DataType="date")] System.DateTime toDate, string department, string busnCode, string airplaneCode, string tprojectCode, string curr) {
             object[] results = this.Invoke("createImprestHeader", new object[] {
                         employeeNo,
                         requisitionNo,
                         description,
                         fromDate,
                         toDate,
-                        destination,
                         department,
                         busnCode,
                         airplaneCode,
-                        vehicleCode,
+                        tprojectCode,
                         curr});
             return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void createImprestHeaderAsync(string employeeNo, string requisitionNo, string description, System.DateTime fromDate, System.DateTime toDate, string destination, string department, string busnCode, string airplaneCode, string vehicleCode, string curr) {
-            this.createImprestHeaderAsync(employeeNo, requisitionNo, description, fromDate, toDate, destination, department, busnCode, airplaneCode, vehicleCode, curr, null);
+        public void createImprestHeaderAsync(string employeeNo, string requisitionNo, string description, System.DateTime fromDate, System.DateTime toDate, string department, string busnCode, string airplaneCode, string tprojectCode, string curr) {
+            this.createImprestHeaderAsync(employeeNo, requisitionNo, description, fromDate, toDate, department, busnCode, airplaneCode, tprojectCode, curr, null);
         }
         
         /// <remarks/>
-        public void createImprestHeaderAsync(string employeeNo, string requisitionNo, string description, System.DateTime fromDate, System.DateTime toDate, string destination, string department, string busnCode, string airplaneCode, string vehicleCode, string curr, object userState) {
+        public void createImprestHeaderAsync(string employeeNo, string requisitionNo, string description, System.DateTime fromDate, System.DateTime toDate, string department, string busnCode, string airplaneCode, string tprojectCode, string curr, object userState) {
             if ((this.createImprestHeaderOperationCompleted == null)) {
                 this.createImprestHeaderOperationCompleted = new System.Threading.SendOrPostCallback(this.OncreateImprestHeaderOperationCompleted);
             }
@@ -551,11 +550,10 @@ namespace HRPortal.HRPortal {
                         description,
                         fromDate,
                         toDate,
-                        destination,
                         department,
                         busnCode,
                         airplaneCode,
-                        vehicleCode,
+                        tprojectCode,
                         curr}, this.createImprestHeaderOperationCompleted, userState);
         }
         
@@ -859,28 +857,27 @@ namespace HRPortal.HRPortal {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/HRPortal:createPurchaseRequisition", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", ResponseElementName="createPurchaseRequisition_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
-        public string createPurchaseRequisition(string employeeNo, string requisitionNo, string description, int reqType, int purchaseType, string department, string busnCode, string airplaneCode, string vehicleCode, string curr) {
+        public string createPurchaseRequisition(string employeeNo, string requisitionNo, string description, string department, string busnCode, string airplaneCode, string vehicleCode, string curr, [System.Xml.Serialization.XmlElementAttribute(DataType="date")] System.DateTime trcptDate) {
             object[] results = this.Invoke("createPurchaseRequisition", new object[] {
                         employeeNo,
                         requisitionNo,
                         description,
-                        reqType,
-                        purchaseType,
                         department,
                         busnCode,
                         airplaneCode,
                         vehicleCode,
-                        curr});
+                        curr,
+                        trcptDate});
             return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void createPurchaseRequisitionAsync(string employeeNo, string requisitionNo, string description, int reqType, int purchaseType, string department, string busnCode, string airplaneCode, string vehicleCode, string curr) {
-            this.createPurchaseRequisitionAsync(employeeNo, requisitionNo, description, reqType, purchaseType, department, busnCode, airplaneCode, vehicleCode, curr, null);
+        public void createPurchaseRequisitionAsync(string employeeNo, string requisitionNo, string description, string department, string busnCode, string airplaneCode, string vehicleCode, string curr, System.DateTime trcptDate) {
+            this.createPurchaseRequisitionAsync(employeeNo, requisitionNo, description, department, busnCode, airplaneCode, vehicleCode, curr, trcptDate, null);
         }
         
         /// <remarks/>
-        public void createPurchaseRequisitionAsync(string employeeNo, string requisitionNo, string description, int reqType, int purchaseType, string department, string busnCode, string airplaneCode, string vehicleCode, string curr, object userState) {
+        public void createPurchaseRequisitionAsync(string employeeNo, string requisitionNo, string description, string department, string busnCode, string airplaneCode, string vehicleCode, string curr, System.DateTime trcptDate, object userState) {
             if ((this.createPurchaseRequisitionOperationCompleted == null)) {
                 this.createPurchaseRequisitionOperationCompleted = new System.Threading.SendOrPostCallback(this.OncreatePurchaseRequisitionOperationCompleted);
             }
@@ -888,13 +885,12 @@ namespace HRPortal.HRPortal {
                         employeeNo,
                         requisitionNo,
                         description,
-                        reqType,
-                        purchaseType,
                         department,
                         busnCode,
                         airplaneCode,
                         vehicleCode,
-                        curr}, this.createPurchaseRequisitionOperationCompleted, userState);
+                        curr,
+                        trcptDate}, this.createPurchaseRequisitionOperationCompleted, userState);
         }
         
         private void OncreatePurchaseRequisitionOperationCompleted(object arg) {
@@ -1083,23 +1079,26 @@ namespace HRPortal.HRPortal {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/HRPortal:createStoreRequisition", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", ResponseElementName="createStoreRequisition_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
-        public string createStoreRequisition(string employeeNo, string requisitionNo, string description, string department, [System.Xml.Serialization.XmlElementAttribute(DataType="date")] System.DateTime requiredDate) {
+        public string createStoreRequisition(string employeeNo, string requisitionNo, string description, string department, [System.Xml.Serialization.XmlElementAttribute(DataType="date")] System.DateTime requiredDate, string busnCode, string airplaneCode, string tprojectCode) {
             object[] results = this.Invoke("createStoreRequisition", new object[] {
                         employeeNo,
                         requisitionNo,
                         description,
                         department,
-                        requiredDate});
+                        requiredDate,
+                        busnCode,
+                        airplaneCode,
+                        tprojectCode});
             return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void createStoreRequisitionAsync(string employeeNo, string requisitionNo, string description, string department, System.DateTime requiredDate) {
-            this.createStoreRequisitionAsync(employeeNo, requisitionNo, description, department, requiredDate, null);
+        public void createStoreRequisitionAsync(string employeeNo, string requisitionNo, string description, string department, System.DateTime requiredDate, string busnCode, string airplaneCode, string tprojectCode) {
+            this.createStoreRequisitionAsync(employeeNo, requisitionNo, description, department, requiredDate, busnCode, airplaneCode, tprojectCode, null);
         }
         
         /// <remarks/>
-        public void createStoreRequisitionAsync(string employeeNo, string requisitionNo, string description, string department, System.DateTime requiredDate, object userState) {
+        public void createStoreRequisitionAsync(string employeeNo, string requisitionNo, string description, string department, System.DateTime requiredDate, string busnCode, string airplaneCode, string tprojectCode, object userState) {
             if ((this.createStoreRequisitionOperationCompleted == null)) {
                 this.createStoreRequisitionOperationCompleted = new System.Threading.SendOrPostCallback(this.OncreateStoreRequisitionOperationCompleted);
             }
@@ -1108,7 +1107,10 @@ namespace HRPortal.HRPortal {
                         requisitionNo,
                         description,
                         department,
-                        requiredDate}, this.createStoreRequisitionOperationCompleted, userState);
+                        requiredDate,
+                        busnCode,
+                        airplaneCode,
+                        tprojectCode}, this.createStoreRequisitionOperationCompleted, userState);
         }
         
         private void OncreateStoreRequisitionOperationCompleted(object arg) {

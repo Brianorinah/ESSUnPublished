@@ -139,11 +139,10 @@
             <element minOccurs="1" maxOccurs="1" name="description" type="string" />
             <element minOccurs="1" maxOccurs="1" name="fromDate" type="date" />
             <element minOccurs="1" maxOccurs="1" name="toDate" type="date" />
-            <element minOccurs="1" maxOccurs="1" name="destination" type="string" />
             <element minOccurs="1" maxOccurs="1" name="department" type="string" />
             <element minOccurs="1" maxOccurs="1" name="busnCode" type="string" />
             <element minOccurs="1" maxOccurs="1" name="airplaneCode" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="vehicleCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="tprojectCode" type="string" />
             <element minOccurs="1" maxOccurs="1" name="curr" type="string" />
           </sequence>
         </complexType>
@@ -298,13 +297,12 @@
             <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
             <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
             <element minOccurs="1" maxOccurs="1" name="description" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="reqType" type="int" />
-            <element minOccurs="1" maxOccurs="1" name="purchaseType" type="int" />
             <element minOccurs="1" maxOccurs="1" name="department" type="string" />
             <element minOccurs="1" maxOccurs="1" name="busnCode" type="string" />
             <element minOccurs="1" maxOccurs="1" name="airplaneCode" type="string" />
             <element minOccurs="1" maxOccurs="1" name="vehicleCode" type="string" />
             <element minOccurs="1" maxOccurs="1" name="curr" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="trcptDate" type="date" />
           </sequence>
         </complexType>
       </element>
@@ -406,6 +404,9 @@
             <element minOccurs="1" maxOccurs="1" name="description" type="string" />
             <element minOccurs="1" maxOccurs="1" name="department" type="string" />
             <element minOccurs="1" maxOccurs="1" name="requiredDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="busnCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="airplaneCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="tprojectCode" type="string" />
           </sequence>
         </complexType>
       </element>

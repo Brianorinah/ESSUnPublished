@@ -227,7 +227,7 @@
                                     <ul class="treeview-menu">
                                         <li><a href="PurchaseRequisition.aspx">New Purchase Requisition</a></li>
                                         <li><a href="PurchaseRequisitions.aspx?status=open">Open Purchase Requsition</a></li>
-                                        <li><a href="PurchaseRequisitions.aspx?status=approved">Approved Purchase Requisition</a></li>
+                                        <li><a href="ApprovedPurchaseRequisition.aspx">Approved Purchase Requisition</a></li>
                                     </ul>
                                 </li>
                                 <li class="treeview">
@@ -241,7 +241,7 @@
                                     <ul class="treeview-menu">
                                         <li><a href="StoreRequisition.aspx">New Store Requisition</a></li>
                                         <li><a href="StoreRequisitions.aspx?status=open">Open Store Requsition</a></li>
-                                        <li><a href="StoreRequisitions.aspx?status=approved">Approved Store Requisition</a></li>
+                                        <li><a href="ApprovedStoreRequisition.aspx">Approved Store Requisition</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -280,7 +280,7 @@
                                     <ul class="treeview-menu">
                                         <%--<li><a href="ImprestSurrender.aspx"><i class="fa fa-circle-o"></i>New Surrender</a></li>--%>
                                         <li><a href="ImprestSurrenders.aspx"><i class="fa fa-circle-o"></i>Open Surrenders</a></li>
-                                        <li><a href="ImprestSurrendersApproved.aspx"><i class="fa fa-circle-o"></i>Approved Surrenders</a></li>
+                                        <li><a href="ApprovedImprestSurrender.aspx"><i class="fa fa-circle-o"></i>Approved Surrenders</a></li>
                                     </ul>
                                 </li>
                                 <li class="treeview">
@@ -294,7 +294,7 @@
                                     <ul class="treeview-menu">
                                         <li><a href="StaffClaim.aspx"><i class="fa fa-circle-o"></i>New Staff Claim</a></li>
                                         <li><a href="StaffClaims.aspx"><i class="fa fa-circle-o"></i>Open Staff Claims</a></li>
-                                        <li><a href="StaffClaimsApproved.aspx"><i class="fa fa-circle-o"></i>Approved Staff Claims</a></li>
+                                        <li><a href="ApprovedStaffClaim.aspx"><i class="fa fa-circle-o"></i>Approved Staff Claims</a></li>
                                     </ul>
                                 </li>
                                 <li class="treeview">
@@ -308,7 +308,7 @@
                                     <ul class="treeview-menu">
                                         <li><a href="PettyCashRequisition.aspx">New Petty Cash Requisition</a></li>
                                         <li><a href="PettyCashHeader.aspx">Open Petty Cash Requisition</a></li>
-                                        <li><a href="PettyCashApproved.aspx">Approved Petty Cash Requisition</a></li>
+                                        <li><a href="ApprovedPettyCash.aspx">Approved Petty Cash Requisition</a></li>
                                     </ul>
                                 </li>
                             </ul>

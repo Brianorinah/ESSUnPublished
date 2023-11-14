@@ -56,6 +56,29 @@ namespace HRPortal
                     }
                 }
 
+                string allVehicles = new Config().ObjNav1().fnGetDepartments(0, false, 4);
+                List<DepartmentsModel> dpts4 = new List<DepartmentsModel>();
+                String[] info54 = allVehicles.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries);
+                if (info54 != null)
+                {
+                    foreach (var allInfo in info54)
+                    {
+                        String[] arr = allInfo.Split('*');
+
+                        DepartmentsModel mdl = new DepartmentsModel();
+                        mdl.Name = arr[1];
+                        mdl.Code = arr[0];
+                        dpts4.Add(mdl);
+
+                    }
+                }
+
+                projectCode.DataSource = dpts4;
+                projectCode.DataTextField = "Name";
+                projectCode.DataValueField = "Code";
+                projectCode.DataBind();
+                projectCode.Items.Insert(0, new System.Web.UI.WebControls.ListItem("--select--", ""));
+
                 traveltype.DataSource = trvls;
                 traveltype.DataTextField = "description";
                 traveltype.DataValueField = "code";
@@ -78,10 +101,9 @@ namespace HRPortal
                             dptMach(arr[9]);
                             bsnCode.SelectedValue = arr[8];
                             airCraftCode.SelectedValue = arr[10];
-                            vhcleCode.SelectedValue = arr[11];
+                            projectCode.SelectedValue = arr[11];
                             description.Text = arr[5];
-                            currCode1.SelectedValue = arr[7];
-                            destinationNarration.Text = arr[6];
+                            currCode1.SelectedValue = arr[7];                            
                             dateFrom.Text = arr[1];
                             dateTo.Text = arr[2];
 
@@ -139,29 +161,7 @@ namespace HRPortal
             airCraftCode.DataValueField = "Code";
             airCraftCode.DataBind();
             airCraftCode.Items.Insert(0, new System.Web.UI.WebControls.ListItem("--select--", tdpt));
-
-            string allVehicles = new Config().ObjNav1().fnGetDepartments2(0, false, 5, "");
-            List<DepartmentsModel> dpts4 = new List<DepartmentsModel>();
-            String[] info54 = allVehicles.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries);
-            if (info54 != null)
-            {
-                foreach (var allInfo in info54)
-                {
-                    String[] arr = allInfo.Split('*');
-
-                    DepartmentsModel mdl = new DepartmentsModel();
-                    mdl.Name = arr[1];
-                    mdl.Code = arr[0];
-                    dpts4.Add(mdl);
-
-                }
-            }
-
-            vhcleCode.DataSource = dpts4;
-            vhcleCode.DataTextField = "Name";
-            vhcleCode.DataValueField = "Code";
-            vhcleCode.DataBind();
-            vhcleCode.Items.Insert(0, new System.Web.UI.WebControls.ListItem("--select--", ""));
+            
         }
 
         protected void addGeneralDetails_Click(object sender, EventArgs e)
@@ -169,14 +169,13 @@ namespace HRPortal
             String requisitionNo = "";
             Boolean newRequisition = false;
             String employeeNo = Convert.ToString(Session["employeeNo"]);
-            string tdescription = description.Text.Trim();
-            string tdestinationNarration = destinationNarration.Text.Trim();
+            string tdescription = description.Text.Trim();            
             DateTime tdateFrom = Convert.ToDateTime(dateFrom.Text.Trim());
             DateTime tdateTo = Convert.ToDateTime(dateTo.Text.Trim());
             string tcurrCode1 = currCode1.SelectedValue.Trim();
             string tdpt = dpt.SelectedValue.Trim();
             string tbsnCode = bsnCode.SelectedValue.Trim();
-            string tvhcleCode = vhcleCode.SelectedValue.Trim();
+            string tprojectCode = projectCode.SelectedValue.Trim();
             string tairCraftCode = airCraftCode.SelectedValue.Trim();
 
             try
@@ -197,7 +196,7 @@ namespace HRPortal
 
             var nav = new Config().ObjNav();
 
-            String status = nav.createImprestHeader(employeeNo, requisitionNo, tdescription, tdateFrom, tdateTo, tdescription, tbsnCode, tdpt, tairCraftCode, tvhcleCode, tcurrCode1);
+            String status = nav.createImprestHeader(employeeNo, requisitionNo, tdescription, tdateFrom, tdateTo, tdpt, tbsnCode, tairCraftCode, tprojectCode, tcurrCode1);
             String[] info = status.Split('*');
             if (info[0] == "success")
             {
@@ -418,29 +417,7 @@ namespace HRPortal
             airCraftCode.DataValueField = "Code";
             airCraftCode.DataBind();
             airCraftCode.Items.Insert(0, new System.Web.UI.WebControls.ListItem("--select--", tdpt));
-
-            string allVehicles = new Config().ObjNav1().fnGetDepartments2(0, false, 5, "");
-            List<DepartmentsModel> dpts4 = new List<DepartmentsModel>();
-            String[] info54 = allVehicles.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries);
-            if (info54 != null)
-            {
-                foreach (var allInfo in info54)
-                {
-                    String[] arr = allInfo.Split('*');
-
-                    DepartmentsModel mdl = new DepartmentsModel();
-                    mdl.Name = arr[1];
-                    mdl.Code = arr[0];
-                    dpts4.Add(mdl);
-
-                }
-            }
-
-            vhcleCode.DataSource = dpts4;
-            vhcleCode.DataTextField = "Name";
-            vhcleCode.DataValueField = "Code";
-            vhcleCode.DataBind();
-            vhcleCode.Items.Insert(0, new System.Web.UI.WebControls.ListItem("--select--", ""));
+            
         }
         protected void previous_Click(object sender, EventArgs e)
         {

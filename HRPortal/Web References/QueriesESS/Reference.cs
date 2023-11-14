@@ -39,6 +39,8 @@ namespace HRPortal.QueriesESS {
         
         private System.Threading.SendOrPostCallback fnApprovalEntriesOperationCompleted;
         
+        private System.Threading.SendOrPostCallback fnCurrenciesOperationCompleted;
+        
         private System.Threading.SendOrPostCallback fnGetDepartments2OperationCompleted;
         
         private System.Threading.SendOrPostCallback fnGetDepartmentsOperationCompleted;
@@ -82,6 +84,8 @@ namespace HRPortal.QueriesESS {
         private System.Threading.SendOrPostCallback fnStaffClaimsOperationCompleted;
         
         private System.Threading.SendOrPostCallback fnStoreRequisitionLinesOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback fnStoreRequisitionsSingleOperationCompleted;
         
         private System.Threading.SendOrPostCallback fnStoreRequisitionsOperationCompleted;
         
@@ -141,6 +145,9 @@ namespace HRPortal.QueriesESS {
         
         /// <remarks/>
         public event fnApprovalEntriesCompletedEventHandler fnApprovalEntriesCompleted;
+        
+        /// <remarks/>
+        public event fnCurrenciesCompletedEventHandler fnCurrenciesCompleted;
         
         /// <remarks/>
         public event fnGetDepartments2CompletedEventHandler fnGetDepartments2Completed;
@@ -207,6 +214,9 @@ namespace HRPortal.QueriesESS {
         
         /// <remarks/>
         public event fnStoreRequisitionLinesCompletedEventHandler fnStoreRequisitionLinesCompleted;
+        
+        /// <remarks/>
+        public event fnStoreRequisitionsSingleCompletedEventHandler fnStoreRequisitionsSingleCompleted;
         
         /// <remarks/>
         public event fnStoreRequisitionsCompletedEventHandler fnStoreRequisitionsCompleted;
@@ -364,6 +374,34 @@ namespace HRPortal.QueriesESS {
             if ((this.fnApprovalEntriesCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.fnApprovalEntriesCompleted(this, new fnApprovalEntriesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnCurrencies", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/QueriesESS", ResponseElementName="fnCurrencies_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/QueriesESS", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string fnCurrencies() {
+            object[] results = this.Invoke("fnCurrencies", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void fnCurrenciesAsync() {
+            this.fnCurrenciesAsync(null);
+        }
+        
+        /// <remarks/>
+        public void fnCurrenciesAsync(object userState) {
+            if ((this.fnCurrenciesOperationCompleted == null)) {
+                this.fnCurrenciesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnfnCurrenciesOperationCompleted);
+            }
+            this.InvokeAsync("fnCurrencies", new object[0], this.fnCurrenciesOperationCompleted, userState);
+        }
+        
+        private void OnfnCurrenciesOperationCompleted(object arg) {
+            if ((this.fnCurrenciesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.fnCurrenciesCompleted(this, new fnCurrenciesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1044,6 +1082,38 @@ namespace HRPortal.QueriesESS {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnStoreRequisitionsSingle", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/QueriesESS", ResponseElementName="fnStoreRequisitionsSingle_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/QueriesESS", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string fnStoreRequisitionsSingle(string empNumber, string appNo) {
+            object[] results = this.Invoke("fnStoreRequisitionsSingle", new object[] {
+                        empNumber,
+                        appNo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void fnStoreRequisitionsSingleAsync(string empNumber, string appNo) {
+            this.fnStoreRequisitionsSingleAsync(empNumber, appNo, null);
+        }
+        
+        /// <remarks/>
+        public void fnStoreRequisitionsSingleAsync(string empNumber, string appNo, object userState) {
+            if ((this.fnStoreRequisitionsSingleOperationCompleted == null)) {
+                this.fnStoreRequisitionsSingleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnfnStoreRequisitionsSingleOperationCompleted);
+            }
+            this.InvokeAsync("fnStoreRequisitionsSingle", new object[] {
+                        empNumber,
+                        appNo}, this.fnStoreRequisitionsSingleOperationCompleted, userState);
+        }
+        
+        private void OnfnStoreRequisitionsSingleOperationCompleted(object arg) {
+            if ((this.fnStoreRequisitionsSingleCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.fnStoreRequisitionsSingleCompleted(this, new fnStoreRequisitionsSingleCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnStoreRequisitions", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/QueriesESS", ResponseElementName="fnStoreRequisitions_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/QueriesESS", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
         public string fnStoreRequisitions(string empNumber) {
@@ -1227,6 +1297,32 @@ namespace HRPortal.QueriesESS {
         private object[] results;
         
         internal fnApprovalEntriesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void fnCurrenciesCompletedEventHandler(object sender, fnCurrenciesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class fnCurrenciesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal fnCurrenciesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -1799,6 +1895,32 @@ namespace HRPortal.QueriesESS {
         private object[] results;
         
         internal fnStoreRequisitionLinesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void fnStoreRequisitionsSingleCompletedEventHandler(object sender, fnStoreRequisitionsSingleCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class fnStoreRequisitionsSingleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal fnStoreRequisitionsSingleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
