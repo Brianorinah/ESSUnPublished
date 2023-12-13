@@ -77,7 +77,7 @@ namespace HRPortal
 
                         ItemList mdl = new ItemList();
                         mdl.code = arr[0];
-                        mdl.description = arr[1];
+                        mdl.description = arr[1] +"--" + arr[2] + "--" + arr[3] + "--" + arr[4] + "--" + arr[5] + "--" + arr[6] + "--" + arr[7];
                         itms.Add(mdl);
 
                     }
@@ -88,6 +88,7 @@ namespace HRPortal
                 item.DataValueField = "code";
                 item.DataBind();
                 item.Items.Insert(0, new System.Web.UI.WebControls.ListItem("--select--", ""));
+                item.Items.Insert(1, new System.Web.UI.WebControls.ListItem("Decription--PartNo--Alt ItemNo --Alt PartNo1 --Alt PartNo2--Alt PartNo3--Alt PartNo4", ""));
 
                 string allVehicles = new Config().ObjNav1().fnGetDepartments(0, false, 4);
                 List<DepartmentsModel> dpts4 = new List<DepartmentsModel>();
@@ -112,6 +113,52 @@ namespace HRPortal
                 projectCode.DataBind();
                 projectCode.Items.Insert(0, new System.Web.UI.WebControls.ListItem("--select--", ""));
 
+                string allBusinessCodes = new Config().ObjNav1().fnGetDepartments2(0, false, 2);
+                List<DepartmentsModel> dpts2 = new List<DepartmentsModel>();
+                String[] info52 = allBusinessCodes.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries);
+                if (info52 != null)
+                {
+                    foreach (var allInfo in info52)
+                    {
+                        String[] arr = allInfo.Split('*');
+
+                        DepartmentsModel mdl = new DepartmentsModel();
+                        mdl.Name = arr[1];
+                        mdl.Code = arr[0];
+                        dpts2.Add(mdl);
+
+                    }
+                }
+
+                bsnCode.DataSource = dpts2;
+                bsnCode.DataTextField = "Name";
+                bsnCode.DataValueField = "Code";
+                bsnCode.DataBind();
+                bsnCode.Items.Insert(0, new System.Web.UI.WebControls.ListItem("--select--", ""));
+
+                string allAirCraftCodes = new Config().ObjNav1().fnGetDepartments2(0, false, 3);
+                List<DepartmentsModel> dpts3 = new List<DepartmentsModel>();
+                String[] info53 = allAirCraftCodes.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries);
+                if (info53 != null)
+                {
+                    foreach (var allInfo in info53)
+                    {
+                        String[] arr = allInfo.Split('*');
+
+                        DepartmentsModel mdl = new DepartmentsModel();
+                        mdl.Name = arr[1];
+                        mdl.Code = arr[0];
+                        dpts3.Add(mdl);
+
+                    }
+                }
+
+                airCraftCode.DataSource = dpts3;
+                airCraftCode.DataTextField = "Name";
+                airCraftCode.DataValueField = "Code";
+                airCraftCode.DataBind();
+                airCraftCode.Items.Insert(0, new System.Web.UI.WebControls.ListItem("--select--", ""));
+
                 String employeeNo = Convert.ToString(Session["employeeNo"]);
                 string requisitionNo = Request.QueryString["docNo"];
 
@@ -125,7 +172,7 @@ namespace HRPortal
                         {
                             String[] arr = allinfo.Split('*');
                             dpt.SelectedValue = arr[6];
-                            dptMach(arr[6]);
+                            //dptMach(arr[6]);
                             bsnCode.SelectedValue = arr[7];
                             airCraftCode.SelectedValue = arr[8];
                             projectCode.SelectedValue = arr[9];
@@ -140,7 +187,7 @@ namespace HRPortal
         }
         public void dptMach(string tdpt)
         {
-            string allBusinessCodes = new Config().ObjNav1().fnGetDepartments2(0, false, 2, tdpt);
+            string allBusinessCodes = new Config().ObjNav1().fnGetDepartments2(0, false, 2);
             List<DepartmentsModel> dpts2 = new List<DepartmentsModel>();
             String[] info52 = allBusinessCodes.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries);
             if (info52 != null)
@@ -163,7 +210,7 @@ namespace HRPortal
             bsnCode.DataBind();
             bsnCode.Items.Insert(0, new System.Web.UI.WebControls.ListItem("--select--", ""));
 
-            string allAirCraftCodes = new Config().ObjNav1().fnGetDepartments2(0, false, 3, tdpt);
+            string allAirCraftCodes = new Config().ObjNav1().fnGetDepartments2(0, false, 3);
             List<DepartmentsModel> dpts3 = new List<DepartmentsModel>();
             String[] info53 = allAirCraftCodes.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries);
             if (info53 != null)
@@ -190,6 +237,8 @@ namespace HRPortal
         protected void next_Click(object sender, EventArgs e)
         {
             int counter = 0;
+            Boolean error = false;
+            string message = "";
             String employeeNo = Convert.ToString(Session["employeeNo"]);
             String requisitionNo = Request.QueryString["docNo"];
             var request = new Config().ObjNav1().fnStoreRequisitions(employeeNo);
@@ -199,20 +248,29 @@ namespace HRPortal
                 foreach (var allinfo in info22)
                 {
                     String[] arr = allinfo.Split('*');
-                    if (arr[2] == "Open" || arr[2] == "Pending Approval")
+                    if (arr[2] == "Open" )
                     {
                         counter++;
                     }
                 }
             }
-            if (counter > 0 && !string.IsNullOrEmpty(requisitionNo))
+            if (counter > 0 && string.IsNullOrEmpty(requisitionNo))
             {
                 generalFeedback.InnerHtml = "<div class='alert alert-danger'>You have an open Store requisition. Kindly Proceed and edit the existing one.<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a></div>";
             }
             else
             {
-                bool error = false;
-                string message = "";                
+                if (string.IsNullOrEmpty(description.Text.Trim()))
+                {
+                    error = true;
+                    message = "Description is Required.";
+                }
+                if (string.IsNullOrEmpty(dateRequired.Text.Trim()))
+                {
+                    error = true;
+                    message = "Required Date is Required.";
+                }
+
                 Boolean newRequisition = false;                
                 if (error)
                 {
@@ -267,24 +325,49 @@ namespace HRPortal
         }
         protected void addItem_Click(object sender, EventArgs e)
         {
-            string requisitionNo = Request.QueryString["docNo"];            
-            string titem = item.SelectedValue.Trim();
-            int tquantityRequested = Convert.ToInt16(quantityRequested.Text.Trim());
-            string tdLocation = dLocation.SelectedValue.Trim();            
-
-            var nav = new Config().ObjNav();
-
-            String status = nav.createStoreRequisitionLine(requisitionNo, titem, tdLocation, tquantityRequested);
-            String[] info = status.Split('*');
-            if (info[0] == "success")
+            Boolean error = false;
+            string message = "";
+            if (string.IsNullOrEmpty(quantityRequested.Text.Trim()))
             {
-                linesFeedback.InnerHtml = "<div class='alert alert-" + info[0] + "'>" + info[1] + "<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a></div>";
+                error = true;
+                message = "Quantity Requested is Required.";
+            }
+            if (string.IsNullOrEmpty(item.Text.Trim()))
+            {
+                error = true;
+                message = "Item is Required.";
+            }
+            if (string.IsNullOrEmpty(dLocation.Text.Trim()))
+            {
+                error = true;
+                message = "Location is Required.";
+            }
 
-
+            if (error)
+            {
+                linesFeedback.InnerHtml = "<div class='alert alert-danger'>" + message + "<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a></div>";
             }
             else
             {
-                linesFeedback.InnerHtml = "<div class='alert alert-danger'>" + info[1] + " <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a></div>";
+                string requisitionNo = Request.QueryString["docNo"];
+                string titem = item.SelectedValue.Trim();
+                int tquantityRequested = Convert.ToInt16(quantityRequested.Text.Trim());
+                string tdLocation = dLocation.SelectedValue.Trim();
+
+                var nav = new Config().ObjNav();
+
+                String status = nav.createStoreRequisitionLine(requisitionNo, titem, tdLocation, tquantityRequested);
+                String[] info = status.Split('*');
+                if (info[0] == "success")
+                {
+                    linesFeedback.InnerHtml = "<div class='alert alert-" + info[0] + "'>" + info[1] + "<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a></div>";
+
+
+                }
+                else
+                {
+                    linesFeedback.InnerHtml = "<div class='alert alert-danger'>" + info[1] + " <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a></div>";
+                }
             }
 
 
@@ -459,7 +542,7 @@ namespace HRPortal
         {
             string tdpt = dpt.Text.Trim();
 
-            string allBusinessCodes = new Config().ObjNav1().fnGetDepartments2(0, false, 2, tdpt);
+            string allBusinessCodes = new Config().ObjNav1().fnGetDepartments2(0, false, 2);
             List<DepartmentsModel> dpts2 = new List<DepartmentsModel>();
             String[] info52 = allBusinessCodes.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries);
             if (info52 != null)
@@ -482,7 +565,7 @@ namespace HRPortal
             bsnCode.DataBind();
             bsnCode.Items.Insert(0, new System.Web.UI.WebControls.ListItem("--select--", ""));
 
-            string allAirCraftCodes = new Config().ObjNav1().fnGetDepartments2(0, false, 3, tdpt);
+            string allAirCraftCodes = new Config().ObjNav1().fnGetDepartments2(0, false, 3);
             List<DepartmentsModel> dpts3 = new List<DepartmentsModel>();
             String[] info53 = allAirCraftCodes.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries);
             if (info53 != null)
@@ -527,36 +610,54 @@ namespace HRPortal
                 step = 1;
             }
             String requisitionNo = Request.QueryString["docNo"];
-            Response.Redirect("StoreRequisition.aspx?step=" + step + "&&requisitionNo=" + requisitionNo);
+            Response.Redirect("StoreRequisition.aspx?step=" + step + "&&docNo=" + requisitionNo);
         }
         protected void sendApproval_Click(object sender, EventArgs e)
         {
             try
             {
                 String requisitionNo = Request.QueryString["docNo"];
-                // Convert.ToString(Session["employeeNo"]),
-                //String status = Config.ObjNav.SendPurchaseRequisitionApproval(Convert.ToString(Session["employeeNo"]),
-                //    requisitionNo);
-                //String[] info = status.Split('*');
-                //if (info[0] == "success")
-                //{
-                //    documentsfeedback.InnerHtml = "<div class='alert alert-" + info[0] + "'>" + info[1] + "<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a></div>";
-                //    ScriptManager.RegisterClientScriptBlock(this, typeof(Page), "redirectJS",
-                //    "setTimeout(function() { window.location.replace('Dashboard.aspx') }, 5000);", true);
-                //}
-                //else
-                //{
-                //    documentsfeedback.InnerHtml = "<div class='alert alert-" + info[0] + "'>" + info[1] + "<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a></div>";
+                string empNo = Convert.ToString(Session["employeeNo"]);
+                String status = new Config().ObjNav().sendStoreRequisitionApproval(requisitionNo, empNo);
+                String[] info = status.Split('*');
+                if (info[0] == "success")
+                {
+                    documentsfeedback.InnerHtml = "<div class='alert alert-" + info[0] + "'>" + info[1] + "<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a></div>";
+                    ScriptManager.RegisterClientScriptBlock(this, typeof(Page), "redirectJS",
+                    "setTimeout(function() { window.location.replace('Dashboard.aspx') }, 5000);", true);
+                }
+                else
+                {
+                    documentsfeedback.InnerHtml = "<div class='alert alert-" + info[0] + "'>" + info[1] + "<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a></div>";
 
-                //}
-                documentsfeedback.InnerHtml = "<div class='alert alert-success'>Document has been succesfully sent for for approval.<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a></div>";
-                ScriptManager.RegisterClientScriptBlock(this, typeof(Page), "redirectJS", "setTimeout(function() { window.location.replace('Dashboard.aspx') }, 500);", true);
+                }               
 
             }
             catch (Exception t)
             {
                 documentsfeedback.InnerHtml = "<div class='alert alert-danger'>" + t.Message + "<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a></div>";
             }
+        }
+
+        protected void dLocation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string titem = item.SelectedValue.Trim();
+            string tdLocation = dLocation.SelectedValue.Trim();
+            if(string.IsNullOrEmpty(titem) || string.IsNullOrEmpty(tdLocation))
+            {
+                linesFeedback.InnerHtml = "<div class='alert alert-danger'>Kindly select both the item and location before proceeding.<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a></div>";
+            }
+            else
+            {
+                var request = new Config().ObjNav1().fnGetInventory(titem, tdLocation);
+                if (!string.IsNullOrEmpty(request))
+                {
+                    inventory.Text = request;
+
+                }
+            }
+            
+
         }
     }
 }

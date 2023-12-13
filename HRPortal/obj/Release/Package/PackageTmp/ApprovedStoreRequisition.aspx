@@ -32,8 +32,8 @@
                             <th>Description</th>
                             <%--<th>Requisition Product Group</th>
                             <th>Priority Level</th>--%>
-                            <th>Status</th>
-                            <th>View Approvers</th>
+                            <%--<th>Status</th>
+                            <th>View Approvers</th>--%>
                             <%--<th>Send/Cancel Approval</th>--%>
                             <th>Edit</th>
                             <%--<th>Print</th>--%>

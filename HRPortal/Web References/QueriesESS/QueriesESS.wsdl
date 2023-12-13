@@ -88,7 +88,6 @@
             <element minOccurs="1" maxOccurs="1" name="dmValueType" type="int" />
             <element minOccurs="1" maxOccurs="1" name="blocked" type="boolean" />
             <element minOccurs="1" maxOccurs="1" name="gblDmNo" type="int" />
-            <element minOccurs="1" maxOccurs="1" name="glblDmCode" type="string" />
           </sequence>
         </complexType>
       </element>
@@ -123,6 +122,35 @@
         </complexType>
       </element>
       <element name="fnGetEmployeeDetail_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnGetInventory">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="itemNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="location" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnGetInventory_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnGetItemPart">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="itemNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnGetItemPart_Result">
         <complexType>
           <sequence>
             <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
@@ -218,6 +246,21 @@
         </complexType>
       </element>
       <element name="fnImprestSurrendersLines_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnImprestSurrendersSingle">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="empNumber" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="appNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnImprestSurrendersSingle_Result">
         <complexType>
           <sequence>
             <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
@@ -367,6 +410,22 @@
           </sequence>
         </complexType>
       </element>
+      <element name="fnStaffClaimsSingle">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="empNumber" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="docType" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="appNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnStaffClaimsSingle_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
       <element name="fnStaffClaims">
         <complexType>
           <sequence>
@@ -419,6 +478,20 @@
         </complexType>
       </element>
       <element name="fnStoreRequisitions_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnUnSurrenderedImprests">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnUnSurrenderedImprests_Result">
         <complexType>
           <sequence>
             <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
@@ -510,6 +583,18 @@
   <message name="fnGetEmployeeDetail_Result">
     <part name="parameters" element="tns:fnGetEmployeeDetail_Result" />
   </message>
+  <message name="fnGetInventory">
+    <part name="parameters" element="tns:fnGetInventory" />
+  </message>
+  <message name="fnGetInventory_Result">
+    <part name="parameters" element="tns:fnGetInventory_Result" />
+  </message>
+  <message name="fnGetItemPart">
+    <part name="parameters" element="tns:fnGetItemPart" />
+  </message>
+  <message name="fnGetItemPart_Result">
+    <part name="parameters" element="tns:fnGetItemPart_Result" />
+  </message>
   <message name="fnGetItems">
     <part name="parameters" element="tns:fnGetItems" />
   </message>
@@ -551,6 +636,12 @@
   </message>
   <message name="fnImprestSurrendersLines_Result">
     <part name="parameters" element="tns:fnImprestSurrendersLines_Result" />
+  </message>
+  <message name="fnImprestSurrendersSingle">
+    <part name="parameters" element="tns:fnImprestSurrendersSingle" />
+  </message>
+  <message name="fnImprestSurrendersSingle_Result">
+    <part name="parameters" element="tns:fnImprestSurrendersSingle_Result" />
   </message>
   <message name="fnImprestSurrenders">
     <part name="parameters" element="tns:fnImprestSurrenders" />
@@ -612,6 +703,12 @@
   <message name="fnStaffClaimLines_Result">
     <part name="parameters" element="tns:fnStaffClaimLines_Result" />
   </message>
+  <message name="fnStaffClaimsSingle">
+    <part name="parameters" element="tns:fnStaffClaimsSingle" />
+  </message>
+  <message name="fnStaffClaimsSingle_Result">
+    <part name="parameters" element="tns:fnStaffClaimsSingle_Result" />
+  </message>
   <message name="fnStaffClaims">
     <part name="parameters" element="tns:fnStaffClaims" />
   </message>
@@ -635,6 +732,12 @@
   </message>
   <message name="fnStoreRequisitions_Result">
     <part name="parameters" element="tns:fnStoreRequisitions_Result" />
+  </message>
+  <message name="fnUnSurrenderedImprests">
+    <part name="parameters" element="tns:fnUnSurrenderedImprests" />
+  </message>
+  <message name="fnUnSurrenderedImprests_Result">
+    <part name="parameters" element="tns:fnUnSurrenderedImprests_Result" />
   </message>
   <message name="fntransactionCodes">
     <part name="parameters" element="tns:fntransactionCodes" />
@@ -685,6 +788,14 @@
       <input name="fnGetEmployeeDetail" message="tns:fnGetEmployeeDetail" />
       <output name="fnGetEmployeeDetail_Result" message="tns:fnGetEmployeeDetail_Result" />
     </operation>
+    <operation name="fnGetInventory">
+      <input name="fnGetInventory" message="tns:fnGetInventory" />
+      <output name="fnGetInventory_Result" message="tns:fnGetInventory_Result" />
+    </operation>
+    <operation name="fnGetItemPart">
+      <input name="fnGetItemPart" message="tns:fnGetItemPart" />
+      <output name="fnGetItemPart_Result" message="tns:fnGetItemPart_Result" />
+    </operation>
     <operation name="fnGetItems">
       <input name="fnGetItems" message="tns:fnGetItems" />
       <output name="fnGetItems_Result" message="tns:fnGetItems_Result" />
@@ -712,6 +823,10 @@
     <operation name="fnImprestSurrendersLines">
       <input name="fnImprestSurrendersLines" message="tns:fnImprestSurrendersLines" />
       <output name="fnImprestSurrendersLines_Result" message="tns:fnImprestSurrendersLines_Result" />
+    </operation>
+    <operation name="fnImprestSurrendersSingle">
+      <input name="fnImprestSurrendersSingle" message="tns:fnImprestSurrendersSingle" />
+      <output name="fnImprestSurrendersSingle_Result" message="tns:fnImprestSurrendersSingle_Result" />
     </operation>
     <operation name="fnImprestSurrenders">
       <input name="fnImprestSurrenders" message="tns:fnImprestSurrenders" />
@@ -753,6 +868,10 @@
       <input name="fnStaffClaimLines" message="tns:fnStaffClaimLines" />
       <output name="fnStaffClaimLines_Result" message="tns:fnStaffClaimLines_Result" />
     </operation>
+    <operation name="fnStaffClaimsSingle">
+      <input name="fnStaffClaimsSingle" message="tns:fnStaffClaimsSingle" />
+      <output name="fnStaffClaimsSingle_Result" message="tns:fnStaffClaimsSingle_Result" />
+    </operation>
     <operation name="fnStaffClaims">
       <input name="fnStaffClaims" message="tns:fnStaffClaims" />
       <output name="fnStaffClaims_Result" message="tns:fnStaffClaims_Result" />
@@ -768,6 +887,10 @@
     <operation name="fnStoreRequisitions">
       <input name="fnStoreRequisitions" message="tns:fnStoreRequisitions" />
       <output name="fnStoreRequisitions_Result" message="tns:fnStoreRequisitions_Result" />
+    </operation>
+    <operation name="fnUnSurrenderedImprests">
+      <input name="fnUnSurrenderedImprests" message="tns:fnUnSurrenderedImprests" />
+      <output name="fnUnSurrenderedImprests_Result" message="tns:fnUnSurrenderedImprests_Result" />
     </operation>
     <operation name="fntransactionCodes">
       <input name="fntransactionCodes" message="tns:fntransactionCodes" />
@@ -861,6 +984,24 @@
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </output>
     </operation>
+    <operation name="fnGetInventory">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnGetInventory" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnGetInventory">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnGetInventory_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnGetItemPart">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnGetItemPart" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnGetItemPart">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnGetItemPart_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
     <operation name="fnGetItems">
       <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnGetItems" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       <input name="fnGetItems">
@@ -921,6 +1062,15 @@
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </input>
       <output name="fnImprestSurrendersLines_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnImprestSurrendersSingle">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnImprestSurrendersSingle" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnImprestSurrendersSingle">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnImprestSurrendersSingle_Result">
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </output>
     </operation>
@@ -1014,6 +1164,15 @@
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </output>
     </operation>
+    <operation name="fnStaffClaimsSingle">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnStaffClaimsSingle" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnStaffClaimsSingle">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnStaffClaimsSingle_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
     <operation name="fnStaffClaims">
       <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnStaffClaims" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       <input name="fnStaffClaims">
@@ -1050,6 +1209,15 @@
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </output>
     </operation>
+    <operation name="fnUnSurrenderedImprests">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fnUnSurrenderedImprests" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnUnSurrenderedImprests">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnUnSurrenderedImprests_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
     <operation name="fntransactionCodes">
       <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/QueriesESS:fntransactionCodes" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       <input name="fntransactionCodes">
@@ -1071,7 +1239,7 @@
   </binding>
   <service name="QueriesESS">
     <port name="QueriesESS_Port" binding="tns:QueriesESS_Binding">
-      <address location="http://172.187.180.196:7047/BC220/WS/Z.Boskovic%20Air%20Charters%20Ltd/Codeunit/QueriesESS" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <address location="http://20.55.27.125:7047/BC220/WS/Z.Boskovic%20Air%20Charters%20Ltd/Codeunit/QueriesESS" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
     </port>
   </service>
 </definitions>

@@ -24,7 +24,7 @@
     %>
     <div class="panel panel-primary">
         <div class="panel-heading">
-            Imprest Memo General Details
+            Imprest Requisition General Details
             <span class="pull-right"><i class="fa fa-chevron-left"></i>Step 1 of 6 <i class="fa fa-chevron-right"></i></span><span class="clearfix"></span>
         </div>
         <div class="panel-body">
@@ -53,17 +53,14 @@
                 <div class="col-md-6 col-lg-6">
                     <div class="form-group">
                         <strong>Currency:</strong>
-                        <asp:DropDownList runat="server" ID="currCode1" CssClass="form-control select2">
-                            <asp:ListItem>--Select--</asp:ListItem>
-                            <asp:ListItem Value="KES">KES</asp:ListItem>
-                            <asp:ListItem Value="USD">USD</asp:ListItem>
-                        </asp:DropDownList>
+                        <asp:DropDownList runat="server" ID="currCode1" CssClass="form-control select2"> </asp:DropDownList>                           
+                        
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6">
                     <div class="form-group">
                         <strong>Department:</strong>
-                        <asp:DropDownList ID="dpt" runat="server" CssClass="form-control select2" OnSelectedIndexChanged="dpt_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                        <asp:DropDownList ID="dpt" runat="server" CssClass="form-control select2"></asp:DropDownList>
 
                     </div>
                 </div>
@@ -117,13 +114,14 @@
                     <asp:DropDownList runat="server" CssClass="form-control select2" ID="traveltype">
                     </asp:DropDownList>
                 </div>
-            </div>
+            </div>            
             <div class="col-md-6 col-lg-6">
                 <div class="form-group">
-                    <strong>Amount:</strong>
-                    <asp:TextBox runat="server" CssClass="form-control " ID="txtamount" TextMode="Number"/>
+                    <strong>Unit Cost:</strong>
+                    <asp:TextBox runat="server" CssClass="form-control " ID="unitCost"  TextMode="Number"/>
                 </div>
             </div>
+
             <div class="col-md-6 col-lg-6">
                 <div class="form-group">
                     <strong>Quantity:</strong>
@@ -140,6 +138,7 @@
                     <tr>
                         <th>Travel Type</th>
                         <th>Description</th>
+                        <th>Unit Cost</th>
                         <th>Quantity</th>
                         <th>Amount</th>
                         <th>Remove</th>
@@ -161,11 +160,10 @@
 
                     %>
                     <tr>
-                        <%--                        <td><% =line.Procurement_Plan_ID %></td>
-                        <td><% =line.Procurement_Plan_Entry_No %></td>--%>
-                        <%-- <td><% =line.ProcurementPlanDescription %></td>--%>
+                        
                         <td><% =arr[4] %></td>
                         <td><% =arr[2] %></td>
+                        <td><% =arr[5] %></td>
                         <td><% = arr[1] %></td>                        
                         <td><%=String.Format("{0:n}", Convert.ToDouble(arr[3])) %></td>
 

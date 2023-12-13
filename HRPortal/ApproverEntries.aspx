@@ -19,8 +19,8 @@
                             <tr>
                                 <th>Sequence No.</th>
                                 <th>Status</th>
-                                <th>Sender Id</th>
-                                <th>Approver Id</th>
+                                <th>Sender </th>
+                                <th>Approver </th>
                                 <th>Amount</th>
                                 <th>Due Date(dd/mm/yyyy)</th>
                                 <th>Date Sent for Approval(dd/mm/yyyy)</th>                                
@@ -43,8 +43,8 @@
                                     <td><%=arr[0]%></td>
                                 <td><%=arr[1]%></td>
                                 <td><%=arr[2]%></td>
-                                <td><%=arr[3]%></td>
-                                <td><%=arr[4]%></td> 
+                                <td><%=arr[8]%></td>
+                                <td><%=arr[3]%></td>                                 
                                 <td><%=Convert.ToDateTime(arr[5]).ToString("dd/MM/yyyy")%></td>
                                     <td><%=Convert.ToDateTime(arr[6]).ToString("dd/MM/yyyy")%></td>
                                
@@ -63,7 +63,7 @@
                                     {
 
                                            %>
-                                     <label class="btn btn-warning"('<%=arr[8] %>');"><i class="fa fa-times"></i> No Comment</label>
+                                     <label class="btn btn-warning"('<%=arr[7] %>');"><i class="fa fa-times"></i> No Comment</label>
                         
                                     <% 
                                     } %>                                              

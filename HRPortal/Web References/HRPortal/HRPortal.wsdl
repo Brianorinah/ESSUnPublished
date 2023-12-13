@@ -98,6 +98,81 @@
           </sequence>
         </complexType>
       </element>
+      <element name="cancelImprestRequisitionApproval">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="cancelImprestRequisitionApproval_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="cancelPurchaseRequisitionApproval">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="cancelPurchaseRequisitionApproval_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="cancelStaffRequisitionApproval">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="cancelStaffRequisitionApproval_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="cancelStoreRequisitionApproval">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="cancelStoreRequisitionApproval_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="cancelSurrenderRequisitionApproval">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="cancelSurrenderRequisitionApproval_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
       <element name="changePassword">
         <complexType>
           <sequence>
@@ -159,7 +234,7 @@
           <sequence>
             <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
             <element minOccurs="1" maxOccurs="1" name="transactionType" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="amount" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="unitCost" type="decimal" />
             <element minOccurs="1" maxOccurs="1" name="quantity" type="decimal" />
           </sequence>
         </complexType>
@@ -280,7 +355,7 @@
             <element minOccurs="1" maxOccurs="1" name="quantity" type="int" />
             <element minOccurs="1" maxOccurs="1" name="deliveryLocation" type="string" />
             <element minOccurs="1" maxOccurs="1" name="item" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="amount" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="unitCost" type="decimal" />
           </sequence>
         </complexType>
       </element>
@@ -300,7 +375,7 @@
             <element minOccurs="1" maxOccurs="1" name="department" type="string" />
             <element minOccurs="1" maxOccurs="1" name="busnCode" type="string" />
             <element minOccurs="1" maxOccurs="1" name="airplaneCode" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="vehicleCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="projectCode" type="string" />
             <element minOccurs="1" maxOccurs="1" name="curr" type="string" />
             <element minOccurs="1" maxOccurs="1" name="trcptDate" type="date" />
           </sequence>
@@ -333,7 +408,6 @@
         <complexType>
           <sequence>
             <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="description" type="string" />
             <element minOccurs="1" maxOccurs="1" name="amount" type="decimal" />
             <element minOccurs="1" maxOccurs="1" name="transType" type="string" />
           </sequence>
@@ -353,6 +427,7 @@
             <element minOccurs="1" maxOccurs="1" name="description" type="string" />
             <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
             <element minOccurs="1" maxOccurs="1" name="docType" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="curr" type="string" />
           </sequence>
         </complexType>
       </element>
@@ -437,10 +512,8 @@
         <complexType>
           <sequence>
             <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="description" type="string" />
-            <element minOccurs="1" maxOccurs="1" name="amountAdvanced" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="lineNo" type="int" />
             <element minOccurs="1" maxOccurs="1" name="actualSpent" type="decimal" />
-            <element minOccurs="1" maxOccurs="1" name="receiptNo" type="string" />
           </sequence>
         </complexType>
       </element>
@@ -586,6 +659,81 @@
           </sequence>
         </complexType>
       </element>
+      <element name="sendImprestRequisitionApproval">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="sendImprestRequisitionApproval_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="sendPurchaseRequisitionApproval">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="sendPurchaseRequisitionApproval_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="sendStaffRequisitionApproval">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="sendStaffRequisitionApproval_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="sendStoreRequisitionApproval">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="sendStoreRequisitionApproval_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="sendSurrenderRequisitionApproval">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="requisitionNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="sendSurrenderRequisitionApproval_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
     </schema>
   </types>
   <message name="DeleteImprestDocumentLink">
@@ -623,6 +771,36 @@
   </message>
   <message name="DeleteSurrenderDocumentLink_Result">
     <part name="parameters" element="tns:DeleteSurrenderDocumentLink_Result" />
+  </message>
+  <message name="cancelImprestRequisitionApproval">
+    <part name="parameters" element="tns:cancelImprestRequisitionApproval" />
+  </message>
+  <message name="cancelImprestRequisitionApproval_Result">
+    <part name="parameters" element="tns:cancelImprestRequisitionApproval_Result" />
+  </message>
+  <message name="cancelPurchaseRequisitionApproval">
+    <part name="parameters" element="tns:cancelPurchaseRequisitionApproval" />
+  </message>
+  <message name="cancelPurchaseRequisitionApproval_Result">
+    <part name="parameters" element="tns:cancelPurchaseRequisitionApproval_Result" />
+  </message>
+  <message name="cancelStaffRequisitionApproval">
+    <part name="parameters" element="tns:cancelStaffRequisitionApproval" />
+  </message>
+  <message name="cancelStaffRequisitionApproval_Result">
+    <part name="parameters" element="tns:cancelStaffRequisitionApproval_Result" />
+  </message>
+  <message name="cancelStoreRequisitionApproval">
+    <part name="parameters" element="tns:cancelStoreRequisitionApproval" />
+  </message>
+  <message name="cancelStoreRequisitionApproval_Result">
+    <part name="parameters" element="tns:cancelStoreRequisitionApproval_Result" />
+  </message>
+  <message name="cancelSurrenderRequisitionApproval">
+    <part name="parameters" element="tns:cancelSurrenderRequisitionApproval" />
+  </message>
+  <message name="cancelSurrenderRequisitionApproval_Result">
+    <part name="parameters" element="tns:cancelSurrenderRequisitionApproval_Result" />
   </message>
   <message name="changePassword">
     <part name="parameters" element="tns:changePassword" />
@@ -798,6 +976,36 @@
   <message name="resetPassword_Result">
     <part name="parameters" element="tns:resetPassword_Result" />
   </message>
+  <message name="sendImprestRequisitionApproval">
+    <part name="parameters" element="tns:sendImprestRequisitionApproval" />
+  </message>
+  <message name="sendImprestRequisitionApproval_Result">
+    <part name="parameters" element="tns:sendImprestRequisitionApproval_Result" />
+  </message>
+  <message name="sendPurchaseRequisitionApproval">
+    <part name="parameters" element="tns:sendPurchaseRequisitionApproval" />
+  </message>
+  <message name="sendPurchaseRequisitionApproval_Result">
+    <part name="parameters" element="tns:sendPurchaseRequisitionApproval_Result" />
+  </message>
+  <message name="sendStaffRequisitionApproval">
+    <part name="parameters" element="tns:sendStaffRequisitionApproval" />
+  </message>
+  <message name="sendStaffRequisitionApproval_Result">
+    <part name="parameters" element="tns:sendStaffRequisitionApproval_Result" />
+  </message>
+  <message name="sendStoreRequisitionApproval">
+    <part name="parameters" element="tns:sendStoreRequisitionApproval" />
+  </message>
+  <message name="sendStoreRequisitionApproval_Result">
+    <part name="parameters" element="tns:sendStoreRequisitionApproval_Result" />
+  </message>
+  <message name="sendSurrenderRequisitionApproval">
+    <part name="parameters" element="tns:sendSurrenderRequisitionApproval" />
+  </message>
+  <message name="sendSurrenderRequisitionApproval_Result">
+    <part name="parameters" element="tns:sendSurrenderRequisitionApproval_Result" />
+  </message>
   <portType name="HRPortal_Port">
     <operation name="DeleteImprestDocumentLink">
       <input name="DeleteImprestDocumentLink" message="tns:DeleteImprestDocumentLink" />
@@ -822,6 +1030,26 @@
     <operation name="DeleteSurrenderDocumentLink">
       <input name="DeleteSurrenderDocumentLink" message="tns:DeleteSurrenderDocumentLink" />
       <output name="DeleteSurrenderDocumentLink_Result" message="tns:DeleteSurrenderDocumentLink_Result" />
+    </operation>
+    <operation name="cancelImprestRequisitionApproval">
+      <input name="cancelImprestRequisitionApproval" message="tns:cancelImprestRequisitionApproval" />
+      <output name="cancelImprestRequisitionApproval_Result" message="tns:cancelImprestRequisitionApproval_Result" />
+    </operation>
+    <operation name="cancelPurchaseRequisitionApproval">
+      <input name="cancelPurchaseRequisitionApproval" message="tns:cancelPurchaseRequisitionApproval" />
+      <output name="cancelPurchaseRequisitionApproval_Result" message="tns:cancelPurchaseRequisitionApproval_Result" />
+    </operation>
+    <operation name="cancelStaffRequisitionApproval">
+      <input name="cancelStaffRequisitionApproval" message="tns:cancelStaffRequisitionApproval" />
+      <output name="cancelStaffRequisitionApproval_Result" message="tns:cancelStaffRequisitionApproval_Result" />
+    </operation>
+    <operation name="cancelStoreRequisitionApproval">
+      <input name="cancelStoreRequisitionApproval" message="tns:cancelStoreRequisitionApproval" />
+      <output name="cancelStoreRequisitionApproval_Result" message="tns:cancelStoreRequisitionApproval_Result" />
+    </operation>
+    <operation name="cancelSurrenderRequisitionApproval">
+      <input name="cancelSurrenderRequisitionApproval" message="tns:cancelSurrenderRequisitionApproval" />
+      <output name="cancelSurrenderRequisitionApproval_Result" message="tns:cancelSurrenderRequisitionApproval_Result" />
     </operation>
     <operation name="changePassword">
       <input name="changePassword" message="tns:changePassword" />
@@ -939,6 +1167,26 @@
       <input name="resetPassword" message="tns:resetPassword" />
       <output name="resetPassword_Result" message="tns:resetPassword_Result" />
     </operation>
+    <operation name="sendImprestRequisitionApproval">
+      <input name="sendImprestRequisitionApproval" message="tns:sendImprestRequisitionApproval" />
+      <output name="sendImprestRequisitionApproval_Result" message="tns:sendImprestRequisitionApproval_Result" />
+    </operation>
+    <operation name="sendPurchaseRequisitionApproval">
+      <input name="sendPurchaseRequisitionApproval" message="tns:sendPurchaseRequisitionApproval" />
+      <output name="sendPurchaseRequisitionApproval_Result" message="tns:sendPurchaseRequisitionApproval_Result" />
+    </operation>
+    <operation name="sendStaffRequisitionApproval">
+      <input name="sendStaffRequisitionApproval" message="tns:sendStaffRequisitionApproval" />
+      <output name="sendStaffRequisitionApproval_Result" message="tns:sendStaffRequisitionApproval_Result" />
+    </operation>
+    <operation name="sendStoreRequisitionApproval">
+      <input name="sendStoreRequisitionApproval" message="tns:sendStoreRequisitionApproval" />
+      <output name="sendStoreRequisitionApproval_Result" message="tns:sendStoreRequisitionApproval_Result" />
+    </operation>
+    <operation name="sendSurrenderRequisitionApproval">
+      <input name="sendSurrenderRequisitionApproval" message="tns:sendSurrenderRequisitionApproval" />
+      <output name="sendSurrenderRequisitionApproval_Result" message="tns:sendSurrenderRequisitionApproval_Result" />
+    </operation>
   </portType>
   <binding name="HRPortal_Binding" type="tns:HRPortal_Port">
     <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
@@ -993,6 +1241,51 @@
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </input>
       <output name="DeleteSurrenderDocumentLink_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="cancelImprestRequisitionApproval">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:cancelImprestRequisitionApproval" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="cancelImprestRequisitionApproval">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="cancelImprestRequisitionApproval_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="cancelPurchaseRequisitionApproval">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:cancelPurchaseRequisitionApproval" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="cancelPurchaseRequisitionApproval">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="cancelPurchaseRequisitionApproval_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="cancelStaffRequisitionApproval">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:cancelStaffRequisitionApproval" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="cancelStaffRequisitionApproval">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="cancelStaffRequisitionApproval_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="cancelStoreRequisitionApproval">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:cancelStoreRequisitionApproval" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="cancelStoreRequisitionApproval">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="cancelStoreRequisitionApproval_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="cancelSurrenderRequisitionApproval">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:cancelSurrenderRequisitionApproval" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="cancelSurrenderRequisitionApproval">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="cancelSurrenderRequisitionApproval_Result">
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </output>
     </operation>
@@ -1257,10 +1550,55 @@
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </output>
     </operation>
+    <operation name="sendImprestRequisitionApproval">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:sendImprestRequisitionApproval" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="sendImprestRequisitionApproval">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="sendImprestRequisitionApproval_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="sendPurchaseRequisitionApproval">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:sendPurchaseRequisitionApproval" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="sendPurchaseRequisitionApproval">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="sendPurchaseRequisitionApproval_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="sendStaffRequisitionApproval">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:sendStaffRequisitionApproval" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="sendStaffRequisitionApproval">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="sendStaffRequisitionApproval_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="sendStoreRequisitionApproval">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:sendStoreRequisitionApproval" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="sendStoreRequisitionApproval">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="sendStoreRequisitionApproval_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="sendSurrenderRequisitionApproval">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:sendSurrenderRequisitionApproval" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="sendSurrenderRequisitionApproval">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="sendSurrenderRequisitionApproval_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
   </binding>
   <service name="HRPortal">
     <port name="HRPortal_Port" binding="tns:HRPortal_Binding">
-      <address location="http://172.187.180.196:7047/BC220/WS/Z.Boskovic%20Air%20Charters%20Ltd/Codeunit/HRPortal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <address location="http://20.55.27.125:7047/BC220/WS/Z.Boskovic%20Air%20Charters%20Ltd/Codeunit/HRPortal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
     </port>
   </service>
 </definitions>

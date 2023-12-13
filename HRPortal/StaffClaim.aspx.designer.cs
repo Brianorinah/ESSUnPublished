@@ -58,15 +58,6 @@ namespace HRPortal {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl linesFeedback;
         
         /// <summary>
-        /// amnt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox amnt;
-        
-        /// <summary>
         /// staffClaimCode control.
         /// </summary>
         /// <remarks>
@@ -74,6 +65,15 @@ namespace HRPortal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList staffClaimCode;
+        
+        /// <summary>
+        /// amnt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox amnt;
         
         /// <summary>
         /// addItem control.

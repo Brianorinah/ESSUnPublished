@@ -35,10 +35,10 @@
             <div class="row">
                 <div class="col-md-6 col-lg-6">
                     <div class="form-group">
-                        <strong>Department:</strong>
-                        <asp:DropDownList ID="dpt" runat="server" CssClass="form-control select2" OnSelectedIndexChanged="dpt_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                        <strong>Description:</strong>
+                        <asp:TextBox runat="server" ID="description" CssClass="form-control" placeholder="Description" />
                     </div>
-                </div>
+                </div>                
 
                 <div class="col-md-6 col-lg-6">
                     <div class="form-group">
@@ -59,6 +59,16 @@
 
                     </div>
                 </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <strong>Department:</strong>
+                        <asp:DropDownList ID="dpt" runat="server" CssClass="form-control select2"></asp:DropDownList>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="row">
                 <div class="col-md-6 col-lg-6" runat="server" id="vehicle">
                     <div class="form-group">
                         <strong>Project :</strong>
@@ -66,21 +76,13 @@
 
                     </div>
                 </div>
-            </div>
-
-            <div class="row">
                 <div class="col-md-6 col-lg-6">
                     <div class="form-group">
                         <strong>Date Required:</strong>
                         <asp:TextBox runat="server" ID="dateRequired" CssClass="form-control" placeholder="Date Required" TextMode="Date" />
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-6">
-                    <div class="form-group">
-                        <strong>Description:</strong>
-                        <asp:TextBox runat="server" ID="description" CssClass="form-control" placeholder="Description" />
-                    </div>
-                </div>
+                
             </div>
             <div class="row">
             </div>
@@ -107,16 +109,22 @@
                 <div class="form-group">
                     <strong>Item:</strong>
                     <asp:DropDownList runat="server" ID="item" CssClass="form-control select2">
+                        <asp:ListItem>--Select--</asp:ListItem>                        
+                    </asp:DropDownList>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <div class="form-group">
+                    <strong>Inventory Location:</strong>
+                    <asp:DropDownList runat="server" ID="dLocation" CssClass="form-control select2" AutoPostBack="True" OnSelectedIndexChanged="dLocation_SelectedIndexChanged">
                         <asp:ListItem>--Select--</asp:ListItem>
                     </asp:DropDownList>
                 </div>
             </div>
             <div class="col-lg-6 col-sm-6">
                 <div class="form-group">
-                    <strong>Delivery Location:</strong>
-                    <asp:DropDownList runat="server" ID="dLocation" CssClass="form-control select2" AppendDataBoundItems="true">
-                        <asp:ListItem>--Select--</asp:ListItem>
-                    </asp:DropDownList>
+                    <strong>Inventory:</strong>
+                    <asp:TextBox runat="server" ID="inventory" CssClass="form-control" placeholder="" ReadOnly />
                 </div>
             </div>
             <div class="col-lg-6 col-sm-6">

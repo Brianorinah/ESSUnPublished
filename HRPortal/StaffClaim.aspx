@@ -36,11 +36,7 @@
                 <div class="col-md-6 col-lg-6">
                     <div class="form-group">
                         <strong>Currency:</strong>
-                        <asp:DropDownList runat="server" ID="currCode1" CssClass="form-control select2">
-                            <asp:ListItem>--Select--</asp:ListItem>
-                            <asp:ListItem Value="KES">KES</asp:ListItem>
-                            <asp:ListItem Value="USD">USD</asp:ListItem>
-                        </asp:DropDownList>
+                         <asp:DropDownList runat="server" ID="currCode1" CssClass="form-control select2"> </asp:DropDownList>                           
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6">
@@ -70,13 +66,7 @@
              <span class="pull-right"><i class="fa fa-chevron-left"></i>Step 2 of 3 <i class="fa fa-chevron-right"></i></span><span class="clearfix"></span>
         </div>
         <div class="panel-body">
-            <div runat="server" id="linesFeedback"></div>            
-            <div class="col-lg-6 col-sm-6">
-                <div class="form-group">
-                    <strong>Amount:</strong>
-                    <asp:TextBox runat="server" ID="amnt" CssClass="form-control" placeholder="Direct Unit Cost" TextMode="Number" />
-                </div>
-            </div> 
+            <div runat="server" id="linesFeedback"></div>   
             <div class="col-lg-6 col-sm-6">
                 <div class="form-group">
                     <strong>Staff Claim Code:</strong>
@@ -84,7 +74,14 @@
                         <asp:ListItem>--Select--</asp:ListItem>
                     </asp:DropDownList>
                 </div>
-            </div>                          
+            </div>           
+            <div class="col-lg-6 col-sm-6">
+                <div class="form-group">
+                    <strong>Amount:</strong>
+                    <asp:TextBox runat="server" ID="amnt" CssClass="form-control" placeholder="Staff Claim Amount" TextMode="Number" />
+                </div>
+            </div> 
+                                    
             <div class="col-lg-6 col-sm-6">
                 <div class="form-group">
                     <br />
@@ -93,14 +90,9 @@
             </div>
             <table class="table table-bordered table-striped">
                 <thead>
-                    <tr>
-                        <%--                        <th>Procurement Plan Id</th>
-                        <th>Procurement Plan Entry No</th>--%>
-                        <%-- <th>Procurement Plan descricption</th>--%>                        
-                        <th>Item </th>
-                        <th>Delivery Location </th>
-                        <th>Quantity Requested </th>                        
-                        <th>Unit Cost</th>
+                    <tr>                                               
+                        <th>Staff Claim Code </th>                                              
+                        <th>Amount</th>
                         <th>Remove </th>
                     </tr>
                 </thead>
@@ -108,7 +100,7 @@
                     <%
                         String requisitionNo = Request.QueryString["docNo"];
                         var nav = new Config().ObjNav1();
-                        var result = nav.fnStoreRequisitionLines(requisitionNo);
+                        var result = nav.fnStaffClaimLines(requisitionNo);
                         String[] info = result.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries);
                         if (info.Count() > 0)
                         {
@@ -123,13 +115,11 @@
                         <%--                        <td><% =line.Procurement_Plan_ID %></td>
                         <td><% =line.Procurement_Plan_Entry_No %></td>--%>
                         <%-- <td><% =line.ProcurementPlanDescription %></td>--%>
-                        <td><% =arr[3] %></td>
-                        <td><% =arr[4] %></td>
-                        <td><% = arr[2] %></td>                        
-                        <td><%=String.Format("{0:n}", Convert.ToDouble(arr[5])) %></td>
+                        <td><% =arr[1] %></td>                                            
+                        <td><%=String.Format("{0:n}", Convert.ToDouble(arr[2])) %></td>
 
                         <td>
-                            <label class="btn btn-danger" onclick="removeLine('<% =arr[3] %>','<%=arr[0] %>');"><i class="fa fa-trash"></i>Delete</label></td>
+                            <label class="btn btn-danger" onclick="removeLine('<% =arr[1] %>','<%=arr[0] %>');"><i class="fa fa-trash"></i>Delete</label></td>
                     </tr>
                     <% 
                             }
@@ -186,7 +176,7 @@
                         try
                         {
                             String fileFolderApplication = ConfigurationManager.AppSettings["FileFolderApplication"];
-                            String filesFolder = ConfigurationManager.AppSettings["FilesLocation"] + "StoreRequisition/";
+                            String filesFolder = ConfigurationManager.AppSettings["FilesLocation"] + "StaffClaim/";
                             String imprestNo = Request.QueryString["docNo"];
                             //imprestNo = imprestNo.Replace('/', '_');
                             //imprestNo = imprestNo.Replace(':', '_');

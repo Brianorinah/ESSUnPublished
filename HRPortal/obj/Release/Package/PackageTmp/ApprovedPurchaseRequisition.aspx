@@ -29,9 +29,7 @@
                             <th>#</th>
                             <th>Requisition No</th>
                             <th>Description</th>                            
-                            <th>Status</th>
-                            <th>View Approvers</th>                            
-                            <th>Edit</th>
+                            <th>Status</th>                            
                             <th>Amount</th>
                         </tr>
                     </thead>

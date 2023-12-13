@@ -15,7 +15,7 @@
         String employeeNo = Convert.ToString(Session["employeeNo"]);
         //string tstatus = 
 
-        var allImprestsUnsurrendered = new Config().ObjNav1().fnOpenImprests(employeeNo);
+        var allImprestsUnsurrendered = new Config().ObjNav1().fnUnSurrenderedImprests(employeeNo);
         decimal unSurrCount = 0;
         string[] info2 = allImprestsUnsurrendered.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries);
         if (info2.Count() > 0)
@@ -23,7 +23,7 @@
             foreach (var allInfo in info2)
             {
                 String[] arr = allInfo.Split('*');
-                unSurrCount = unSurrCount + Convert.ToDecimal(arr[2]);
+                unSurrCount = unSurrCount + Convert.ToDecimal(arr[3]);
             }
         }
 
@@ -73,7 +73,7 @@
                                         </tr>
                                         <tr>
                                             <td style="font-weight: bold">Unsurrendered Imprest Amount:</td>
-                                            <td><%= unSurrCount %> </td>
+                                            <td>Kshs. <%= unSurrCount %> </td>
                                         </tr>
 
 
@@ -151,7 +151,7 @@
                             </div>
                         </div>
                         <!-- ./col -->
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <%--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <!-- small box -->
                             <div class="small-box bg-red">
                                 <div class="inner">
@@ -165,12 +165,10 @@
 
                                     <p>Petty cash</p>
                                 </div>
-                                <%--            <div class="icon">
-              <i class="fa fa-money"></i>
-            </div>--%>
+                              
                                 <a href="PettyCashApproved.aspx" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
-                        </div>
+                        </div>--%>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <!-- small box -->
                             <div class="small-box bg-aqua">

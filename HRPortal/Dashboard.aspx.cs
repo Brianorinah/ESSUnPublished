@@ -16,7 +16,7 @@ namespace HRPortal
             if (Session["employeeNo"] == null)
             {
 
-                //Response.Redirect("Login.aspx");
+                Response.Redirect("Login.aspx");
             }
             else
             {

@@ -22,13 +22,13 @@ namespace HRPortal {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl generalFeedback;
         
         /// <summary>
-        /// dpt control.
+        /// description control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpt;
+        protected global::System.Web.UI.WebControls.TextBox description;
         
         /// <summary>
         /// bsnCode control.
@@ -58,6 +58,15 @@ namespace HRPortal {
         protected global::System.Web.UI.WebControls.DropDownList airCraftCode;
         
         /// <summary>
+        /// dpt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dpt;
+        
+        /// <summary>
         /// vehicle control.
         /// </summary>
         /// <remarks>
@@ -83,15 +92,6 @@ namespace HRPortal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox dateRequired;
-        
-        /// <summary>
-        /// description control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox description;
         
         /// <summary>
         /// next control.
@@ -128,6 +128,15 @@ namespace HRPortal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dLocation;
+        
+        /// <summary>
+        /// inventory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox inventory;
         
         /// <summary>
         /// quantityRequested control.

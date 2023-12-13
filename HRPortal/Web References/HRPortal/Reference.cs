@@ -41,6 +41,16 @@ namespace HRPortal.HRPortal {
         
         private System.Threading.SendOrPostCallback DeleteSurrenderDocumentLinkOperationCompleted;
         
+        private System.Threading.SendOrPostCallback cancelImprestRequisitionApprovalOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback cancelPurchaseRequisitionApprovalOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback cancelStaffRequisitionApprovalOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback cancelStoreRequisitionApprovalOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback cancelSurrenderRequisitionApprovalOperationCompleted;
+        
         private System.Threading.SendOrPostCallback changePasswordOperationCompleted;
         
         private System.Threading.SendOrPostCallback createImprestDocumentLinkOperationCompleted;
@@ -99,6 +109,16 @@ namespace HRPortal.HRPortal {
         
         private System.Threading.SendOrPostCallback resetPasswordOperationCompleted;
         
+        private System.Threading.SendOrPostCallback sendImprestRequisitionApprovalOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback sendPurchaseRequisitionApprovalOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback sendStaffRequisitionApprovalOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback sendStoreRequisitionApprovalOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback sendSurrenderRequisitionApprovalOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -154,6 +174,21 @@ namespace HRPortal.HRPortal {
         
         /// <remarks/>
         public event DeleteSurrenderDocumentLinkCompletedEventHandler DeleteSurrenderDocumentLinkCompleted;
+        
+        /// <remarks/>
+        public event cancelImprestRequisitionApprovalCompletedEventHandler cancelImprestRequisitionApprovalCompleted;
+        
+        /// <remarks/>
+        public event cancelPurchaseRequisitionApprovalCompletedEventHandler cancelPurchaseRequisitionApprovalCompleted;
+        
+        /// <remarks/>
+        public event cancelStaffRequisitionApprovalCompletedEventHandler cancelStaffRequisitionApprovalCompleted;
+        
+        /// <remarks/>
+        public event cancelStoreRequisitionApprovalCompletedEventHandler cancelStoreRequisitionApprovalCompleted;
+        
+        /// <remarks/>
+        public event cancelSurrenderRequisitionApprovalCompletedEventHandler cancelSurrenderRequisitionApprovalCompleted;
         
         /// <remarks/>
         public event changePasswordCompletedEventHandler changePasswordCompleted;
@@ -241,6 +276,21 @@ namespace HRPortal.HRPortal {
         
         /// <remarks/>
         public event resetPasswordCompletedEventHandler resetPasswordCompleted;
+        
+        /// <remarks/>
+        public event sendImprestRequisitionApprovalCompletedEventHandler sendImprestRequisitionApprovalCompleted;
+        
+        /// <remarks/>
+        public event sendPurchaseRequisitionApprovalCompletedEventHandler sendPurchaseRequisitionApprovalCompleted;
+        
+        /// <remarks/>
+        public event sendStaffRequisitionApprovalCompletedEventHandler sendStaffRequisitionApprovalCompleted;
+        
+        /// <remarks/>
+        public event sendStoreRequisitionApprovalCompletedEventHandler sendStoreRequisitionApprovalCompleted;
+        
+        /// <remarks/>
+        public event sendSurrenderRequisitionApprovalCompletedEventHandler sendSurrenderRequisitionApprovalCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/HRPortal:DeleteImprestDocumentLink", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", ResponseElementName="DeleteImprestDocumentLink_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -447,6 +497,169 @@ namespace HRPortal.HRPortal {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/HRPortal:cancelImprestRequisitionApproval" +
+            "", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", ResponseElementName="cancelImprestRequisitionApproval_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string cancelImprestRequisitionApproval(string requisitionNo, string employeeNo) {
+            object[] results = this.Invoke("cancelImprestRequisitionApproval", new object[] {
+                        requisitionNo,
+                        employeeNo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void cancelImprestRequisitionApprovalAsync(string requisitionNo, string employeeNo) {
+            this.cancelImprestRequisitionApprovalAsync(requisitionNo, employeeNo, null);
+        }
+        
+        /// <remarks/>
+        public void cancelImprestRequisitionApprovalAsync(string requisitionNo, string employeeNo, object userState) {
+            if ((this.cancelImprestRequisitionApprovalOperationCompleted == null)) {
+                this.cancelImprestRequisitionApprovalOperationCompleted = new System.Threading.SendOrPostCallback(this.OncancelImprestRequisitionApprovalOperationCompleted);
+            }
+            this.InvokeAsync("cancelImprestRequisitionApproval", new object[] {
+                        requisitionNo,
+                        employeeNo}, this.cancelImprestRequisitionApprovalOperationCompleted, userState);
+        }
+        
+        private void OncancelImprestRequisitionApprovalOperationCompleted(object arg) {
+            if ((this.cancelImprestRequisitionApprovalCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.cancelImprestRequisitionApprovalCompleted(this, new cancelImprestRequisitionApprovalCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/HRPortal:cancelPurchaseRequisitionApprova" +
+            "l", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", ResponseElementName="cancelPurchaseRequisitionApproval_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string cancelPurchaseRequisitionApproval(string requisitionNo, string employeeNo) {
+            object[] results = this.Invoke("cancelPurchaseRequisitionApproval", new object[] {
+                        requisitionNo,
+                        employeeNo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void cancelPurchaseRequisitionApprovalAsync(string requisitionNo, string employeeNo) {
+            this.cancelPurchaseRequisitionApprovalAsync(requisitionNo, employeeNo, null);
+        }
+        
+        /// <remarks/>
+        public void cancelPurchaseRequisitionApprovalAsync(string requisitionNo, string employeeNo, object userState) {
+            if ((this.cancelPurchaseRequisitionApprovalOperationCompleted == null)) {
+                this.cancelPurchaseRequisitionApprovalOperationCompleted = new System.Threading.SendOrPostCallback(this.OncancelPurchaseRequisitionApprovalOperationCompleted);
+            }
+            this.InvokeAsync("cancelPurchaseRequisitionApproval", new object[] {
+                        requisitionNo,
+                        employeeNo}, this.cancelPurchaseRequisitionApprovalOperationCompleted, userState);
+        }
+        
+        private void OncancelPurchaseRequisitionApprovalOperationCompleted(object arg) {
+            if ((this.cancelPurchaseRequisitionApprovalCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.cancelPurchaseRequisitionApprovalCompleted(this, new cancelPurchaseRequisitionApprovalCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/HRPortal:cancelStaffRequisitionApproval", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", ResponseElementName="cancelStaffRequisitionApproval_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string cancelStaffRequisitionApproval(string requisitionNo, string employeeNo) {
+            object[] results = this.Invoke("cancelStaffRequisitionApproval", new object[] {
+                        requisitionNo,
+                        employeeNo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void cancelStaffRequisitionApprovalAsync(string requisitionNo, string employeeNo) {
+            this.cancelStaffRequisitionApprovalAsync(requisitionNo, employeeNo, null);
+        }
+        
+        /// <remarks/>
+        public void cancelStaffRequisitionApprovalAsync(string requisitionNo, string employeeNo, object userState) {
+            if ((this.cancelStaffRequisitionApprovalOperationCompleted == null)) {
+                this.cancelStaffRequisitionApprovalOperationCompleted = new System.Threading.SendOrPostCallback(this.OncancelStaffRequisitionApprovalOperationCompleted);
+            }
+            this.InvokeAsync("cancelStaffRequisitionApproval", new object[] {
+                        requisitionNo,
+                        employeeNo}, this.cancelStaffRequisitionApprovalOperationCompleted, userState);
+        }
+        
+        private void OncancelStaffRequisitionApprovalOperationCompleted(object arg) {
+            if ((this.cancelStaffRequisitionApprovalCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.cancelStaffRequisitionApprovalCompleted(this, new cancelStaffRequisitionApprovalCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/HRPortal:cancelStoreRequisitionApproval", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", ResponseElementName="cancelStoreRequisitionApproval_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string cancelStoreRequisitionApproval(string requisitionNo, string employeeNo) {
+            object[] results = this.Invoke("cancelStoreRequisitionApproval", new object[] {
+                        requisitionNo,
+                        employeeNo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void cancelStoreRequisitionApprovalAsync(string requisitionNo, string employeeNo) {
+            this.cancelStoreRequisitionApprovalAsync(requisitionNo, employeeNo, null);
+        }
+        
+        /// <remarks/>
+        public void cancelStoreRequisitionApprovalAsync(string requisitionNo, string employeeNo, object userState) {
+            if ((this.cancelStoreRequisitionApprovalOperationCompleted == null)) {
+                this.cancelStoreRequisitionApprovalOperationCompleted = new System.Threading.SendOrPostCallback(this.OncancelStoreRequisitionApprovalOperationCompleted);
+            }
+            this.InvokeAsync("cancelStoreRequisitionApproval", new object[] {
+                        requisitionNo,
+                        employeeNo}, this.cancelStoreRequisitionApprovalOperationCompleted, userState);
+        }
+        
+        private void OncancelStoreRequisitionApprovalOperationCompleted(object arg) {
+            if ((this.cancelStoreRequisitionApprovalCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.cancelStoreRequisitionApprovalCompleted(this, new cancelStoreRequisitionApprovalCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/HRPortal:cancelSurrenderRequisitionApprov" +
+            "al", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", ResponseElementName="cancelSurrenderRequisitionApproval_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string cancelSurrenderRequisitionApproval(string requisitionNo, string employeeNo) {
+            object[] results = this.Invoke("cancelSurrenderRequisitionApproval", new object[] {
+                        requisitionNo,
+                        employeeNo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void cancelSurrenderRequisitionApprovalAsync(string requisitionNo, string employeeNo) {
+            this.cancelSurrenderRequisitionApprovalAsync(requisitionNo, employeeNo, null);
+        }
+        
+        /// <remarks/>
+        public void cancelSurrenderRequisitionApprovalAsync(string requisitionNo, string employeeNo, object userState) {
+            if ((this.cancelSurrenderRequisitionApprovalOperationCompleted == null)) {
+                this.cancelSurrenderRequisitionApprovalOperationCompleted = new System.Threading.SendOrPostCallback(this.OncancelSurrenderRequisitionApprovalOperationCompleted);
+            }
+            this.InvokeAsync("cancelSurrenderRequisitionApproval", new object[] {
+                        requisitionNo,
+                        employeeNo}, this.cancelSurrenderRequisitionApprovalOperationCompleted, userState);
+        }
+        
+        private void OncancelSurrenderRequisitionApprovalOperationCompleted(object arg) {
+            if ((this.cancelSurrenderRequisitionApprovalCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.cancelSurrenderRequisitionApprovalCompleted(this, new cancelSurrenderRequisitionApprovalCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/HRPortal:changePassword", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", ResponseElementName="changePassword_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
         public string changePassword(string employeeNo, string currentPassword, string newPassword, string confirmPassword) {
@@ -567,29 +780,29 @@ namespace HRPortal.HRPortal {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/HRPortal:createImprestLine", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", ResponseElementName="createImprestLine_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
-        public string createImprestLine(string requisitionNo, string transactionType, decimal amount, decimal quantity) {
+        public string createImprestLine(string requisitionNo, string transactionType, decimal unitCost, decimal quantity) {
             object[] results = this.Invoke("createImprestLine", new object[] {
                         requisitionNo,
                         transactionType,
-                        amount,
+                        unitCost,
                         quantity});
             return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void createImprestLineAsync(string requisitionNo, string transactionType, decimal amount, decimal quantity) {
-            this.createImprestLineAsync(requisitionNo, transactionType, amount, quantity, null);
+        public void createImprestLineAsync(string requisitionNo, string transactionType, decimal unitCost, decimal quantity) {
+            this.createImprestLineAsync(requisitionNo, transactionType, unitCost, quantity, null);
         }
         
         /// <remarks/>
-        public void createImprestLineAsync(string requisitionNo, string transactionType, decimal amount, decimal quantity, object userState) {
+        public void createImprestLineAsync(string requisitionNo, string transactionType, decimal unitCost, decimal quantity, object userState) {
             if ((this.createImprestLineOperationCompleted == null)) {
                 this.createImprestLineOperationCompleted = new System.Threading.SendOrPostCallback(this.OncreateImprestLineOperationCompleted);
             }
             this.InvokeAsync("createImprestLine", new object[] {
                         requisitionNo,
                         transactionType,
-                        amount,
+                        unitCost,
                         quantity}, this.createImprestLineOperationCompleted, userState);
         }
         
@@ -815,7 +1028,7 @@ namespace HRPortal.HRPortal {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/HRPortal:createPurchaseRequisitionLine", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", ResponseElementName="createPurchaseRequisitionLine_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
-        public string createPurchaseRequisitionLine(string requisitionNo, int reqType, int typee, int quantity, string deliveryLocation, string item, decimal amount) {
+        public string createPurchaseRequisitionLine(string requisitionNo, int reqType, int typee, int quantity, string deliveryLocation, string item, decimal unitCost) {
             object[] results = this.Invoke("createPurchaseRequisitionLine", new object[] {
                         requisitionNo,
                         reqType,
@@ -823,17 +1036,17 @@ namespace HRPortal.HRPortal {
                         quantity,
                         deliveryLocation,
                         item,
-                        amount});
+                        unitCost});
             return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void createPurchaseRequisitionLineAsync(string requisitionNo, int reqType, int typee, int quantity, string deliveryLocation, string item, decimal amount) {
-            this.createPurchaseRequisitionLineAsync(requisitionNo, reqType, typee, quantity, deliveryLocation, item, amount, null);
+        public void createPurchaseRequisitionLineAsync(string requisitionNo, int reqType, int typee, int quantity, string deliveryLocation, string item, decimal unitCost) {
+            this.createPurchaseRequisitionLineAsync(requisitionNo, reqType, typee, quantity, deliveryLocation, item, unitCost, null);
         }
         
         /// <remarks/>
-        public void createPurchaseRequisitionLineAsync(string requisitionNo, int reqType, int typee, int quantity, string deliveryLocation, string item, decimal amount, object userState) {
+        public void createPurchaseRequisitionLineAsync(string requisitionNo, int reqType, int typee, int quantity, string deliveryLocation, string item, decimal unitCost, object userState) {
             if ((this.createPurchaseRequisitionLineOperationCompleted == null)) {
                 this.createPurchaseRequisitionLineOperationCompleted = new System.Threading.SendOrPostCallback(this.OncreatePurchaseRequisitionLineOperationCompleted);
             }
@@ -844,7 +1057,7 @@ namespace HRPortal.HRPortal {
                         quantity,
                         deliveryLocation,
                         item,
-                        amount}, this.createPurchaseRequisitionLineOperationCompleted, userState);
+                        unitCost}, this.createPurchaseRequisitionLineOperationCompleted, userState);
         }
         
         private void OncreatePurchaseRequisitionLineOperationCompleted(object arg) {
@@ -857,7 +1070,7 @@ namespace HRPortal.HRPortal {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/HRPortal:createPurchaseRequisition", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", ResponseElementName="createPurchaseRequisition_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
-        public string createPurchaseRequisition(string employeeNo, string requisitionNo, string description, string department, string busnCode, string airplaneCode, string vehicleCode, string curr, [System.Xml.Serialization.XmlElementAttribute(DataType="date")] System.DateTime trcptDate) {
+        public string createPurchaseRequisition(string employeeNo, string requisitionNo, string description, string department, string busnCode, string airplaneCode, string projectCode, string curr, [System.Xml.Serialization.XmlElementAttribute(DataType="date")] System.DateTime trcptDate) {
             object[] results = this.Invoke("createPurchaseRequisition", new object[] {
                         employeeNo,
                         requisitionNo,
@@ -865,19 +1078,19 @@ namespace HRPortal.HRPortal {
                         department,
                         busnCode,
                         airplaneCode,
-                        vehicleCode,
+                        projectCode,
                         curr,
                         trcptDate});
             return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void createPurchaseRequisitionAsync(string employeeNo, string requisitionNo, string description, string department, string busnCode, string airplaneCode, string vehicleCode, string curr, System.DateTime trcptDate) {
-            this.createPurchaseRequisitionAsync(employeeNo, requisitionNo, description, department, busnCode, airplaneCode, vehicleCode, curr, trcptDate, null);
+        public void createPurchaseRequisitionAsync(string employeeNo, string requisitionNo, string description, string department, string busnCode, string airplaneCode, string projectCode, string curr, System.DateTime trcptDate) {
+            this.createPurchaseRequisitionAsync(employeeNo, requisitionNo, description, department, busnCode, airplaneCode, projectCode, curr, trcptDate, null);
         }
         
         /// <remarks/>
-        public void createPurchaseRequisitionAsync(string employeeNo, string requisitionNo, string description, string department, string busnCode, string airplaneCode, string vehicleCode, string curr, System.DateTime trcptDate, object userState) {
+        public void createPurchaseRequisitionAsync(string employeeNo, string requisitionNo, string description, string department, string busnCode, string airplaneCode, string projectCode, string curr, System.DateTime trcptDate, object userState) {
             if ((this.createPurchaseRequisitionOperationCompleted == null)) {
                 this.createPurchaseRequisitionOperationCompleted = new System.Threading.SendOrPostCallback(this.OncreatePurchaseRequisitionOperationCompleted);
             }
@@ -888,7 +1101,7 @@ namespace HRPortal.HRPortal {
                         department,
                         busnCode,
                         airplaneCode,
-                        vehicleCode,
+                        projectCode,
                         curr,
                         trcptDate}, this.createPurchaseRequisitionOperationCompleted, userState);
         }
@@ -937,28 +1150,26 @@ namespace HRPortal.HRPortal {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/HRPortal:createStaffClaimLine", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", ResponseElementName="createStaffClaimLine_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
-        public string createStaffClaimLine(string requisitionNo, string description, decimal amount, string transType) {
+        public string createStaffClaimLine(string requisitionNo, decimal amount, string transType) {
             object[] results = this.Invoke("createStaffClaimLine", new object[] {
                         requisitionNo,
-                        description,
                         amount,
                         transType});
             return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void createStaffClaimLineAsync(string requisitionNo, string description, decimal amount, string transType) {
-            this.createStaffClaimLineAsync(requisitionNo, description, amount, transType, null);
+        public void createStaffClaimLineAsync(string requisitionNo, decimal amount, string transType) {
+            this.createStaffClaimLineAsync(requisitionNo, amount, transType, null);
         }
         
         /// <remarks/>
-        public void createStaffClaimLineAsync(string requisitionNo, string description, decimal amount, string transType, object userState) {
+        public void createStaffClaimLineAsync(string requisitionNo, decimal amount, string transType, object userState) {
             if ((this.createStaffClaimLineOperationCompleted == null)) {
                 this.createStaffClaimLineOperationCompleted = new System.Threading.SendOrPostCallback(this.OncreateStaffClaimLineOperationCompleted);
             }
             this.InvokeAsync("createStaffClaimLine", new object[] {
                         requisitionNo,
-                        description,
                         amount,
                         transType}, this.createStaffClaimLineOperationCompleted, userState);
         }
@@ -973,22 +1184,23 @@ namespace HRPortal.HRPortal {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/HRPortal:createStaffClaim", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", ResponseElementName="createStaffClaim_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
-        public string createStaffClaim(string employeeNo, string description, string requisitionNo, int docType) {
+        public string createStaffClaim(string employeeNo, string description, string requisitionNo, int docType, string curr) {
             object[] results = this.Invoke("createStaffClaim", new object[] {
                         employeeNo,
                         description,
                         requisitionNo,
-                        docType});
+                        docType,
+                        curr});
             return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void createStaffClaimAsync(string employeeNo, string description, string requisitionNo, int docType) {
-            this.createStaffClaimAsync(employeeNo, description, requisitionNo, docType, null);
+        public void createStaffClaimAsync(string employeeNo, string description, string requisitionNo, int docType, string curr) {
+            this.createStaffClaimAsync(employeeNo, description, requisitionNo, docType, curr, null);
         }
         
         /// <remarks/>
-        public void createStaffClaimAsync(string employeeNo, string description, string requisitionNo, int docType, object userState) {
+        public void createStaffClaimAsync(string employeeNo, string description, string requisitionNo, int docType, string curr, object userState) {
             if ((this.createStaffClaimOperationCompleted == null)) {
                 this.createStaffClaimOperationCompleted = new System.Threading.SendOrPostCallback(this.OncreateStaffClaimOperationCompleted);
             }
@@ -996,7 +1208,8 @@ namespace HRPortal.HRPortal {
                         employeeNo,
                         description,
                         requisitionNo,
-                        docType}, this.createStaffClaimOperationCompleted, userState);
+                        docType,
+                        curr}, this.createStaffClaimOperationCompleted, userState);
         }
         
         private void OncreateStaffClaimOperationCompleted(object arg) {
@@ -1157,32 +1370,28 @@ namespace HRPortal.HRPortal {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/HRPortal:createSurrenderLine", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", ResponseElementName="createSurrenderLine_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
-        public string createSurrenderLine(string requisitionNo, string description, decimal amountAdvanced, decimal actualSpent, string receiptNo) {
+        public string createSurrenderLine(string requisitionNo, int lineNo, decimal actualSpent) {
             object[] results = this.Invoke("createSurrenderLine", new object[] {
                         requisitionNo,
-                        description,
-                        amountAdvanced,
-                        actualSpent,
-                        receiptNo});
+                        lineNo,
+                        actualSpent});
             return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void createSurrenderLineAsync(string requisitionNo, string description, decimal amountAdvanced, decimal actualSpent, string receiptNo) {
-            this.createSurrenderLineAsync(requisitionNo, description, amountAdvanced, actualSpent, receiptNo, null);
+        public void createSurrenderLineAsync(string requisitionNo, int lineNo, decimal actualSpent) {
+            this.createSurrenderLineAsync(requisitionNo, lineNo, actualSpent, null);
         }
         
         /// <remarks/>
-        public void createSurrenderLineAsync(string requisitionNo, string description, decimal amountAdvanced, decimal actualSpent, string receiptNo, object userState) {
+        public void createSurrenderLineAsync(string requisitionNo, int lineNo, decimal actualSpent, object userState) {
             if ((this.createSurrenderLineOperationCompleted == null)) {
                 this.createSurrenderLineOperationCompleted = new System.Threading.SendOrPostCallback(this.OncreateSurrenderLineOperationCompleted);
             }
             this.InvokeAsync("createSurrenderLine", new object[] {
                         requisitionNo,
-                        description,
-                        amountAdvanced,
-                        actualSpent,
-                        receiptNo}, this.createSurrenderLineOperationCompleted, userState);
+                        lineNo,
+                        actualSpent}, this.createSurrenderLineOperationCompleted, userState);
         }
         
         private void OncreateSurrenderLineOperationCompleted(object arg) {
@@ -1481,6 +1690,167 @@ namespace HRPortal.HRPortal {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/HRPortal:sendImprestRequisitionApproval", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", ResponseElementName="sendImprestRequisitionApproval_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string sendImprestRequisitionApproval(string requisitionNo, string employeeNo) {
+            object[] results = this.Invoke("sendImprestRequisitionApproval", new object[] {
+                        requisitionNo,
+                        employeeNo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void sendImprestRequisitionApprovalAsync(string requisitionNo, string employeeNo) {
+            this.sendImprestRequisitionApprovalAsync(requisitionNo, employeeNo, null);
+        }
+        
+        /// <remarks/>
+        public void sendImprestRequisitionApprovalAsync(string requisitionNo, string employeeNo, object userState) {
+            if ((this.sendImprestRequisitionApprovalOperationCompleted == null)) {
+                this.sendImprestRequisitionApprovalOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsendImprestRequisitionApprovalOperationCompleted);
+            }
+            this.InvokeAsync("sendImprestRequisitionApproval", new object[] {
+                        requisitionNo,
+                        employeeNo}, this.sendImprestRequisitionApprovalOperationCompleted, userState);
+        }
+        
+        private void OnsendImprestRequisitionApprovalOperationCompleted(object arg) {
+            if ((this.sendImprestRequisitionApprovalCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sendImprestRequisitionApprovalCompleted(this, new sendImprestRequisitionApprovalCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/HRPortal:sendPurchaseRequisitionApproval", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", ResponseElementName="sendPurchaseRequisitionApproval_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string sendPurchaseRequisitionApproval(string requisitionNo, string employeeNo) {
+            object[] results = this.Invoke("sendPurchaseRequisitionApproval", new object[] {
+                        requisitionNo,
+                        employeeNo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void sendPurchaseRequisitionApprovalAsync(string requisitionNo, string employeeNo) {
+            this.sendPurchaseRequisitionApprovalAsync(requisitionNo, employeeNo, null);
+        }
+        
+        /// <remarks/>
+        public void sendPurchaseRequisitionApprovalAsync(string requisitionNo, string employeeNo, object userState) {
+            if ((this.sendPurchaseRequisitionApprovalOperationCompleted == null)) {
+                this.sendPurchaseRequisitionApprovalOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsendPurchaseRequisitionApprovalOperationCompleted);
+            }
+            this.InvokeAsync("sendPurchaseRequisitionApproval", new object[] {
+                        requisitionNo,
+                        employeeNo}, this.sendPurchaseRequisitionApprovalOperationCompleted, userState);
+        }
+        
+        private void OnsendPurchaseRequisitionApprovalOperationCompleted(object arg) {
+            if ((this.sendPurchaseRequisitionApprovalCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sendPurchaseRequisitionApprovalCompleted(this, new sendPurchaseRequisitionApprovalCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/HRPortal:sendStaffRequisitionApproval", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", ResponseElementName="sendStaffRequisitionApproval_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string sendStaffRequisitionApproval(string requisitionNo, string employeeNo) {
+            object[] results = this.Invoke("sendStaffRequisitionApproval", new object[] {
+                        requisitionNo,
+                        employeeNo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void sendStaffRequisitionApprovalAsync(string requisitionNo, string employeeNo) {
+            this.sendStaffRequisitionApprovalAsync(requisitionNo, employeeNo, null);
+        }
+        
+        /// <remarks/>
+        public void sendStaffRequisitionApprovalAsync(string requisitionNo, string employeeNo, object userState) {
+            if ((this.sendStaffRequisitionApprovalOperationCompleted == null)) {
+                this.sendStaffRequisitionApprovalOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsendStaffRequisitionApprovalOperationCompleted);
+            }
+            this.InvokeAsync("sendStaffRequisitionApproval", new object[] {
+                        requisitionNo,
+                        employeeNo}, this.sendStaffRequisitionApprovalOperationCompleted, userState);
+        }
+        
+        private void OnsendStaffRequisitionApprovalOperationCompleted(object arg) {
+            if ((this.sendStaffRequisitionApprovalCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sendStaffRequisitionApprovalCompleted(this, new sendStaffRequisitionApprovalCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/HRPortal:sendStoreRequisitionApproval", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", ResponseElementName="sendStoreRequisitionApproval_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string sendStoreRequisitionApproval(string requisitionNo, string employeeNo) {
+            object[] results = this.Invoke("sendStoreRequisitionApproval", new object[] {
+                        requisitionNo,
+                        employeeNo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void sendStoreRequisitionApprovalAsync(string requisitionNo, string employeeNo) {
+            this.sendStoreRequisitionApprovalAsync(requisitionNo, employeeNo, null);
+        }
+        
+        /// <remarks/>
+        public void sendStoreRequisitionApprovalAsync(string requisitionNo, string employeeNo, object userState) {
+            if ((this.sendStoreRequisitionApprovalOperationCompleted == null)) {
+                this.sendStoreRequisitionApprovalOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsendStoreRequisitionApprovalOperationCompleted);
+            }
+            this.InvokeAsync("sendStoreRequisitionApproval", new object[] {
+                        requisitionNo,
+                        employeeNo}, this.sendStoreRequisitionApprovalOperationCompleted, userState);
+        }
+        
+        private void OnsendStoreRequisitionApprovalOperationCompleted(object arg) {
+            if ((this.sendStoreRequisitionApprovalCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sendStoreRequisitionApprovalCompleted(this, new sendStoreRequisitionApprovalCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/HRPortal:sendSurrenderRequisitionApproval" +
+            "", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", ResponseElementName="sendSurrenderRequisitionApproval_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string sendSurrenderRequisitionApproval(string requisitionNo, string employeeNo) {
+            object[] results = this.Invoke("sendSurrenderRequisitionApproval", new object[] {
+                        requisitionNo,
+                        employeeNo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void sendSurrenderRequisitionApprovalAsync(string requisitionNo, string employeeNo) {
+            this.sendSurrenderRequisitionApprovalAsync(requisitionNo, employeeNo, null);
+        }
+        
+        /// <remarks/>
+        public void sendSurrenderRequisitionApprovalAsync(string requisitionNo, string employeeNo, object userState) {
+            if ((this.sendSurrenderRequisitionApprovalOperationCompleted == null)) {
+                this.sendSurrenderRequisitionApprovalOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsendSurrenderRequisitionApprovalOperationCompleted);
+            }
+            this.InvokeAsync("sendSurrenderRequisitionApproval", new object[] {
+                        requisitionNo,
+                        employeeNo}, this.sendSurrenderRequisitionApprovalOperationCompleted, userState);
+        }
+        
+        private void OnsendSurrenderRequisitionApprovalOperationCompleted(object arg) {
+            if ((this.sendSurrenderRequisitionApprovalCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sendSurrenderRequisitionApprovalCompleted(this, new sendSurrenderRequisitionApprovalCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -1642,6 +2012,136 @@ namespace HRPortal.HRPortal {
         private object[] results;
         
         internal DeleteSurrenderDocumentLinkCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void cancelImprestRequisitionApprovalCompletedEventHandler(object sender, cancelImprestRequisitionApprovalCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class cancelImprestRequisitionApprovalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal cancelImprestRequisitionApprovalCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void cancelPurchaseRequisitionApprovalCompletedEventHandler(object sender, cancelPurchaseRequisitionApprovalCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class cancelPurchaseRequisitionApprovalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal cancelPurchaseRequisitionApprovalCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void cancelStaffRequisitionApprovalCompletedEventHandler(object sender, cancelStaffRequisitionApprovalCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class cancelStaffRequisitionApprovalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal cancelStaffRequisitionApprovalCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void cancelStoreRequisitionApprovalCompletedEventHandler(object sender, cancelStoreRequisitionApprovalCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class cancelStoreRequisitionApprovalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal cancelStoreRequisitionApprovalCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void cancelSurrenderRequisitionApprovalCompletedEventHandler(object sender, cancelSurrenderRequisitionApprovalCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class cancelSurrenderRequisitionApprovalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal cancelSurrenderRequisitionApprovalCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -2396,6 +2896,136 @@ namespace HRPortal.HRPortal {
         private object[] results;
         
         internal resetPasswordCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void sendImprestRequisitionApprovalCompletedEventHandler(object sender, sendImprestRequisitionApprovalCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class sendImprestRequisitionApprovalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal sendImprestRequisitionApprovalCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void sendPurchaseRequisitionApprovalCompletedEventHandler(object sender, sendPurchaseRequisitionApprovalCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class sendPurchaseRequisitionApprovalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal sendPurchaseRequisitionApprovalCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void sendStaffRequisitionApprovalCompletedEventHandler(object sender, sendStaffRequisitionApprovalCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class sendStaffRequisitionApprovalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal sendStaffRequisitionApprovalCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void sendStoreRequisitionApprovalCompletedEventHandler(object sender, sendStoreRequisitionApprovalCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class sendStoreRequisitionApprovalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal sendStoreRequisitionApprovalCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void sendSurrenderRequisitionApprovalCompletedEventHandler(object sender, sendSurrenderRequisitionApprovalCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class sendSurrenderRequisitionApprovalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal sendSurrenderRequisitionApprovalCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

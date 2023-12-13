@@ -264,9 +264,9 @@
                                         </span>
                                     </a>
                                     <ul class="treeview-menu">
-                                        <li><a href="Imprest.aspx"><i class="fa fa-circle-o"></i>New Imprest Memo</a></li>
-                                        <li><a href="ImprestMemo.aspx"><i class="fa fa-circle-o"></i>Open Imprest Memo</a></li>                                    
-                                        <li><a href="ApprovedImprestRequisition.aspx"><i class="fa fa-circle-o"></i>Approved Imprest Memo</a></li>
+                                        <li><a href="Imprest.aspx"><i class="fa fa-circle-o"></i>New Imprest Request</a></li>
+                                        <li><a href="ImprestMemo.aspx"><i class="fa fa-circle-o"></i>Open Imprest Requests</a></li>                                    
+                                        <li><a href="ApprovedImprestRequisition.aspx"><i class="fa fa-circle-o"></i>Approved Imprest Requests</a></li>
                                     </ul>
                                 </li>
                                 <li class="treeview">
@@ -278,8 +278,8 @@
                                         </span>
                                     </a>
                                     <ul class="treeview-menu">
-                                        <%--<li><a href="ImprestSurrender.aspx"><i class="fa fa-circle-o"></i>New Surrender</a></li>--%>
-                                        <li><a href="ImprestSurrenders.aspx"><i class="fa fa-circle-o"></i>Open Surrenders</a></li>
+                                        <li><a href="ImprestSurrenders.aspx"><i class="fa fa-circle-o"></i>New Imprest Surrender</a></li>
+                                        <li><a href="ImprestSurrendersOpen.aspx"><i class="fa fa-circle-o"></i>Open Imprest Surrenders</a></li>
                                         <li><a href="ApprovedImprestSurrender.aspx"><i class="fa fa-circle-o"></i>Approved Surrenders</a></li>
                                     </ul>
                                 </li>
@@ -297,7 +297,7 @@
                                         <li><a href="ApprovedStaffClaim.aspx"><i class="fa fa-circle-o"></i>Approved Staff Claims</a></li>
                                     </ul>
                                 </li>
-                                <li class="treeview">
+                                <%--<li class="treeview">
                                     <a href="#">
                                         <i class="fa fa-money"></i>
                                         <span>Petty Cash Requisition</span>
@@ -310,7 +310,7 @@
                                         <li><a href="PettyCashHeader.aspx">Open Petty Cash Requisition</a></li>
                                         <li><a href="ApprovedPettyCash.aspx">Approved Petty Cash Requisition</a></li>
                                     </ul>
-                                </li>
+                                </li>--%>
                             </ul>
                         </li>
                          <li><a href="logout.aspx"><i class="fa fa-sign-out"></i>logout</a></li>                        

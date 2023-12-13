@@ -22,40 +22,13 @@ namespace HRPortal {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl generalFeedback;
         
         /// <summary>
-        /// currCode1 control.
+        /// pnarration control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList currCode1;
-        
-        /// <summary>
-        /// description control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox description;
-        
-        /// <summary>
-        /// vehicle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl vehicle;
-        
-        /// <summary>
-        /// paymentMode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList paymentMode;
+        protected global::System.Web.UI.WebControls.TextBox pnarration;
         
         /// <summary>
         /// next control.
@@ -76,40 +49,49 @@ namespace HRPortal {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl linesFeedback;
         
         /// <summary>
-        /// amnt control.
+        /// expenditure control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox amnt;
+        protected global::System.Web.UI.WebControls.DropDownList expenditure;
         
         /// <summary>
-        /// staffClaimCode control.
+        /// amount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList staffClaimCode;
+        protected global::System.Web.UI.WebControls.TextBox amount;
         
         /// <summary>
-        /// addItem control.
+        /// AddLine control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button addItem;
+        protected global::System.Web.UI.WebControls.Button AddLine;
         
         /// <summary>
-        /// previous control.
+        /// Previous control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button previous;
+        protected global::System.Web.UI.WebControls.Button Previous;
+        
+        /// <summary>
+        /// nextpage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button nextpage;
         
         /// <summary>
         /// documentsfeedback control.
@@ -139,6 +121,15 @@ namespace HRPortal {
         protected global::System.Web.UI.WebControls.Button uploadDocument;
         
         /// <summary>
+        /// GoBackStep2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button GoBackStep2;
+        
+        /// <summary>
         /// sendApproval control.
         /// </summary>
         /// <remarks>
@@ -157,6 +148,33 @@ namespace HRPortal {
         protected global::System.Web.UI.WebControls.TextBox fileName;
         
         /// <summary>
+        /// removeLineNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox removeLineNo;
+        
+        /// <summary>
+        /// removedocNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox removedocNo;
+        
+        /// <summary>
+        /// RemovePettyCashRequisition control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button RemovePettyCashRequisition;
+        
+        /// <summary>
         /// lineNo control.
         /// </summary>
         /// <remarks>
@@ -164,5 +182,41 @@ namespace HRPortal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox lineNo;
+        
+        /// <summary>
+        /// docNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox docNo;
+        
+        /// <summary>
+        /// editexpenditure control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList editexpenditure;
+        
+        /// <summary>
+        /// editAmount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox editAmount;
+        
+        /// <summary>
+        /// EditPettyCashRequisition control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button EditPettyCashRequisition;
     }
 }

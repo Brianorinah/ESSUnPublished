@@ -1,9 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ImprestMemo.aspx.cs" Inherits="HRPortal.ImprestMemo" %>
+
 <%@ Import Namespace="HRPortal" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<div class="row">
+    <div class="row">
         <div class="col-sm-12">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="Dashboard.aspx">Dashboard</a></li>
@@ -12,7 +13,7 @@
         </div>
     </div>
     <%        
-        String employeeNo = Convert.ToString(Session["employeeNo"]);        
+        String employeeNo = Convert.ToString(Session["employeeNo"]);
     %>
     <div class="panel panel-primary">
         <div class="panel-heading">
@@ -26,13 +27,10 @@
                         <tr>
                             <th>#</th>
                             <th>Requisition No</th>
-                            <th>Description</th>
-                            <%--<th>Requisition Product Group</th>
-                            <th>Priority Level</th>--%>
-                            <th>Status</th>                            
-                            <th>Destination</th>
+                            <th>Description</th>  
+                            <th>Status</th>
                             <th>Amount</th>
-                            <%--<th>Send/Cancel Approval</th>--%>
+                            
                             <th>View Approvers</th>
                             <th>Edit</th>
                             <%--<th>Print</th>--%>
@@ -40,7 +38,7 @@
                     </thead>
                     <tbody>
                         <%
-                            int counter = 0;                            
+                            int counter = 0;
                             var request = new Config().ObjNav1().fnImprestHeader(employeeNo);
                             String[] info = request.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries);
                             if (info != null)
@@ -48,32 +46,65 @@
                                 foreach (var allinfo in info)
                                 {
                                     String[] arr = allinfo.Split('*');
-                                    if(arr[4] == "Open" || arr[4] == "Pending Approval") {
+                                    if (arr[4] == "Open" || arr[4] == "Pending Approval")
+                                    {
                                         counter++;
 
-                                    %>
+                        %>
                         <tr>
                             <td><%=counter%></td>
                             <td><%=arr[0]%></td>
-                            <td><%=arr[5]%></td>
-                            <%--<td><%=arr[2]%></td>
-                            <td><%=arr[3]%></td>--%>
-                            <td><%=arr[6]%></td> 
+                            <td><%=arr[5]%></td>  
                             <td><%=arr[4]%></td>
-                            <td><%=arr[3]%></td> 
-                            <td><a href="ApproverEntries.aspx?docNo=<%=arr[0] %>" class="btn btn-warning"><i class="fa fa-eye"></i>View Approvers</a></td> 
-                            <td><a href="Imprest.aspx?step=1&&docNo=<%=arr[0] %>" class="btn btn-info"><i class="fa fa-edit"></i>Edit</a></td>                      
+                            <td><%=arr[3]%></td>
+                            <td><a href="ApproverEntries.aspx?docNo=<%=arr[0] %>" class="btn btn-warning"><i class="fa fa-eye"></i>View Approvers</a></td>                           
+                            <td>
+                                <%
+                                    if (arr[4] == "Pending Approval")
+                                    {
+                                %>
+                                <label class="btn btn-danger" onclick="cancelApprovalRequest('<%=arr[0] %>');"><i class="fa fa-times"></i>Cancel Approval Request</label>
+
+                                <%   
+                                    }
+
+                                    else if (arr[4] == "Open")
+                                    {
+                                %>
+                                <label class="btn btn-success" onclick="sendApprovalRequest('<%=arr[0] %>');"><i class="fa fa-check"></i>Send Approval Request</label>
+                                <% 
+                                    }
+                                %>
+                            </td>
+                            <td>
+                                <%
+                                    if (arr[4] == "Open")
+                                    {
+                                %>
+                                <a href="Imprest.aspx?step=1&&docNo=<%=arr[0] %>" class="btn btn-success"><i class="fa fa-edit"></i>Edit</a>
+                                <%
+                                    }                                    
+
+                                %>                            
+
+                                                                             
+                            </td>
+                            <td>
+                                 <a href="ViewImprest.aspx?step=1&&docNo=<%=arr[0] %>" class="btn btn-default"><i class="fa fa-eye"></i>View</a>                                
+                            </td>
 
                         </tr>
                         <%
-                                }    }
-                                
+                                    }
+                                }
+
                             } %>
                     </tbody>
                 </table>
             </div>
         </div>
-    </div>
+    </div>    
+
     <div id="showApprovalEntriesModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg">
 
@@ -81,7 +112,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Purchase Requisition <strong id="myRecordId"></strong>Approval Entries</h4>
+                    <h4 class="modal-title">Imprest Memo No <strong id="myRecordId"></strong>Approval Entries</h4>
                 </div>
                 <div class="modal-body">
                     <div class="overlay" id="myLoading">
@@ -185,14 +216,14 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Send Purchase Requisition For Approval</h4>
+                    <h4 class="modal-title">Send Imprest Memo For Approval</h4>
                 </div>
                 <div class="modal-body">
                     <asp:TextBox runat="server" ID="imprestMemoToApprove" type="hidden" />
-                    Are you sure you want to send Purchase Requisition No <strong id="approveImprestMemoNo"></strong>for approval ? 
+                    Are you sure you want to send Imprest Memo No <strong id="approveImprestMemoNo"></strong>for approval ? 
                 </div>
                 <div class="modal-footer">
-                    <%--<asp:Button runat="server" CssClass="btn btn-success" Text="Send Approval" OnClick="sendApproval_Click" />--%>
+                    <asp:Button runat="server" CssClass="btn btn-success" Text="Send Approval" OnClick="sendApproval_Click" />
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                 </div>
             </div>
@@ -206,14 +237,14 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Cancel Purchase Requisition Approval</h4>
+                    <h4 class="modal-title">Cancel Imprest Memo Approval</h4>
                 </div>
                 <div class="modal-body">
                     <asp:TextBox runat="server" ID="cancelImprestMemoNo" type="hidden" />
-                    Are you sure you want to cancel approval of  Purchase Requisition No <strong id="cancelImprestMemoText"></strong>? 
+                    Are you sure you want to cancel approval of  Imprest Memo No <strong id="cancelImprestMemoText"></strong>? 
                 </div>
                 <div class="modal-footer">
-                    <%--<asp:Button runat="server" CssClass="btn btn-danger" Text="Cancel Approval" OnClick="cancelApproval_Click" />--%>
+                    <asp:Button runat="server" CssClass="btn btn-danger" Text="Cancel Approval" OnClick="cancelApproval_Click" />
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                 </div>
             </div>

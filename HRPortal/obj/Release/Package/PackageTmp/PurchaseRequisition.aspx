@@ -33,46 +33,23 @@
         </div>
         <div class="panel-body">
             <div id="generalFeedback" runat="server"></div>
-
-            <%--<div class="row">
-                <div class="col-md-6 col-lg-6">
-                    <div class="form-group">
-                        <strong>Requisition Type:</strong>
-                        <asp:DropDownList runat="server" ID="prnType" CssClass="form-control select2">
-                            <asp:ListItem>--Select--</asp:ListItem>
-                            <asp:ListItem Value="1">Program</asp:ListItem>
-                            <asp:ListItem Value="2">Office Supply</asp:ListItem>
-                        </asp:DropDownList>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6">
-                    <div class="form-group">
-                        <strong>Purchase Type:</strong>
-                        <asp:DropDownList runat="server" ID="purchType" CssClass="form-control select2">
-                            <asp:ListItem>--Select--</asp:ListItem>
-                            <asp:ListItem Value="0">Goods</asp:ListItem>
-                            <asp:ListItem Value="1">Services</asp:ListItem>
-                        </asp:DropDownList>
-                    </div>
-                </div>
-
-            </div>--%>
+           
             <div class="row">
                 <div class="col-md-6 col-lg-6">
                     <div class="form-group">
-                        <strong>Department:</strong>
-                        <asp:DropDownList ID="dpt" runat="server" CssClass="form-control select2" OnSelectedIndexChanged="dpt_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
-
+                        <strong>Description:</strong>
+                        <asp:TextBox runat="server" ID="description" CssClass="form-control" placeholder="Description" />
                     </div>
-                </div>
-
+                </div>                
                 <div class="col-md-6 col-lg-6">
                     <div class="form-group">
-                        <strong>Business Unit:</strong>
-                        <asp:DropDownList ID="bsnCode" runat="server" CssClass="form-control select2"></asp:DropDownList>
+                        <strong>Department:</strong>
+                        <asp:DropDownList ID="dpt" runat="server" CssClass="form-control select2" ></asp:DropDownList>
 
                     </div>
                 </div>
+
+                
 
 
             </div>
@@ -85,6 +62,16 @@
 
                     </div>
                 </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <strong>Business Unit:</strong>
+                        <asp:DropDownList ID="bsnCode" runat="server" CssClass="form-control select2"></asp:DropDownList>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="row">
                 <div class="col-md-6 col-lg-6" runat="server" id="vehicle" >
                     <div class="form-group">
                         <strong>Project :</strong>
@@ -92,30 +79,12 @@
 
                     </div>
                 </div>
-            </div>
-
-            <div class="row">
                 <div class="col-md-6 col-lg-6">
                     <div class="form-group">
                         <strong>Currency:</strong>
-                        <asp:DropDownList runat="server" ID="currCode1" CssClass="form-control select2">
-                            <asp:ListItem>--Select--</asp:ListItem>
-                            <asp:ListItem Value="KES">KES</asp:ListItem>
-                            <asp:ListItem Value="USD">USD</asp:ListItem>
-                        </asp:DropDownList>
+                        <asp:DropDownList runat="server" ID="currCode1" CssClass="form-control select2"> </asp:DropDownList>                           
                     </div>
                 </div>
-
-
-                <div class="col-md-6 col-lg-6">
-                    <div class="form-group">
-                        <strong>Description:</strong>
-                        <asp:TextBox runat="server" ID="description" CssClass="form-control" placeholder="Description" />
-                    </div>
-                </div>
-
-
-
             </div>
             <div class="row">
                 <div class="col-md-6 col-lg-6">
@@ -159,11 +128,41 @@
             <div class="col-lg-6 col-sm-6">
                 <div class="form-group">
                     <strong>Item:</strong>
-                    <asp:DropDownList runat="server" ID="item" CssClass="form-control select2">
+                    <asp:DropDownList runat="server" ID="item" CssClass="form-control select2" OnSelectedIndexChanged="item_SelectedIndexChanged" AutoPostBack="True">
                         <asp:ListItem>--Select--</asp:ListItem>
                     </asp:DropDownList>
                 </div>
             </div>
+            <div class="col-lg-6 col-sm-6">
+                <div class="form-group">
+                    <strong>Part No:</strong>
+                    <asp:TextBox runat="server" ID="partNo" CssClass="form-control" placeholder="" ReadOnly />
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <div class="form-group">
+                    <strong>Alternative Part No. 1:</strong>
+                    <asp:TextBox runat="server" ID="partNo1" CssClass="form-control" placeholder="" ReadOnly />
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <div class="form-group">
+                    <strong>Alternative Part No. 2:</strong>
+                    <asp:TextBox runat="server" ID="partNo2" CssClass="form-control" placeholder="" ReadOnly />
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <div class="form-group">
+                    <strong>Alternative Part No. 3:</strong>
+                    <asp:TextBox runat="server" ID="partNo3" CssClass="form-control" placeholder="" ReadOnly />
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <div class="form-group">
+                    <strong>Alternative Part No. 4:</strong>
+                    <asp:TextBox runat="server" ID="partNo4" CssClass="form-control" placeholder="" ReadOnly />
+                </div>
+            </div>            
             <div class="col-lg-6 col-sm-6">
                 <div class="form-group">
                     <strong>Delivery Location:</strong>
@@ -172,18 +171,18 @@
                     </asp:DropDownList>
                 </div>
             </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="form-group">
+                    <strong>Unit Cost:</strong>
+                    <asp:TextBox runat="server" CssClass="form-control " ID="unitCost"  TextMode="Number"/>
+                </div>
+            </div>
             <div class="col-lg-6 col-sm-6">
                 <div class="form-group">
                     <strong>Quantity Requested:</strong>
                     <asp:TextBox runat="server" ID="quantityRequested" CssClass="form-control" placeholder="Quantity Requested" TextMode="Number"/>
                 </div>
-            </div>
-            <div class="col-lg-6 col-sm-6">
-                <div class="form-group">
-                    <strong>Cost:</strong>
-                    <asp:TextBox runat="server" ID="directUnitCost" CssClass="form-control" placeholder="Direct Unit Cost" TextMode="Number" />
-                </div>
-            </div>    
+            </div>               
             <div class="col-lg-6 col-sm-6">
                 <div class="form-group">
                     <br />
@@ -192,13 +191,11 @@
             </div>
             <table class="table table-bordered table-striped">
                 <thead>
-                    <tr>
-                        <%--                        <th>Procurement Plan Id</th>
-                        <th>Procurement Plan Entry No</th>--%>
-                        <%-- <th>Procurement Plan descricption</th>--%>
+                    <tr>                        
                         <th>Item Category</th>
                         <th>Item </th>
                         <th>Delivery Location </th>
+                        <th>Unit Cost </th>
                         <th>Quantity Requested </th>                        
                         <th>Amount </th>
                         <th>Remove </th>
@@ -219,13 +216,11 @@
                                     String[] arr = allinfo.Split('*');
 
                     %>
-                    <tr>
-                        <%--                        <td><% =line.Procurement_Plan_ID %></td>
-                        <td><% =line.Procurement_Plan_Entry_No %></td>--%>
-                        <%-- <td><% =line.ProcurementPlanDescription %></td>--%>
+                    <tr>                        
                         <td><% =arr[6] %></td>
                         <td><% =arr[2] %></td>
                         <td><% = arr[5] %></td>
+                        <td><% = arr[8] %></td>
                         <td><% = arr[1] %></td>
                         <td><%=String.Format("{0:n}", Convert.ToDouble(arr[7])) %></td>
 

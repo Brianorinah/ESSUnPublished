@@ -18,9 +18,6 @@ $('.btn_reset_passord').click(function (event) {
 
     var temail = $('#txtemailresetaddress').val();
 
-
-
-
     if (temail != '') {
         //Swal Message
         Swal.fire({
@@ -122,7 +119,7 @@ $('.btn_reset_passord').click(function (event) {
     }
 });
 
-$('.btn_passwordreset_Details').click(function (event) {
+$('.btn_passwordreset_Details1').click(function (event) {
     //To prevent form submit after ajax call
     event.preventDefault();
 
@@ -150,12 +147,13 @@ $('.btn_passwordreset_Details').click(function (event) {
                 return $.ajax
                    ({
                        type: 'POST',
-                       url: 'Login.aspx/ChangePassword',
+                       url: 'Login.aspx/ChangePassword1',
                        async: false,
-                       data: "{'temailAddres':'" + temailAddres + "','tOldPassword':'" + tOldPassword + "','tNewPassword':'" + tNewPassword + "','tconfirmNewPassword':'" + tconfirmNewPassword + "'}",
+                       //data: "{'temailAddres':'" + temailAddres + "','tOldPassword':'" + tOldPassword + "','tNewPassword':'" + tNewPassword + "','tconfirmNewPassword':'" + tconfirmNewPassword + "'}",
                        contentType: 'application/json; charset =utf-8',
                        success: function (status) {
                            var obj = status.d;
+                           console.log(status.d);
                            if (obj == 'success') {
 
                                Swal.fire

@@ -29,14 +29,12 @@
                         <tr>
                             <th>#</th>
                             <th>Requisition No</th>
-                            <th>Description</th>
-                            <%--<th>Requisition Product Group</th>
-                            <th>Priority Level</th>--%>
+                            <th>Description</th>                            
                             <th>Status</th>
                             <th>View Approvers</th>
-                            <%--<th>Send/Cancel Approval</th>--%>
+                            <th>Send/Cancel Approval</th>
                             <th>Edit</th>
-                            <%--<th>Print</th>--%>
+                            
                         </tr>
                     </thead>
                     <tbody>
@@ -56,13 +54,37 @@
                         <tr>
                             <td><%=counter%></td>
                             <td><%=arr[0]%></td>
-                            <td><%=arr[1]%></td>
-                            <%--<td><%=arr[2]%></td>
-                            <td><%=arr[3]%></td>--%>
+                            <td><%=arr[1]%></td>                            
                             <td><%=arr[2]%></td> 
-                            <td><a href="ApproverEntries.aspx?docNo=<%=arr[0] %>" class="btn btn-warning"><i class="fa fa-eye"></i>View Approvers</a></td> 
-                            <td><a href="PurchaseRequisition.aspx?step=1&&docNo=<%=arr[0] %>" class="btn btn-info"><i class="fa fa-edit"></i>Edit</a></td>                      
+                            <td><a href="ApproverEntries.aspx?docNo=<%=arr[0] %>" class="btn btn-warning"><i class="fa fa-eye"></i>View Approvers</a></td>                             
+                            <td>
+                                <%
+                                    if (arr[2] == "Pending Approval")
+                                    {
+                                %>
+                                <label class="btn btn-danger" onclick="cancelApprovalRequest('<%=arr[0] %>');"><i class="fa fa-times"></i>Cancel Approval Request</label>
 
+                                <%   
+                                    }
+                                    else if (arr[2] == "Open")
+                                    {
+                                %>
+                                <label class="btn btn-success" onclick="sendApprovalRequest('<%=arr[0] %>');"><i class="fa fa-check"></i>Send Approval Request</label>
+                                <% 
+                                    }
+                                %>
+                            </td>
+                            <td>  
+                                <%   
+                                    
+                                    if (arr[2] == "Open")
+                                    {
+                                %>
+                                <a href="PurchaseRequisition.aspx?step=1&&docNo=<%=arr[0] %>" class="btn btn-info"><i class="fa fa-edit"></i>Edit</a>
+                                <% 
+                                    }
+                                %>
+                            </td>
                         </tr>
                         <%
                                 }    }
@@ -191,7 +213,7 @@
                     Are you sure you want to send Purchase Requisition No <strong id="approveImprestMemoNo"></strong>for approval ? 
                 </div>
                 <div class="modal-footer">
-                    <%--<asp:Button runat="server" CssClass="btn btn-success" Text="Send Approval" OnClick="sendApproval_Click" />--%>
+                    <asp:Button runat="server" CssClass="btn btn-success" Text="Send Approval" OnClick="sendApproval_Click" />
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                 </div>
             </div>
@@ -212,7 +234,7 @@
                     Are you sure you want to cancel approval of  Purchase Requisition No <strong id="cancelImprestMemoText"></strong>? 
                 </div>
                 <div class="modal-footer">
-                    <%--<asp:Button runat="server" CssClass="btn btn-danger" Text="Cancel Approval" OnClick="cancelApproval_Click" />--%>
+                    <asp:Button runat="server" CssClass="btn btn-danger" Text="Cancel Approval" OnClick="cancelApproval_Click" />
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                 </div>
             </div>

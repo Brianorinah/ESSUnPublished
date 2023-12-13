@@ -2,9 +2,9 @@
 <%@ Import Namespace="HRPortal" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-</asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
         <div class="col-sm-12">
             <ol class="breadcrumb float-sm-right">
@@ -35,7 +35,7 @@
                             <th>Status</th>
                             <th>View Approvers</th>
                             <%--<th>Send/Cancel Approval</th>--%>
-                            <th>Edit</th>
+                            <th></th>
                             <%--<th>Print</th>--%>
                         </tr>
                     </thead>
@@ -61,8 +61,35 @@
                             <td><%=arr[3]%></td>--%>
                             <td><%=arr[3]%></td> 
                             <td><a href="ApproverEntries.aspx?docNo=<%=arr[0] %>" class="btn btn-warning"><i class="fa fa-eye"></i>View Approvers</a></td> 
-                            <td><a href="StoreRequisition.aspx?step=1&&docNo=<%=arr[0] %>" class="btn btn-info"><i class="fa fa-edit"></i>Edit</a></td>                      
+                           
+                            <td>
+                            <%
+                                if (arr[3] == "Pending Approval")
+                                {
+                            %>
+                            <label class="btn btn-danger" onclick="cancelApprovalRequest('<%=arr[0] %>');"><i class="fa fa-times"></i>Cancel Approval Request</label>
 
+                            <%   
+                                }
+                                else if (arr[3] == "Open")
+                                {
+                            %>
+                            <label class="btn btn-success" onclick="sendApprovalRequest('<%=arr[0] %>');"><i class="fa fa-check"></i>Send Approval Request</label>
+                            <% 
+                                }
+                            %>
+                        </td>
+                        <td>                            
+
+                            <%   
+                                if (arr[3] == "Open")
+                                {
+                            %>
+                           <a href="StoreRequisition.aspx?step=1&&docNo=<%=arr[0] %>" class="btn btn-primary"><i class="fa fa-pencil"></i>Edit</a>
+                            <% 
+                                }
+                            %>
+                        </td>
                         </tr>
                         <%
                                 }    }
@@ -191,7 +218,7 @@
           Are you sure you want to send store Requisition No <strong id="approveImprestMemoNo"></strong>  for approval ? 
         </div>
       <div class="modal-footer">
-          <%--<asp:Button runat="server" CssClass="btn btn-success" Text="Send Approval" OnClick="sendApproval_Click"/>--%>
+          <asp:Button runat="server" CssClass="btn btn-success" Text="Send Approval" OnClick="sendApproval_Click"/>
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
       </div>
     </div>
@@ -212,7 +239,7 @@
           Are you sure you want to cancel approval of  Store Requisition No <strong id="cancelImprestMemoText"></strong>? 
         </div>
       <div class="modal-footer">
-          <%--<asp:Button runat="server" CssClass="btn btn-danger" Text="Cancel Approval" OnClick="cancelApproval_Click" />--%>
+          <asp:Button runat="server" CssClass="btn btn-danger" Text="Cancel Approval" OnClick="cancelApproval_Click" />
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
       </div>
     </div>

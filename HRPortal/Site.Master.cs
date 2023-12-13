@@ -69,13 +69,15 @@ namespace HRPortal
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            String Name = (String)Session["name"];
+            String EmployeeNo = (String)Session["employeeNo"];
+            String idNo = (String)Session["idNo"];
+            if (String.IsNullOrEmpty(EmployeeNo))
+            {
+                Response.Redirect("Login.aspx");
+            }
         }
-
-        protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
-        {
-            Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-        }
+        
     }
 
 }
