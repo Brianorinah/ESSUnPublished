@@ -21,7 +21,8 @@
     <link rel="stylesheet" type="text/css" href="assests/css/CustomCss.css">
 </head>
 <body>
-    <div class="respo">
+    <form runat="server">
+          <div class="respo">
     <div class="main-wrapper">
         <div class="account-page">
             <div class="container">
@@ -38,16 +39,20 @@
                                 </div>
                                 <div class="row">
                                     <div id="passwordresetfeedback" style="display: none" data-dismiss="alert"></div>
+                                    <div id="passwordFeedback" runat="server"></div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label class="control-label">Registered Email Address: <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" id="txtemailaddress" value="<%=Session["EmailAddress"]%>" readonly >
+                                            <asp:TextBox runat="server" ID="txtemailaddress" CssClass="form-control" />
+                                             <asp:TextBox runat="server" ID="empId" Visible="false" />
+                                            <%--<input type="text" class="form-control" id="txtemailaddress" value="<%=Session["EmailAddress"]%>" readonly >--%>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group pass_show1">
                                             <label class="control-label">Old Password: <span class="text-danger">*</span></label>
-                                            <input class="form-control" type="password" id="txtoldpassword" value="<%=Session["Password"]%>" readonly>
+                                             <asp:TextBox runat="server" ID="txtoldpassword" CssClass="form-control" type="password" readonly/>
+                                           <%-- <input class="form-control" type="password" id="txtoldpassword" value="<%=Session["Password"]%>" readonly>--%>
                                         </div>
                                     </div>
                                 </div>
@@ -55,18 +60,21 @@
                                     <div class="col-sm-6">
                                         <div class="form-group pass_show">
                                             <label class="control-label">Enter New Password: <span class="text-danger">*</span></label>
-                                            <input type="password" class="form-control" id="txtnewpassword">
+                                             <asp:TextBox runat="server" ID="txtnewpassword" CssClass="form-control" type="password" />
+                                            <%--<input type="password" class="form-control" id="txtnewpassword">--%>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
-                                        <div class="form-group pass_show">
+                                        <div class="form-group pass_show">                                           
                                             <label class="control-label">Confirm New Password: <span class="text-danger">*</span></label>
-                                            <input class="form-control" type="password" id="txtconfirmnewpassword">
+                                            <asp:TextBox runat="server" ID="txtconfirmnewpassword" CssClass="form-control" type="password" />
+                                            <%--<input class="form-control" type="password" id="txtconfirmnewpassword">--%>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group text-center">
-                                    <button class="btn btn-primary btn-block account-btn btn_passwordreset_Details1 backgroundcolor" type="button">Change Password</button>
+                                     <asp:Button runat="server" CssClass="btn btn-primary btn-block account-btn backgroundcolor" Text="Change Password" ID="changePass" OnClick="changePass_Click" />
+                                   <%-- <button class="btn btn-primary btn-block account-btn btn_passwordreset_Details1 backgroundcolor" type="button">Change Password</button>--%>
                                 </div>
                                 <div class="text-center">
                                     <a href="Login.aspx">Back to Login</a>
@@ -79,6 +87,8 @@
         </div>
     </div>
         </div>
+    </form>
+  
     
     <div class="sidebar-overlay" data-reff="#sidebar"></div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

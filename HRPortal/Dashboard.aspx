@@ -13,10 +13,16 @@
     </div>
     <% //var nav = new Config().ReturnNav();
         String employeeNo = Convert.ToString(Session["employeeNo"]);
-        //string tstatus = 
+        //string tstatus =
+        decimal unSurrCount = 0;
+        decimal purchCount = 0;
+        decimal storeCount = 0;
+        decimal imprestCount = 0;
+        decimal surrenderCount = 0;
+        decimal staffCount = 0;
 
         var allImprestsUnsurrendered = new Config().ObjNav1().fnUnSurrenderedImprests(employeeNo);
-        decimal unSurrCount = 0;
+
         string[] info2 = allImprestsUnsurrendered.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries);
         if (info2.Count() > 0)
         {
@@ -67,10 +73,10 @@
                                             <td style="font-weight: bold">Email:</td>
                                             <td><%= Session["EmailAddress"] %> </td>
                                         </tr>
-                                        <tr>
+                                        <%--<tr>
                                             <td style="font-weight: bold">Phone Number:</td>
                                             <td><%= Session["PhoneNo"] %> </td>
-                                        </tr>
+                                        </tr>--%>
                                         <tr>
                                             <td style="font-weight: bold">Unsurrendered Imprest Amount:</td>
                                             <td>Kshs. <%= unSurrCount %> </td>
@@ -92,12 +98,23 @@
                                 <div class="inner">
                                     <h3>
                                         <% 
-                                            var request = new Config().ObjNav1().fnPurchaseRequisitions(employeeNo);
-                                            int purchaseRequisitionsCount1 = request.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries).Count();
+                                            var requestPurchase = new Config().ObjNav1().fnPurchaseRequisitions(employeeNo);
+                                            String[] infoPurchase = requestPurchase.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries);
+                                            if (infoPurchase != null)
+                                            {
+                                                foreach (var allinfo in infoPurchase)
+                                                {
+                                                    String[] arr = allinfo.Split('*');
+                                                    if (arr[2] == "Open" || arr[2] == "Pending Approval")
+                                                    {
+                                                        purchCount++;
+                                                    }
+                                                }
+                                            }
 
 
                                         %>
-                                        <% = purchaseRequisitionsCount1 %>
+                                        <% = purchCount %>
                                     </h3>
 
                                     <p>Purchase Requisitions</p>
@@ -115,10 +132,21 @@
                                 <div class="inner">
                                     <h3>
                                         <% 
-                                            var request1 = new Config().ObjNav1().fnStoreRequisitions(employeeNo);
-                                            int storeRequisitionsCount1 = request1.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries).Count();
+                                            var requestStaff = new Config().ObjNav1().fnStaffClaims(employeeNo, 6);
+                                            String[] infoStaff = requestStaff.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries);
+                                            if (infoStaff != null)
+                                            {
+                                                foreach (var allinfo in infoStaff)
+                                                {
+                                                    String[] arr = allinfo.Split('*');
+                                                    if (arr[3] == "Open" || arr[3] == "Pending Approval")
+                                                    {
+                                                        staffCount++;
+                                                    }
+                                                }
+                                            }
                                         %>
-                                        <% = storeRequisitionsCount1 %>
+                                        <% = staffCount %>
                                     </h3>
 
                                     <p>Store Requisitions</p>
@@ -126,7 +154,7 @@
                                 <%--            <div class="icon">
               <i class="fa fa-money"></i>
             </div>--%>
-                                <a href="Approvedleave.aspx" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                                <a href="StaffClaims.aspx" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
@@ -136,10 +164,21 @@
                                 <div class="inner">
                                     <h3>
                                         <% 
-                                            var request2 = new Config().ObjNav1().fnStaffClaims(employeeNo, 6);
-                                            int staffClaimRequisitionsCount1 = request2.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries).Count();
+                                            var requestStore = new Config().ObjNav1().fnStoreRequisitions(employeeNo);
+                                            String[] infoStore = requestStore.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries);
+                                            if (infoStore != null)
+                                            {
+                                                foreach (var allinfo in infoStore)
+                                                {
+                                                    String[] arr = allinfo.Split('*');
+                                                    if (arr[3] == "Open" || arr[3] == "Pending Approval")
+                                                    {
+                                                        storeCount++;
+                                                    }
+                                                }
+                                            }
                                         %>
-                                        <% = staffClaimRequisitionsCount1 %>
+                                        <% = storeCount %>
                                     </h3>
 
                                     <p>Staff Claims</p>
@@ -175,10 +214,21 @@
                                 <div class="inner">
                                     <h3>
                                         <% 
-                                            var request4 = new Config().ObjNav1().fnImprestHeader(employeeNo);
-                                            int ImprestReqs = request4.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries).Count();
+                                            var requestImprest = new Config().ObjNav1().fnImprestHeader(employeeNo);
+                                            String[] infoImprest = requestImprest.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries);
+                                            if (infoImprest != null)
+                                            {
+                                                foreach (var allinfo in infoImprest)
+                                                {
+                                                    String[] arr = allinfo.Split('*');
+                                                    if (arr[4] == "Open" || arr[4] == "Pending Approval")
+                                                    {
+                                                        imprestCount++;
+                                                    }
+                                                }
+                                            }
                                         %>
-                                        <% = ImprestReqs %>
+                                        <% = imprestCount %>
                                     </h3>
 
                                     <p>Imprest Requisitions</p>
@@ -196,10 +246,21 @@
                                 <div class="inner">
                                     <h3>
                                         <% 
-                                            var request5 = new Config().ObjNav1().fnImprestSurrenders(employeeNo);
-                                            int imprestSurrender = request5.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries).Count();
+                                            var requestSurrender = new Config().ObjNav1().fnImprestSurrenders(employeeNo);
+                                            String[] infoSurrender = requestSurrender.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries);
+                                            if (infoSurrender != null)
+                                            {
+                                                foreach (var allinfo in infoSurrender)
+                                                {
+                                                    String[] arr = allinfo.Split('*');
+                                                    if (arr[4] == "Open" || arr[4] == "Pending Approval")
+                                                    {
+                                                        surrenderCount++;
+                                                    }
+                                                }
+                                            }
                                         %>
-                                        <% = imprestSurrender %>
+                                        <% = surrenderCount %>
                                     </h3>
 
                                     <p>Imprest Surrenders</p>

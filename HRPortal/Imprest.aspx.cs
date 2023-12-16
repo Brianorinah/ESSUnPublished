@@ -283,6 +283,16 @@ namespace HRPortal
                     error = true;
                     message = "Description is Required.";
                 }
+                if (string.IsNullOrEmpty(dpt.Text.Trim()))
+                {
+                    error = true;
+                    message = "Department is Required.";
+                }
+                if (string.IsNullOrEmpty(bsnCode.Text.Trim()))
+                {
+                    error = true;
+                    message = "Business Code is Required.";
+                }
 
                 if (error)
                 {

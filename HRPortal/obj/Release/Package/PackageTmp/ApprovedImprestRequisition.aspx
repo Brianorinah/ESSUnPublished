@@ -35,8 +35,8 @@
                             <th>Destination</th>
                             <th>Amount</th>
                             <%--<th>Send/Cancel Approval</th>--%>
-                            <th>View Approvers</th>
-                            <th>Edit</th>
+                            <%--<th>View Approvers</th>--%>
+                            <%--<th>Edit</th>--%>
                             <%--<th>Print</th>--%>
                         </tr>
                     </thead>

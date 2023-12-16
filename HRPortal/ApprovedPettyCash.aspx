@@ -30,7 +30,7 @@
                         <th>Status</th>
                         <%--<th>Amount</th>
                         <th>View Approvers</th>--%>
-                        <th>Edit</th>
+                        <%--<th>Edit</th>--%>
                     </tr>
                 </thead>
                 <tbody>

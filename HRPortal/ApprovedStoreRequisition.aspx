@@ -35,7 +35,7 @@
                             <%--<th>Status</th>
                             <th>View Approvers</th>--%>
                             <%--<th>Send/Cancel Approval</th>--%>
-                            <th>Edit</th>
+                           <%-- <th>Edit</th>--%>
                             <%--<th>Print</th>--%>
                         </tr>
                     </thead>

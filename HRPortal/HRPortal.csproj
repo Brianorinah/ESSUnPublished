@@ -285,7 +285,6 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Settings.aspx" />
     <Content Include="Site.Master" />
@@ -295,6 +294,9 @@
     <Content Include="StoreRequisition.aspx" />
     <Content Include="StoreRequisitions.aspx" />
     <Content Include="ViewImprest.aspx" />
+    <Content Include="ViewPurchase.aspx" />
+    <Content Include="ViewStaffClaim.aspx" />
+    <Content Include="ViewStore.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -666,6 +668,27 @@
     </Compile>
     <Compile Include="ViewImprest.aspx.designer.cs">
       <DependentUpon>ViewImprest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPurchase.aspx.cs">
+      <DependentUpon>ViewPurchase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewPurchase.aspx.designer.cs">
+      <DependentUpon>ViewPurchase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewStaffClaim.aspx.cs">
+      <DependentUpon>ViewStaffClaim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewStaffClaim.aspx.designer.cs">
+      <DependentUpon>ViewStaffClaim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewStore.aspx.cs">
+      <DependentUpon>ViewStore.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewStore.aspx.designer.cs">
+      <DependentUpon>ViewStore.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

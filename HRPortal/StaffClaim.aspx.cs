@@ -162,7 +162,7 @@ namespace HRPortal
                 {
                     error = true;
                     message = "Description is Required.";
-                }
+                }               
 
 
                 if (error)

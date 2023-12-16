@@ -270,6 +270,16 @@ namespace HRPortal
                     error = true;
                     message = "Required Date is Required.";
                 }
+                if (string.IsNullOrEmpty(dpt.Text.Trim()))
+                {
+                    error = true;
+                    message = "Department is Required.";
+                }
+                if (string.IsNullOrEmpty(bsnCode.Text.Trim()))
+                {
+                    error = true;
+                    message = "Business Code is Required.";
+                }
 
                 Boolean newRequisition = false;                
                 if (error)

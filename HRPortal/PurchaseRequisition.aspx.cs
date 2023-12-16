@@ -269,6 +269,16 @@ namespace HRPortal
                     error = true;
                     message = "Requested Receipt Date is Required.";
                 }
+                if (string.IsNullOrEmpty(dpt.Text.Trim()))
+                {
+                    error = true;
+                    message = "Department is Required.";
+                }
+                if (string.IsNullOrEmpty(bsnCode.Text.Trim()))
+                {
+                    error = true;
+                    message = "Business Code is Required.";
+                }
 
 
                 Boolean newRequisition = false;                

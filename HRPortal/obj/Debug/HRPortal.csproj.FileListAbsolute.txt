@@ -120,4 +120,3 @@ D:\Client Projects\Cronus\ESS OnPrem\HRPortal\HRPortal\bin\zh-Hans\System.Spatia
 D:\Client Projects\Cronus\ESS OnPrem\HRPortal\HRPortal\bin\zh-Hant\System.Spatial.resources.dll
 D:\Client Projects\Cronus\ESS OnPrem\HRPortal\HRPortal\obj\Debug\HRPortal.dll
 D:\Client Projects\Cronus\ESS OnPrem\HRPortal\HRPortal\obj\Debug\HRPortal.pdb
-D:\Client Projects\Cronus\ESS OnPrem\HRPortal\HRPortal\obj\Debug\HRPortal.csprojResolveAssemblyReference.cache

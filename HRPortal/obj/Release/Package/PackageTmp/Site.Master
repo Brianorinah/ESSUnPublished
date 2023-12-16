@@ -12,7 +12,7 @@
     </asp:ContentPlaceHolder>
 
     <%-- <link rel="icon" href="images/kemri.png" type="image/x-icon">--%>
-    <link rel="shortcut icon" type="image/x-icon" href="">
+    <link rel="shortcut icon" type="image/x-icon" href="siteAssets/Images/logo.jpg" />
     <link href="assests/css/sweetalert.css" rel="stylesheet" />
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -258,7 +258,7 @@
                                 <li class="treeview">
                                     <a href="#">
                                         <i class="fa fa-money"></i>
-                                        <span>Imprest</span>
+                                        <span>Imprest Requisition</span>
                                         <span class="pull-right-container">
                                             <i class="fa fa-angle-left pull-right"></i>
                                         </span>

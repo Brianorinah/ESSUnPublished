@@ -24,10 +24,10 @@
 					<div class="card shadow-lg">
 						<div class="card-body p-5">
 							<center><h1 class="fs-4 card-title fw-bold mb-4">Forgot Password</h1></center>							
-
+                            <div id="passwordFeedback" runat="server"></div>
 								<div class="mb-3">
-									<label class="mb-2 text-muted" for="">Email Address</label>
-                                    <asp:Textbox runat="server" type="email" id="email" name="email" value="" placeholder="Email Address" cssClass="form-control" required autofocus/>
+									<label class="mb-2 text-muted" for="">Employee Number</label>
+                                    <asp:Textbox runat="server" id="email" name="email" value="" placeholder="Employee Number" cssClass="form-control" required autofocus/>
 									<%--<input id="email" type="email" class="form-control" name="email" value="" required autofocus>--%>
 									
 									<div class="invalid-feedback">
@@ -36,9 +36,10 @@
 								</div>
 
 								<div class="d-flex align-items-center">
-									<button type="submit" class="btn btn-primary ms-auto">
+                                    <asp:Button runat="server" CssClass="btn btn-primary ms-auto" Text="Send" ID="resetPass" OnClick="resetPass_Click"/>
+									<%--<button type="submit" class="btn btn-primary ms-auto">
 										Send Link
-									</button>
+									</button>--%>
 								</div>							
 							
 						</div>
