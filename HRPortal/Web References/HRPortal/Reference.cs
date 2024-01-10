@@ -41,6 +41,8 @@ namespace HRPortal.HRPortal {
         
         private System.Threading.SendOrPostCallback DeleteSurrenderDocumentLinkOperationCompleted;
         
+        private System.Threading.SendOrPostCallback SendEmailNotificationOperationCompleted;
+        
         private System.Threading.SendOrPostCallback cancelImprestRequisitionApprovalOperationCompleted;
         
         private System.Threading.SendOrPostCallback cancelPurchaseRequisitionApprovalOperationCompleted;
@@ -174,6 +176,9 @@ namespace HRPortal.HRPortal {
         
         /// <remarks/>
         public event DeleteSurrenderDocumentLinkCompletedEventHandler DeleteSurrenderDocumentLinkCompleted;
+        
+        /// <remarks/>
+        public event SendEmailNotificationCompletedEventHandler SendEmailNotificationCompleted;
         
         /// <remarks/>
         public event cancelImprestRequisitionApprovalCompletedEventHandler cancelImprestRequisitionApprovalCompleted;
@@ -493,6 +498,38 @@ namespace HRPortal.HRPortal {
             if ((this.DeleteSurrenderDocumentLinkCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.DeleteSurrenderDocumentLinkCompleted(this, new DeleteSurrenderDocumentLinkCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/HRPortal:SendEmailNotification", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", ResponseElementName="SendEmailNotification_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void SendEmailNotification(string recepient, string emailSubject, string emailBody) {
+            this.Invoke("SendEmailNotification", new object[] {
+                        recepient,
+                        emailSubject,
+                        emailBody});
+        }
+        
+        /// <remarks/>
+        public void SendEmailNotificationAsync(string recepient, string emailSubject, string emailBody) {
+            this.SendEmailNotificationAsync(recepient, emailSubject, emailBody, null);
+        }
+        
+        /// <remarks/>
+        public void SendEmailNotificationAsync(string recepient, string emailSubject, string emailBody, object userState) {
+            if ((this.SendEmailNotificationOperationCompleted == null)) {
+                this.SendEmailNotificationOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSendEmailNotificationOperationCompleted);
+            }
+            this.InvokeAsync("SendEmailNotification", new object[] {
+                        recepient,
+                        emailSubject,
+                        emailBody}, this.SendEmailNotificationOperationCompleted, userState);
+        }
+        
+        private void OnSendEmailNotificationOperationCompleted(object arg) {
+            if ((this.SendEmailNotificationCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SendEmailNotificationCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1070,7 +1107,7 @@ namespace HRPortal.HRPortal {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/HRPortal:createPurchaseRequisition", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", ResponseElementName="createPurchaseRequisition_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
-        public string createPurchaseRequisition(string employeeNo, string requisitionNo, string description, string department, string busnCode, string airplaneCode, string projectCode, string curr, [System.Xml.Serialization.XmlElementAttribute(DataType="date")] System.DateTime trcptDate) {
+        public string createPurchaseRequisition(string employeeNo, string requisitionNo, string description, string department, string busnCode, string airplaneCode, string projectCode, string curr, [System.Xml.Serialization.XmlElementAttribute(DataType="date")] System.DateTime trcptDate, string refDoc) {
             object[] results = this.Invoke("createPurchaseRequisition", new object[] {
                         employeeNo,
                         requisitionNo,
@@ -1080,17 +1117,18 @@ namespace HRPortal.HRPortal {
                         airplaneCode,
                         projectCode,
                         curr,
-                        trcptDate});
+                        trcptDate,
+                        refDoc});
             return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void createPurchaseRequisitionAsync(string employeeNo, string requisitionNo, string description, string department, string busnCode, string airplaneCode, string projectCode, string curr, System.DateTime trcptDate) {
-            this.createPurchaseRequisitionAsync(employeeNo, requisitionNo, description, department, busnCode, airplaneCode, projectCode, curr, trcptDate, null);
+        public void createPurchaseRequisitionAsync(string employeeNo, string requisitionNo, string description, string department, string busnCode, string airplaneCode, string projectCode, string curr, System.DateTime trcptDate, string refDoc) {
+            this.createPurchaseRequisitionAsync(employeeNo, requisitionNo, description, department, busnCode, airplaneCode, projectCode, curr, trcptDate, refDoc, null);
         }
         
         /// <remarks/>
-        public void createPurchaseRequisitionAsync(string employeeNo, string requisitionNo, string description, string department, string busnCode, string airplaneCode, string projectCode, string curr, System.DateTime trcptDate, object userState) {
+        public void createPurchaseRequisitionAsync(string employeeNo, string requisitionNo, string description, string department, string busnCode, string airplaneCode, string projectCode, string curr, System.DateTime trcptDate, string refDoc, object userState) {
             if ((this.createPurchaseRequisitionOperationCompleted == null)) {
                 this.createPurchaseRequisitionOperationCompleted = new System.Threading.SendOrPostCallback(this.OncreatePurchaseRequisitionOperationCompleted);
             }
@@ -1103,7 +1141,8 @@ namespace HRPortal.HRPortal {
                         airplaneCode,
                         projectCode,
                         curr,
-                        trcptDate}, this.createPurchaseRequisitionOperationCompleted, userState);
+                        trcptDate,
+                        refDoc}, this.createPurchaseRequisitionOperationCompleted, userState);
         }
         
         private void OncreatePurchaseRequisitionOperationCompleted(object arg) {
@@ -1292,7 +1331,7 @@ namespace HRPortal.HRPortal {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/HRPortal:createStoreRequisition", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", ResponseElementName="createStoreRequisition_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/HRPortal", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
-        public string createStoreRequisition(string employeeNo, string requisitionNo, string description, string department, [System.Xml.Serialization.XmlElementAttribute(DataType="date")] System.DateTime requiredDate, string busnCode, string airplaneCode, string tprojectCode) {
+        public string createStoreRequisition(string employeeNo, string requisitionNo, string description, string department, [System.Xml.Serialization.XmlElementAttribute(DataType="date")] System.DateTime requiredDate, string busnCode, string airplaneCode, string tprojectCode, string refDoc) {
             object[] results = this.Invoke("createStoreRequisition", new object[] {
                         employeeNo,
                         requisitionNo,
@@ -1301,17 +1340,18 @@ namespace HRPortal.HRPortal {
                         requiredDate,
                         busnCode,
                         airplaneCode,
-                        tprojectCode});
+                        tprojectCode,
+                        refDoc});
             return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void createStoreRequisitionAsync(string employeeNo, string requisitionNo, string description, string department, System.DateTime requiredDate, string busnCode, string airplaneCode, string tprojectCode) {
-            this.createStoreRequisitionAsync(employeeNo, requisitionNo, description, department, requiredDate, busnCode, airplaneCode, tprojectCode, null);
+        public void createStoreRequisitionAsync(string employeeNo, string requisitionNo, string description, string department, System.DateTime requiredDate, string busnCode, string airplaneCode, string tprojectCode, string refDoc) {
+            this.createStoreRequisitionAsync(employeeNo, requisitionNo, description, department, requiredDate, busnCode, airplaneCode, tprojectCode, refDoc, null);
         }
         
         /// <remarks/>
-        public void createStoreRequisitionAsync(string employeeNo, string requisitionNo, string description, string department, System.DateTime requiredDate, string busnCode, string airplaneCode, string tprojectCode, object userState) {
+        public void createStoreRequisitionAsync(string employeeNo, string requisitionNo, string description, string department, System.DateTime requiredDate, string busnCode, string airplaneCode, string tprojectCode, string refDoc, object userState) {
             if ((this.createStoreRequisitionOperationCompleted == null)) {
                 this.createStoreRequisitionOperationCompleted = new System.Threading.SendOrPostCallback(this.OncreateStoreRequisitionOperationCompleted);
             }
@@ -1323,7 +1363,8 @@ namespace HRPortal.HRPortal {
                         requiredDate,
                         busnCode,
                         airplaneCode,
-                        tprojectCode}, this.createStoreRequisitionOperationCompleted, userState);
+                        tprojectCode,
+                        refDoc}, this.createStoreRequisitionOperationCompleted, userState);
         }
         
         private void OncreateStoreRequisitionOperationCompleted(object arg) {
@@ -2024,6 +2065,10 @@ namespace HRPortal.HRPortal {
             }
         }
     }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void SendEmailNotificationCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]

@@ -26,8 +26,7 @@ namespace HRPortal.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://20.55.27.125:7047/BC220/WS/Z.Boskovic%20Air%20Charters%20Ltd/Codeunit/Quer" +
-            "iesESS")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://boskovic:7047/BC220/WS/Z.Boskovic%20Air%20Charters/Codeunit/QueriesESS")]
         public string HRPortal_QueriesESS_QueriesESS {
             get {
                 return ((string)(this["HRPortal_QueriesESS_QueriesESS"]));
@@ -37,8 +36,7 @@ namespace HRPortal.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://20.55.27.125:7047/BC220/WS/Z.Boskovic%20Air%20Charters%20Ltd/Codeunit/HRPo" +
-            "rtal")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://boskovic:7047/BC220/WS/Z.Boskovic%20Air%20Charters/Codeunit/HRPortal")]
         public string HRPortal_HRPortal_HRPortal {
             get {
                 return ((string)(this["HRPortal_HRPortal_HRPortal"]));

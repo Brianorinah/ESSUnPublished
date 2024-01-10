@@ -29,7 +29,13 @@
                         <tr>
                             <th>#</th>
                             <th>Requisition No</th>
-                            <th>Description</th>
+                            <th>Description</th>                            
+                            <th>Department</th>
+                            <th>Business Unit</th>
+                            <th>Aircraft </th>
+                            <th>Reference Document</th>
+                            <th>Document Date</th>
+                            
                             <%--<th>Requisition Product Group</th>
                             <th>Priority Level</th>--%>
                             <%--<th>Status</th>
@@ -61,8 +67,11 @@
                             <td><%=arr[3]%></td>--%>
                             <td><%=arr[3]%></td> 
                             <td><%=String.Format("{0:n}", Convert.ToDouble(arr[2]))%> </td>
-                            
-
+                            <td><%=arr[8]%></td> 
+                            <td><%=arr[9]%></td> 
+                            <td><%=arr[10]%></td> 
+                            <td><%=arr[12]%></td> 
+                            <td><%=arr[1]%></td> 
                         </tr>
                         <%
                                 }    }

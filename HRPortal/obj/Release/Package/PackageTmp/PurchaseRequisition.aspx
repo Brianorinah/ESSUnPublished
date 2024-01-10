@@ -93,6 +93,12 @@
                         <asp:TextBox runat="server" ID="rcptDate" CssClass="form-control" placeholder="Date Required" TextMode="Date" />
                     </div>
                 </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <strong>Reference Document:</strong>
+                        <asp:TextBox runat="server" ID="refDoc" CssClass="form-control" placeholder="Description" />
+                    </div>
+                </div> 
 
             </div>
 

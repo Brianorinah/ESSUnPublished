@@ -30,7 +30,12 @@
                             <th>Requisition No</th>
                             <th>Description</th>                            
                             <th>Status</th>                            
-                            <th>Amount</th>
+                            <th>Amount</th>                           
+                            <th>Department</th>
+                            <th>Business Unit</th>
+                            <th>Aircraft </th>
+                             <th>Reference Document</th>
+                            <th>Document Date</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -52,7 +57,12 @@
                             <td><%=arr[0]%></td>
                             <td><%=arr[1]%></td>                            
                             <td><%=arr[2]%></td>   
-                            <td><%=String.Format("{0:n}", Convert.ToDouble(arr[4]))%></td>                           
+                            <td><%=String.Format("{0:n}", Convert.ToDouble(arr[4]))%></td> 
+                            <td><%=arr[9]%></td> 
+                            <td><%=arr[10]%></td> 
+                            <td><%=arr[11]%></td> 
+                            <td><%=arr[13]%></td> 
+                            <td><%=arr[3]%></td>                           
 
                         </tr>
                         <%

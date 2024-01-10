@@ -176,7 +176,8 @@ namespace HRPortal
                             bsnCode.SelectedValue = arr[7];
                             airCraftCode.SelectedValue = arr[8];
                             projectCode.SelectedValue = arr[9];
-                            description.Text = arr[4];   
+                            description.Text = arr[4];
+                            refDoc.Text = arr[10];
 
                         }
                     }
@@ -270,16 +271,16 @@ namespace HRPortal
                     error = true;
                     message = "Required Date is Required.";
                 }
-                if (string.IsNullOrEmpty(dpt.Text.Trim()))
-                {
-                    error = true;
-                    message = "Department is Required.";
-                }
-                if (string.IsNullOrEmpty(bsnCode.Text.Trim()))
-                {
-                    error = true;
-                    message = "Business Code is Required.";
-                }
+                //if (string.IsNullOrEmpty(dpt.Text.Trim()))
+                //{
+                //    error = true;
+                //    message = "Department is Required.";
+                //}
+                //if (string.IsNullOrEmpty(bsnCode.Text.Trim()))
+                //{
+                //    error = true;
+                //    message = "Business Code is Required.";
+                //}
 
                 Boolean newRequisition = false;                
                 if (error)
@@ -294,6 +295,7 @@ namespace HRPortal
                     string tairCraftCode = airCraftCode.SelectedValue.Trim();
                     string tprojectCode = projectCode.SelectedValue.Trim();                    
                     string tdescription = description.Text.Trim();
+                    string trefDoc = refDoc.Text.Trim();
 
                     try
                     {
@@ -313,7 +315,7 @@ namespace HRPortal
 
                     var nav = new Config().ObjNav();
 
-                    String status = nav.createStoreRequisition(employeeNo, requisitionNo, tdescription, tdpt, tdateRequired, tbsnCode, tairCraftCode, tprojectCode);
+                    String status = nav.createStoreRequisition(employeeNo, requisitionNo, tdescription, tdpt, tdateRequired, tbsnCode, tairCraftCode, tprojectCode,trefDoc);
                     String[] info = status.Split('*');
                     if (info[0] == "success")
                     {

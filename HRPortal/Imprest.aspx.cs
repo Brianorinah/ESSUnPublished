@@ -174,11 +174,32 @@ namespace HRPortal
                             description.Text = arr[5];
                             currCode1.SelectedValue = arr[7];
                             dateFrom.Text = arr[1];
-                            dateTo.Text = arr[2];                            
+                            dateTo.Text = arr[2];
+                            totalImprest.Text = arr[3];
 
                         }
                     }
                 }
+            }
+            else
+            {
+                double impAmount = 0;
+                String requisitionNo = Request.QueryString["docNo"];
+                var nav = new Config().ObjNav1();
+                var result = nav.fnImprestLines(requisitionNo);
+                String[] info = result.Split(new string[] { "::::" }, StringSplitOptions.RemoveEmptyEntries);
+                if (info.Count() > 0)
+                {
+                    if (info != null)
+                    {
+                        foreach (var allinfo in info)
+                        {
+                            String[] arr = allinfo.Split('*');
+                            impAmount += Convert.ToDouble(arr[3]);
+                        }
+                    }
+                }
+                totalImprest.Text = Convert.ToString(impAmount);
             }
         }
         public void dptMach(string tdpt)
@@ -283,16 +304,16 @@ namespace HRPortal
                     error = true;
                     message = "Description is Required.";
                 }
-                if (string.IsNullOrEmpty(dpt.Text.Trim()))
-                {
-                    error = true;
-                    message = "Department is Required.";
-                }
-                if (string.IsNullOrEmpty(bsnCode.Text.Trim()))
-                {
-                    error = true;
-                    message = "Business Code is Required.";
-                }
+                //if (string.IsNullOrEmpty(dpt.Text.Trim()))
+                //{
+                //    error = true;
+                //    message = "Department is Required.";
+                //}
+                //if (string.IsNullOrEmpty(bsnCode.Text.Trim()))
+                //{
+                //    error = true;
+                //    message = "Business Code is Required.";
+                //}
 
                 if (error)
                 {

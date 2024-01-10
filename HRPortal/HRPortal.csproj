@@ -718,10 +718,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://20.55.27.125:7047/BC220/WS/Z.Boskovic%2520Air%2520Charters%2520Ltd/Codeunit/HRPortal">
+    <WebReferenceUrl Include="http://20.55.27.125:7047/BC220/WS/Z.Boskovic%2520Air%2520Charters/Codeunit/HRPortal">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\HRPortal\</RelPath>
-      <UpdateFromURL>http://20.55.27.125:7047/BC220/WS/Z.Boskovic%2520Air%2520Charters%2520Ltd/Codeunit/HRPortal</UpdateFromURL>
+      <UpdateFromURL>http://20.55.27.125:7047/BC220/WS/Z.Boskovic%2520Air%2520Charters/Codeunit/HRPortal</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -729,10 +729,10 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>HRPortal_HRPortal_HRPortal</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://20.55.27.125:7047/BC220/WS/Z.Boskovic%2520Air%2520Charters%2520Ltd/Codeunit/QueriesESS">
+    <WebReferenceUrl Include="http://20.55.27.125:7047/BC220/WS/Z.Boskovic%2520Air%2520Charters/Codeunit/QueriesESS">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\QueriesESS\</RelPath>
-      <UpdateFromURL>http://20.55.27.125:7047/BC220/WS/Z.Boskovic%2520Air%2520Charters%2520Ltd/Codeunit/QueriesESS</UpdateFromURL>
+      <UpdateFromURL>http://20.55.27.125:7047/BC220/WS/Z.Boskovic%2520Air%2520Charters/Codeunit/QueriesESS</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

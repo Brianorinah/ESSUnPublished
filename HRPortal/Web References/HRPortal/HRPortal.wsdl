@@ -98,6 +98,20 @@
           </sequence>
         </complexType>
       </element>
+      <element name="SendEmailNotification">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="recepient" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="emailSubject" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="emailBody" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SendEmailNotification_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
       <element name="cancelImprestRequisitionApproval">
         <complexType>
           <sequence>
@@ -378,6 +392,7 @@
             <element minOccurs="1" maxOccurs="1" name="projectCode" type="string" />
             <element minOccurs="1" maxOccurs="1" name="curr" type="string" />
             <element minOccurs="1" maxOccurs="1" name="trcptDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="refDoc" type="string" />
           </sequence>
         </complexType>
       </element>
@@ -482,6 +497,7 @@
             <element minOccurs="1" maxOccurs="1" name="busnCode" type="string" />
             <element minOccurs="1" maxOccurs="1" name="airplaneCode" type="string" />
             <element minOccurs="1" maxOccurs="1" name="tprojectCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="refDoc" type="string" />
           </sequence>
         </complexType>
       </element>
@@ -772,6 +788,12 @@
   <message name="DeleteSurrenderDocumentLink_Result">
     <part name="parameters" element="tns:DeleteSurrenderDocumentLink_Result" />
   </message>
+  <message name="SendEmailNotification">
+    <part name="parameters" element="tns:SendEmailNotification" />
+  </message>
+  <message name="SendEmailNotification_Result">
+    <part name="parameters" element="tns:SendEmailNotification_Result" />
+  </message>
   <message name="cancelImprestRequisitionApproval">
     <part name="parameters" element="tns:cancelImprestRequisitionApproval" />
   </message>
@@ -1031,6 +1053,10 @@
       <input name="DeleteSurrenderDocumentLink" message="tns:DeleteSurrenderDocumentLink" />
       <output name="DeleteSurrenderDocumentLink_Result" message="tns:DeleteSurrenderDocumentLink_Result" />
     </operation>
+    <operation name="SendEmailNotification">
+      <input name="SendEmailNotification" message="tns:SendEmailNotification" />
+      <output name="SendEmailNotification_Result" message="tns:SendEmailNotification_Result" />
+    </operation>
     <operation name="cancelImprestRequisitionApproval">
       <input name="cancelImprestRequisitionApproval" message="tns:cancelImprestRequisitionApproval" />
       <output name="cancelImprestRequisitionApproval_Result" message="tns:cancelImprestRequisitionApproval_Result" />
@@ -1241,6 +1267,15 @@
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </input>
       <output name="DeleteSurrenderDocumentLink_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="SendEmailNotification">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/HRPortal:SendEmailNotification" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="SendEmailNotification">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="SendEmailNotification_Result">
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
       </output>
     </operation>
@@ -1598,7 +1633,7 @@
   </binding>
   <service name="HRPortal">
     <port name="HRPortal_Port" binding="tns:HRPortal_Binding">
-      <address location="http://20.55.27.125:7047/BC220/WS/Z.Boskovic%20Air%20Charters%20Ltd/Codeunit/HRPortal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <address location="http://20.55.27.125:7047/BC220/WS/Z.Boskovic%20Air%20Charters/Codeunit/HRPortal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
     </port>
   </service>
 </definitions>

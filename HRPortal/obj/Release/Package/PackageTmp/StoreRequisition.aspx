@@ -85,6 +85,12 @@
                 
             </div>
             <div class="row">
+                <div class="col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <strong>Reference Document:</strong>
+                        <asp:TextBox runat="server" ID="refDoc" CssClass="form-control" placeholder="Description" />
+                    </div>
+                </div> 
             </div>
 
             <div class="panel-footer">

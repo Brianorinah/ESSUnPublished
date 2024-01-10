@@ -174,7 +174,8 @@ namespace HRPortal
                             airCraftCode.SelectedValue = arr[10];
                             projectCode.SelectedValue = arr[11];
                             description.Text = arr[1];
-                            currCode1.SelectedValue = arr[7];                            
+                            currCode1.SelectedValue = arr[7];
+                            refDoc.Text = arr[12];
 
                         }
                     }
@@ -269,16 +270,16 @@ namespace HRPortal
                     error = true;
                     message = "Requested Receipt Date is Required.";
                 }
-                if (string.IsNullOrEmpty(dpt.Text.Trim()))
-                {
-                    error = true;
-                    message = "Department is Required.";
-                }
-                if (string.IsNullOrEmpty(bsnCode.Text.Trim()))
-                {
-                    error = true;
-                    message = "Business Code is Required.";
-                }
+                //if (string.IsNullOrEmpty(dpt.Text.Trim()))
+                //{
+                //    error = true;
+                //    message = "Department is Required.";
+                //}
+                //if (string.IsNullOrEmpty(bsnCode.Text.Trim()))
+                //{
+                //    error = true;
+                //    message = "Business Code is Required.";
+                //}
 
 
                 Boolean newRequisition = false;                
@@ -294,6 +295,7 @@ namespace HRPortal
                     string tprojectCode = projectCode.SelectedValue.Trim();
                     string tcurrCode = currCode1.SelectedValue.Trim();
                     string tdescription = description.Text.Trim();
+                    string trefDoc = refDoc.Text.Trim();
                     DateTime trcptDate = Convert.ToDateTime(rcptDate.Text.Trim());
 
                     try
@@ -314,7 +316,7 @@ namespace HRPortal
 
                     var nav = new Config().ObjNav();
 
-                    String status = nav.createPurchaseRequisition(employeeNo, requisitionNo, tdescription, tdpt, tbsnCode, tairCraftCode, tprojectCode, tcurrCode, trcptDate);
+                    String status = nav.createPurchaseRequisition(employeeNo, requisitionNo, tdescription, tdpt, tbsnCode, tairCraftCode, tprojectCode, tcurrCode, trcptDate, trefDoc);
                     String[] info = status.Split('*');
                     if (info[0] == "success")
                     {

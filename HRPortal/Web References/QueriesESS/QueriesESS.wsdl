@@ -1239,7 +1239,7 @@
   </binding>
   <service name="QueriesESS">
     <port name="QueriesESS_Port" binding="tns:QueriesESS_Binding">
-      <address location="http://20.55.27.125:7047/BC220/WS/Z.Boskovic%20Air%20Charters%20Ltd/Codeunit/QueriesESS" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <address location="http://20.55.27.125:7047/BC220/WS/Z.Boskovic%20Air%20Charters/Codeunit/QueriesESS" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
     </port>
   </service>
 </definitions>

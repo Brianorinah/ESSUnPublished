@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="HRPortal_QueriesESS_QueriesESS" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://20.55.27.125:7047/BC220/WS/Z.Boskovic%20Air%20Charters%20Ltd/Codeunit/QueriesESS</Value>
+      <Value Profile="(Default)">http://boskovic:7047/BC220/WS/Z.Boskovic%20Air%20Charters/Codeunit/QueriesESS</Value>
     </Setting>
     <Setting Name="HRPortal_HRPortal_HRPortal" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://20.55.27.125:7047/BC220/WS/Z.Boskovic%20Air%20Charters%20Ltd/Codeunit/HRPortal</Value>
+      <Value Profile="(Default)">http://20.55.27.125:7047/BC220/WS/Z.Boskovic%20Air%20Charters/Codeunit/HRPortal</Value>
     </Setting>
   </Settings>
 </SettingsFile>

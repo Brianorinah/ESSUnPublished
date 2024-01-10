@@ -7,6 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <%
         int step = 1;
+        double impAmount = 0;
         try
         {
             step = Convert.ToInt32(Request.QueryString["step"]);
@@ -99,6 +100,8 @@
         }
         else if (step == 2)
         {
+            //totalImprest.Text = Convert.ToString(impAmount);
+
     %>
     <div class="panel panel-primary">
         <div class="panel-heading">
@@ -110,7 +113,7 @@
             <!--team(destination town, vote item, no, number of days) -->
             <div class="col-md-6 col-lg-6">
                 <div class="form-group">
-                    <strong>Travel Type:</strong>
+                    <strong>Imprest Type:</strong>
                     <asp:DropDownList runat="server" CssClass="form-control select2" ID="traveltype">
                     </asp:DropDownList>
                 </div>
@@ -126,6 +129,12 @@
                 <div class="form-group">
                     <strong>Quantity:</strong>
                     <asp:TextBox runat="server" CssClass="form-control " ID="quantity"  TextMode="Number"/>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="form-group">
+                    <strong>Current Total Imprest Amount:</strong>
+                    <asp:TextBox runat="server" CssClass="form-control " ID="totalImprest" ReadOnly/>
                 </div>
             </div>
             <div class="form-group">
@@ -157,6 +166,7 @@
                                 foreach (var allinfo in info)
                                 {
                                     String[] arr = allinfo.Split('*');
+                                    //impAmount += Convert.ToDouble(arr[3]);
 
                     %>
                     <tr>
